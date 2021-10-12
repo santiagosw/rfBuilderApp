@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "animate_do",
+      "rootUri": "file:///C:/development/flutter/.pub-cache/hosted/pub.dartlang.org/animate_do-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "archive",
       "rootUri": "file:///C:/development/flutter/.pub-cache/hosted/pub.dartlang.org/archive-3.1.6",
       "packageUri": "lib/",
@@ -80,6 +86,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_advanced_drawer",
+      "rootUri": "file:///C:/development/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_advanced_drawer-1.2.3+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_launcher_icons",
       "rootUri": "file:///C:/development/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.9.2",
       "packageUri": "lib/",
@@ -100,6 +112,12 @@
     {
       "name": "get",
       "rootUri": "file:///C:/development/flutter/.pub-cache/hosted/pub.dartlang.org/get-4.3.8",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "getwidget",
+      "rootUri": "file:///C:/development/flutter/.pub-cache/hosted/pub.dartlang.org/getwidget-2.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -224,7 +242,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-10-12T15:37:49.595921Z",
+  "generated": "2021-10-12T19:57:19.268923Z",
   "generator": "pub",
   "generatorVersion": "2.14.3"
 }

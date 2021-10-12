@@ -1267,8 +1267,8 @@ kotlin.collections.MapsKt
 androidx.core.view.NestedScrollingChild3
 io.flutter.BuildConfig
 androidx.core.content.res.TypedArrayUtils
-kotlin.NumbersKt__BigDecimalsKt
 kotlin.collections.ArraysKt___ArraysKt
+kotlin.NumbersKt__BigDecimalsKt
 kotlin.UInt$Companion
 kotlin.jvm.functions.Function3
 androidx.fragment.app.FragmentContainer
@@ -2607,8 +2607,8 @@ androidx.customview.widget.ExploreByTouchHelper$1
 androidx.core.graphics.PathSegment
 androidx.core.app.SharedElementCallback
 androidx.core.graphics.drawable.IconCompat$IconType
-kotlin.UnsignedKt
 kotlin.io.AccessDeniedException
+kotlin.UnsignedKt
 android.support.v4.os.IResultReceiver
 androidx.core.graphics.drawable.RoundedBitmapDrawable
 kotlin.SafePublicationLazyImpl

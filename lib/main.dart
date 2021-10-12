@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rfbuilder_app/screens/login.dart';
+import 'package:rfbuilder_app/screens/menu.dart';
+import 'package:rfbuilder_app/screens/register.dart';
 
 void main() => runApp(MyApp());
 

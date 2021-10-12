@@ -1,7 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:get/get.dart';
+import 'package:rfbuilder_app/screens/menu.dart';
+import 'package:rfbuilder_app/screens/register.dart';
+import 'dart:io';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -114,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
               style: TextStyle(
                   fontSize: 36,
                   fontFamily: "Titillium Web",
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w900,
                   color: Colors.grey.shade700),
             ),
             SizedBox(
@@ -210,7 +215,12 @@ class _LoginPageState extends State<LoginPage> {
               height: 10,
             ),
             MaterialButton(
-              onPressed: () {},
+              onPressed: () async {
+                GFLoader(
+                  type: GFLoaderType.android,
+                );
+                Get.to(HomePage());
+              },
               height: 45,
               color: Colors.red,
               child: Text(
@@ -236,7 +246,9 @@ class _LoginPageState extends State<LoginPage> {
                       fontWeight: FontWeight.w400),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(RegisterPage());
+                  },
                   child: Text(
                     'Register',
                     style: TextStyle(

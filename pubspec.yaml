@@ -20,6 +20,9 @@ dependencies:
   iconsax: ^0.0.8
   get: ^4.3.8
   flutter_launcher_icons: ^0.9.2
+  getwidget: ^2.0.4
+  flutter_advanced_drawer: ^1.2.3+1
+  animate_do: ^2.0.0
   
 
 dev_dependencies:
