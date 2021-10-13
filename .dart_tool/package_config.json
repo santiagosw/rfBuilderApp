@@ -104,8 +104,32 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_localizations",
+      "rootUri": "file:///C:/development/flutter/packages/flutter_localizations",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_rounded_date_picker",
+      "rootUri": "file:///C:/development/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_rounded_date_picker-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_signin_button",
+      "rootUri": "file:///C:/development/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_signin_button-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///C:/development/flutter/packages/flutter_test",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "font_awesome_flutter",
+      "rootUri": "file:///C:/development/flutter/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-9.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -130,6 +154,12 @@
     {
       "name": "image",
       "rootUri": "file:///C:/development/flutter/.pub-cache/hosted/pub.dartlang.org/image-3.0.8",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///C:/development/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -242,7 +272,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-10-12T19:57:19.268923Z",
+  "generated": "2021-10-13T18:19:26.856145Z",
   "generator": "pub",
   "generatorVersion": "2.14.3"
 }

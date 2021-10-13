@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -86,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
                   child: Text(
-                    "Santiago Romero",
+                    "Usuario",
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.w600),
                   ),
@@ -96,7 +97,9 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.grey.shade800,
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed('/home');
+                  },
                   leading: Icon(Iconsax.home),
                   title: Text('Dashboard'),
                 ),
@@ -110,14 +113,17 @@ class _HomePageState extends State<HomePage> {
                   leading: Icon(Iconsax.profile_2user),
                   title: Text('Contacts'),
                 ),
-                SizedBox(
-                  height: 50,
-                ),
                 Divider(color: Colors.grey.shade800),
                 ListTile(
                   onTap: () {},
                   leading: Icon(Iconsax.setting_2),
                   title: Text('Settings'),
+                ),
+                ListTile(
+                  onTap: () {},
+                  leading: Icon(Iconsax.menu),
+                  title: Text('Slide Menu'),
+                  trailing: Icon(Iconsax.arrow_circle_up),
                 ),
                 ListTile(
                   onTap: () {},
@@ -200,7 +206,7 @@ class _HomePageState extends State<HomePage> {
                       width: 30,
                       height: 4,
                       decoration: BoxDecoration(
-                        color: Colors.grey.shade800,
+                        color: Colors.red,
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
@@ -259,42 +265,88 @@ class _HomePageState extends State<HomePage> {
               child: Container(
                 padding: EdgeInsets.only(left: 20, right: 20, top: 30),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     FadeInDown(
                       duration: Duration(milliseconds: 500),
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            GFListTile(
-                            titleText:'Transferencias',
-                            icon: Icon(Iconsax.arrow_2)
-                           ),
-                           Divider(),
-                            GFListTile(
-                            titleText:'Recepción',
-                            icon: Icon(Iconsax.support)
-                           ),
-                           Divider(),
-                            GFListTile(
-                            titleText:'Guardado de Recepción',
-                            icon: Icon(Iconsax.save_2)
-                           ),
-                           Divider(),
-                            GFListTile(
-                            titleText:'Control Consolidado',
-                            icon: Icon(Iconsax.security)
-                           ),
-                           Divider(),
-                            GFListTile(
-                            titleText:'Despacho de carro consolidado',
-                            icon: Icon(Iconsax.box)
-                           ),
-                           Divider(),
-                            GFListTile(
-                            titleText:'Ayudante Gondola',
-                            icon: Icon(Iconsax.personalcard)
-                           ),
-                          ]),
+                      child: Column(children: [
+                        GFButton(
+                          onPressed: () {},
+                          text: "Transferencias",
+                          icon: Icon(Iconsax.arrow_2),
+                          textColor: Colors.black,
+                          type: GFButtonType.transparent,
+                          position: GFPosition.end,
+                          fullWidthButton: true,
+                        ),
+                        Divider(),
+                        GFButton(
+                          onPressed: () {
+                            Get.toNamed('/reception');
+                          },
+                          text: "Recepción",
+                          icon: Icon(Iconsax.box_add),
+                          textColor: Colors.black,
+                          type: GFButtonType.transparent,
+                          fullWidthButton: true,
+                          position: GFPosition.end,
+                        ),
+                        Divider(),
+                        GFButton(
+                          onPressed: () {
+                            Get.toNamed('/savereception');
+                          },
+                          text: "Guardado de Recepción",
+                          icon: Icon(Iconsax.save_2),
+                          textColor: Colors.black,
+                          type: GFButtonType.transparent,
+                          fullWidthButton: true,
+                          position: GFPosition.end,
+                        ),
+                        Divider(),
+                        GFButton(
+                          onPressed: () {},
+                          text: "Control Consolidado",
+                          icon: Icon(Iconsax.security),
+                          textColor: Colors.black,
+                          type: GFButtonType.transparent,
+                          fullWidthButton: true,
+                          position: GFPosition.end,
+                        ),
+                        Divider(),
+                        GFButton(
+                          onPressed: () {},
+                          text: "Despacho de carro consolidado",
+                          icon: Icon(Iconsax.box),
+                          textColor: Colors.black,
+                          type: GFButtonType.transparent,
+                          fullWidthButton: true,
+                          position: GFPosition.end,
+                        ),
+                        Divider(),
+                        GFButton(
+                          onPressed: () {},
+                          text: "Ayudante Gondola",
+                          icon: Icon(Iconsax.personalcard),
+                          textColor: Colors.black,
+                          type: GFButtonType.transparent,
+                          fullWidthButton: true,
+                          position: GFPosition.end,
+                        ),
+                        GFAccordion(
+                          title: 'Informacion',
+                          content:
+                              'Aqui se mostraran los cambios importantes de la aplicacion y informacion de las tareas durante la navegacion',
+                          collapsedIcon: Text('Mostrar'),
+                          expandedIcon: Text('Ocultar'),
+                          collapsedTitleBackgroundColor: Colors.grey.shade100,
+                          contentBackgroundColor: Colors.grey.shade300,
+                          titleBorder: Border.all(width: 1),
+                          contentBorder: Border.all(width: 0.5),
+                          titleBorderRadius: BorderRadius.circular(5),
+                          contentBorderRadius: BorderRadius.circular(5),
+                        ),
+                      ]),
                     ),
                   ],
                 ),

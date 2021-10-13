@@ -1,12 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:getwidget/getwidget.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
-import 'package:rfbuilder_app/screens/menu.dart';
-import 'package:rfbuilder_app/screens/register.dart';
-import 'dart:io';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -34,9 +31,8 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea (
-        child:   
-        SingleChildScrollView(
+        body: SafeArea(
+            child: SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.all(20.0),
         child: Column(
@@ -47,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
               height: 60,
             )),
             SizedBox(
-              height: 30,
+              height: 10,
             ),
             Container(
               height: 350,
@@ -65,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                     curve: Curves.linear,
                     child: Image.network(
                       'https://i.imgur.com/K37Y9HS.png',
-                      height: 400,
+                      height: 160,
                     ),
                   ),
                 ),
@@ -80,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                     curve: Curves.linear,
                     child: Image.network(
                       'https://i.imgur.com/78CvihZ.png',
-                      height: 250,
+                      height: 160,
                     ),
                   ),
                 ),
@@ -95,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                     curve: Curves.linear,
                     child: Image.network(
                       'https://i.imgur.com/9mlOKe2.png',
-                      height: 250,
+                      height: 160,
                     ),
                   ),
                 ),
@@ -110,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                     curve: Curves.linear,
                     child: Image.network(
                       'https://i.imgur.com/rUq1PPb.png',
-                      height: 250,
+                      height: 160,
                     ),
                   ),
                 )
@@ -217,11 +213,8 @@ class _LoginPageState extends State<LoginPage> {
               height: 10,
             ),
             MaterialButton(
-              onPressed: () async {
-                GFLoader(
-                  type: GFLoaderType.android,
-                );
-                Get.to(HomePage());
+              onPressed: () {
+                Get.toNamed('/home');
               },
               height: 45,
               color: Colors.red,
@@ -249,7 +242,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 TextButton(
                   onPressed: () {
-                    Get.to(RegisterPage());
+                    Get.toNamed('/register');
                   },
                   child: Text(
                     'Register',

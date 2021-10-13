@@ -11,9 +11,12 @@ environment:
 
 
 dependencies:
+
   flutter:
     sdk: flutter
-  
+    
+  flutter_localizations:
+    sdk: flutter
   cupertino_icons: ^1.0.2
   custom_splash: ^0.0.2
   simple_animations: ^4.0.1
@@ -23,6 +26,8 @@ dependencies:
   getwidget: ^2.0.4
   flutter_advanced_drawer: ^1.2.3+1
   animate_do: ^2.0.0
+  flutter_signin_button: ^2.0.0
+  flutter_rounded_date_picker: ^2.0.2
   
 
 dev_dependencies:

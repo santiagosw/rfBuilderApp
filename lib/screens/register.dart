@@ -6,8 +6,9 @@ import 'package:iconsax/iconsax.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
-import 'package:rfbuilder_app/routes.dart';
 import 'package:rfbuilder_app/screens/login.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
+
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -57,26 +58,18 @@ class _RegisterPageState extends State<RegisterPage> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    GFButton(
-                      onPressed: () {},
-                      text: "Register with Facebook",
-                      textStyle: TextStyle(color: Colors.grey.shade700),
-                      icon: Icon(Icons.facebook, color: Colors.blue),
-                      type: GFButtonType.outline,
-                      borderSide: BorderSide(color: Colors.grey, width: 2),
-                      shape: GFButtonShape.pills,
-                      fullWidthButton: true,
-                    ),
-                    GFButton(
-                      onPressed: () {},
-                      text: "Register with Google",
-                      textStyle: TextStyle(color: Colors.grey.shade700),
-                      icon: Icon(Icons.shop, color: Colors.red),
-                      type: GFButtonType.outline,
-                      borderSide: BorderSide(color: Colors.grey, width: 2),
-                      shape: GFButtonShape.pills,
-                      fullWidthButton: true,
-                    ),
+                    SignInButton(
+                    Buttons.Google,
+                    text: "Sign up with Google",
+                    elevation: 4,
+                    onPressed: () {},
+                  ),
+                    SignInButton(
+                    Buttons.Facebook,
+                    text: "Sign up with Facebook",
+                    elevation: 4,
+                    onPressed: () {},
+                  ),
                   ],
                 ),
                 SizedBox(
