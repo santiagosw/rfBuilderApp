@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:rfbuilder_app/screens/login.dart';
 import 'package:rfbuilder_app/screens/menu.dart';
 import 'package:rfbuilder_app/screens/reception/reception_page.dart';
@@ -15,14 +16,17 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Material App',
+        themeMode: ThemeMode.system,
+        theme: MyThemes.lightTheme,
+        darkTheme: MyThemes.darkTheme,
         home: LoginPage(),
-         localizationsDelegates: [
+        localizationsDelegates: [
           GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-          ],
-          supportedLocales: [
-                const Locale('en', 'US'), // English
-          ],
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          const Locale('en', 'US'), // English
+        ],
         getPages: [
           GetPage(
               name: "/login",

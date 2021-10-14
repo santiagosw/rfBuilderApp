@@ -17,7 +17,7 @@
 13    <application
 13-->C:\development\repos\rfBuilderApp\android\app\src\main\AndroidManifest.xml:3:4-40:19
 14        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-14-->[androidx.core:core:1.1.0] C:\Users\Usuario\.gradle\caches\transforms-2\files-2.1\2e94107f30f39be366a17347c2bf100b\core-1.1.0\AndroidManifest.xml:24:18-86
+14-->[androidx.core:core:1.1.0] C:\Users\user\.gradle\caches\transforms-2\files-2.1\2e94107f30f39be366a17347c2bf100b\core-1.1.0\AndroidManifest.xml:24:18-86
 15        android:icon="@mipmap/ic_launcher"
 15-->C:\development\repos\rfBuilderApp\android\app\src\main\AndroidManifest.xml:5:9-43
 16        android:label="RFBuilder" >

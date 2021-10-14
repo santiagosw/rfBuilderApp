@@ -4,6 +4,8 @@ import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
+import 'package:rfbuilder_app/provider/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -37,6 +39,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   final _advancedDrawerController = AdvancedDrawerController();
+  final GFBottomSheetController _controller = GFBottomSheetController();
 
   @override
   Widget build(BuildContext context) {
@@ -121,14 +124,20 @@ class _HomePageState extends State<HomePage> {
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.menu),
-                  title: Text('Slide Menu'),
-                  trailing: Icon(Iconsax.arrow_circle_up),
+                  leading: Icon(Iconsax.support),
+                  title: Text('Support'),
+                ),
+                Divider(color: Colors.grey.shade800),
+                ListTile(
+                  onTap: () {},
+                  leading: Icon(Iconsax.moon),
+                  title: Text('Dark Mode'),
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.support),
-                  title: Text('Support'),
+                  leading: Icon(Iconsax.menu),
+                  title: Text('Slide Menu'),
+                  trailing: Icon(Iconsax.arrow_circle_up),
                 ),
                 Spacer(),
                 Padding(
@@ -145,6 +154,86 @@ class _HomePageState extends State<HomePage> {
       ),
       child: Scaffold(
           backgroundColor: Colors.grey.shade100,
+          bottomSheet: GFBottomSheet(
+            animationDuration: 1000,
+            controller: _controller,
+            maxContentHeight: 300,
+            enableExpandableContent: true,
+            stickyHeaderHeight: 100,
+            contentBody: SingleChildScrollView(
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                child: Column(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 15),
+                      child: Column(
+                        children: <Widget>[
+                          ListTile(
+                            onTap: () {
+                              Get.toNamed('/home');
+                            },
+                            leading: Icon(Iconsax.home),
+                            title: Text('Dashboard'),
+                          ),
+                          Divider(
+                            color: Colors.grey.shade500,
+                          ),
+                          ListTile(
+                            onTap: () {},
+                            leading: Icon(Iconsax.task),
+                            title: Text('Tasks'),
+                          ),
+                          ListTile(
+                            onTap: () {},
+                            leading: Icon(Iconsax.profile_2user),
+                            title: Text('Contacts'),
+                          ),
+                          Divider(
+                            color: Colors.grey.shade500,
+                          ),
+                          ListTile(
+                            onTap: () {},
+                            leading: Icon(Iconsax.setting_2),
+                            title: Text('Settings'),
+                          ),
+                          ListTile(
+                            onTap: () {},
+                            leading: Icon(Iconsax.support),
+                            title: Text('Support'),
+                          ),
+                          Divider(color: Colors.grey.shade500),
+                          ListTile(
+                            onTap: () {},
+                            leading: Icon(Iconsax.moon),
+                            title: Text('Dark Mode'),
+                          ),
+                          ListTile(
+                            onTap: () {},
+                            leading: Icon(Iconsax.menu),
+                            title: Text('Slide Menu'),
+                            trailing: Icon(Iconsax.arrow_circle_up),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          floatingActionButton: FloatingActionButton(
+              mini: true,
+              tooltip: "Menu",
+              backgroundColor: Colors.red,
+              child: _controller.isBottomSheetOpened
+                  ? Icon(Icons.keyboard_arrow_down)
+                  : Icon(Icons.keyboard_arrow_up),
+              onPressed: () {
+                _controller.isBottomSheetOpened
+                    ? _controller.hideBottomSheet()
+                    : _controller.showBottomSheet();
+              }),
           body: CustomScrollView(controller: _scrollController, slivers: [
             SliverAppBar(
               expandedHeight: 250.0,
@@ -175,7 +264,7 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {},
                 ),
                 IconButton(
-                  icon: Icon(Iconsax.more, color: Colors.red),
+                  icon: Icon(Iconsax.message_question, color: Colors.red),
                   onPressed: () {},
                 ),
               ],
@@ -332,19 +421,6 @@ class _HomePageState extends State<HomePage> {
                           type: GFButtonType.transparent,
                           fullWidthButton: true,
                           position: GFPosition.end,
-                        ),
-                        GFAccordion(
-                          title: 'Informacion',
-                          content:
-                              'Aqui se mostraran los cambios importantes de la aplicacion y informacion de las tareas durante la navegacion',
-                          collapsedIcon: Text('Mostrar'),
-                          expandedIcon: Text('Ocultar'),
-                          collapsedTitleBackgroundColor: Colors.grey.shade100,
-                          contentBackgroundColor: Colors.grey.shade300,
-                          titleBorder: Border.all(width: 1),
-                          contentBorder: Border.all(width: 0.5),
-                          titleBorderRadius: BorderRadius.circular(5),
-                          contentBorderRadius: BorderRadius.circular(5),
                         ),
                       ]),
                     ),

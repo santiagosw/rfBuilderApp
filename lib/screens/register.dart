@@ -8,7 +8,8 @@ import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
 import 'package:rfbuilder_app/screens/login.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-
+import 'package:rfbuilder_app/provider/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -20,6 +21,9 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
+    final text = Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark
+        ? 'DarkTheme'
+        : 'LightTheme';
     return Scaffold(
         appBar: GFAppBar(
           leading: GFIconButton(
@@ -59,17 +63,17 @@ class _RegisterPageState extends State<RegisterPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SignInButton(
-                    Buttons.Google,
-                    text: "Sign up with Google",
-                    elevation: 4,
-                    onPressed: () {},
-                  ),
+                      Buttons.Google,
+                      text: "Sign up with Google",
+                      elevation: 4,
+                      onPressed: () {},
+                    ),
                     SignInButton(
-                    Buttons.Facebook,
-                    text: "Sign up with Facebook",
-                    elevation: 4,
-                    onPressed: () {},
-                  ),
+                      Buttons.Facebook,
+                      text: "Sign up with Facebook",
+                      elevation: 4,
+                      onPressed: () {},
+                    ),
                   ],
                 ),
                 SizedBox(
