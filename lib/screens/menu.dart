@@ -43,6 +43,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return AdvancedDrawer(
       backdropColor: Colors.grey.shade900,
       controller: _advancedDrawerController,
@@ -83,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.grey.shade800,
                       shape: BoxShape.circle,
                     ),
-                    child: Image.network('https://i.imgur.com/9qbgwba.png')),
+                    child: Image.asset('assets/images/user.png')),
                 SizedBox(
                   height: 10,
                 ),
@@ -132,6 +133,18 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {},
                   leading: Icon(Iconsax.moon),
                   title: Text('Dark Mode'),
+                  trailing: GFToggle(
+                    onChanged: (value) {
+                      final provider =
+                          Provider.of<ThemeProvider>(context, listen: false);
+                      provider.toggleTheme(value!);
+                    },
+                    value: false,
+                    type: GFToggleType.android,
+                    enabledThumbColor: Colors.red,
+                    disabledThumbColor: Colors.grey.shade300,
+                    enabledTrackColor: Colors.grey.shade300,
+                  ),
                 ),
                 ListTile(
                   onTap: () {},
@@ -139,11 +152,18 @@ class _HomePageState extends State<HomePage> {
                   title: Text('Slide Menu'),
                   trailing: Icon(Iconsax.arrow_circle_up),
                 ),
+                 ListTile(
+                  onTap: () {
+                    Get.toNamed('/login');
+                  },
+                  leading: Icon(Iconsax.logout),
+                  title: Text('Sign Out'),
+                ),
                 Spacer(),
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Text(
-                    'Version 1.0.0',
+                    'Version 1.1.0',
                     style: TextStyle(color: Colors.grey.shade500),
                   ),
                 )
@@ -159,13 +179,27 @@ class _HomePageState extends State<HomePage> {
             controller: _controller,
             maxContentHeight: 300,
             enableExpandableContent: true,
-            stickyHeaderHeight: 100,
+            stickyHeaderHeight: 50,
+            stickyHeader: Container(
+              child: Center(
+                child: Icon(
+                  Iconsax.more,
+                  color: Colors.white,
+                ),
+              ),
+              decoration: BoxDecoration(
+                  color: Colors.red,
+                  boxShadow: [BoxShadow(color: Colors.black45, blurRadius: 0)]),
+            ),
             contentBody: SingleChildScrollView(
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                 child: Column(
                   children: [
                     Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
                       margin: EdgeInsets.symmetric(horizontal: 15),
                       child: Column(
                         children: <Widget>[
@@ -173,7 +207,7 @@ class _HomePageState extends State<HomePage> {
                             onTap: () {
                               Get.toNamed('/home');
                             },
-                            leading: Icon(Iconsax.home),
+                            leading: Icon(Iconsax.home, color: Colors.red),
                             title: Text('Dashboard'),
                           ),
                           Divider(
@@ -181,12 +215,13 @@ class _HomePageState extends State<HomePage> {
                           ),
                           ListTile(
                             onTap: () {},
-                            leading: Icon(Iconsax.task),
+                            leading: Icon(Iconsax.task, color: Colors.red),
                             title: Text('Tasks'),
                           ),
                           ListTile(
                             onTap: () {},
-                            leading: Icon(Iconsax.profile_2user),
+                            leading:
+                                Icon(Iconsax.profile_2user, color: Colors.red),
                             title: Text('Contacts'),
                           ),
                           Divider(
@@ -194,25 +229,58 @@ class _HomePageState extends State<HomePage> {
                           ),
                           ListTile(
                             onTap: () {},
-                            leading: Icon(Iconsax.setting_2),
+                            leading: Icon(Iconsax.setting_2, color: Colors.red),
                             title: Text('Settings'),
                           ),
                           ListTile(
                             onTap: () {},
-                            leading: Icon(Iconsax.support),
+                            leading: Icon(Iconsax.support, color: Colors.red),
                             title: Text('Support'),
                           ),
                           Divider(color: Colors.grey.shade500),
                           ListTile(
                             onTap: () {},
-                            leading: Icon(Iconsax.moon),
+                            leading: Icon(Iconsax.moon, color: Colors.red),
                             title: Text('Dark Mode'),
+                            trailing: GFToggle(
+                              onChanged: (val) {
+                                onChanged:
+                                (value) {
+                                  final provider = Provider.of<ThemeProvider>(
+                                      context,
+                                      listen: false);
+                                  provider.toggleTheme(value!);
+                                };
+                                value:
+                                false;
+                                type:
+                                GFToggleType.android;
+                                enabledThumbColor:
+                                Colors.red;
+                                disabledThumbColor:
+                                Colors.grey.shade300;
+                                enabledTrackColor:
+                                Colors.grey.shade300;
+                              },
+                              value: false,
+                              type: GFToggleType.android,
+                              enabledThumbColor: Colors.red,
+                              disabledThumbColor: Colors.grey.shade300,
+                              enabledTrackColor: Colors.grey.shade300,
+                            ),
                           ),
                           ListTile(
                             onTap: () {},
-                            leading: Icon(Iconsax.menu),
+                            leading: Icon(Iconsax.menu, color: Colors.red),
                             title: Text('Slide Menu'),
-                            trailing: Icon(Iconsax.arrow_circle_up),
+                            trailing: Icon(Iconsax.arrow_circle_up, color: Colors.red),
+                          ),
+                          ListTile(
+                            onTap: () {
+                              Get.toNamed('/login');
+                            },
+                            leading: Icon(Iconsax.logout, color: Colors.red),
+                            title: Text('Sign Out'),
                           ),
                         ],
                       ),
@@ -222,18 +290,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          floatingActionButton: FloatingActionButton(
-              mini: true,
-              tooltip: "Menu",
-              backgroundColor: Colors.red,
-              child: _controller.isBottomSheetOpened
-                  ? Icon(Icons.keyboard_arrow_down)
-                  : Icon(Icons.keyboard_arrow_up),
-              onPressed: () {
-                _controller.isBottomSheetOpened
-                    ? _controller.hideBottomSheet()
-                    : _controller.showBottomSheet();
-              }),
           body: CustomScrollView(controller: _scrollController, slivers: [
             SliverAppBar(
               expandedHeight: 250.0,
@@ -262,10 +318,13 @@ class _HomePageState extends State<HomePage> {
                 IconButton(
                   icon: Icon(Iconsax.notification, color: Colors.red),
                   onPressed: () {},
+                  
                 ),
                 IconButton(
                   icon: Icon(Iconsax.message_question, color: Colors.red),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                 ),
               ],
               shape: RoundedRectangleBorder(
@@ -362,7 +421,7 @@ class _HomePageState extends State<HomePage> {
                         GFButton(
                           onPressed: () {},
                           text: "Transferencias",
-                          icon: Icon(Iconsax.arrow_2),
+                          icon: Icon(Iconsax.arrow_2, color: Colors.red),
                           textColor: Colors.black,
                           type: GFButtonType.transparent,
                           position: GFPosition.end,
@@ -374,7 +433,7 @@ class _HomePageState extends State<HomePage> {
                             Get.toNamed('/reception');
                           },
                           text: "Recepción",
-                          icon: Icon(Iconsax.box_add),
+                          icon: Icon(Iconsax.box_add, color: Colors.red),
                           textColor: Colors.black,
                           type: GFButtonType.transparent,
                           fullWidthButton: true,
@@ -386,7 +445,7 @@ class _HomePageState extends State<HomePage> {
                             Get.toNamed('/savereception');
                           },
                           text: "Guardado de Recepción",
-                          icon: Icon(Iconsax.save_2),
+                          icon: Icon(Iconsax.save_2, color: Colors.red),
                           textColor: Colors.black,
                           type: GFButtonType.transparent,
                           fullWidthButton: true,
@@ -396,7 +455,7 @@ class _HomePageState extends State<HomePage> {
                         GFButton(
                           onPressed: () {},
                           text: "Control Consolidado",
-                          icon: Icon(Iconsax.security),
+                          icon: Icon(Iconsax.security, color: Colors.red),
                           textColor: Colors.black,
                           type: GFButtonType.transparent,
                           fullWidthButton: true,
@@ -406,7 +465,7 @@ class _HomePageState extends State<HomePage> {
                         GFButton(
                           onPressed: () {},
                           text: "Despacho de carro consolidado",
-                          icon: Icon(Iconsax.box),
+                          icon: Icon(Iconsax.box, color: Colors.red),
                           textColor: Colors.black,
                           type: GFButtonType.transparent,
                           fullWidthButton: true,
@@ -416,7 +475,7 @@ class _HomePageState extends State<HomePage> {
                         GFButton(
                           onPressed: () {},
                           text: "Ayudante Gondola",
-                          icon: Icon(Iconsax.personalcard),
+                          icon: Icon(Iconsax.personalcard, color: Colors.red),
                           textColor: Colors.black,
                           type: GFButtonType.transparent,
                           fullWidthButton: true,

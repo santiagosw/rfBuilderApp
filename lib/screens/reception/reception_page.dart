@@ -80,11 +80,11 @@ class _ReceptionPageState extends State<ReceptionPage> {
                       top: 24.0,
                     ),
                     clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
+                    decoration: BoxDecoration( 
                       color: Colors.grey.shade800,
                       shape: BoxShape.circle,
                     ),
-                    child: Image.network('https://i.imgur.com/9qbgwba.png')),
+                    child: Image.asset('assets/images/user.png')),
                 SizedBox(
                   height: 10,
                 ),
@@ -130,21 +130,39 @@ class _ReceptionPageState extends State<ReceptionPage> {
                 ),
                 Divider(color: Colors.grey.shade800),
                 ListTile(
-                  onTap: () {},
-                  leading: Icon(Iconsax.moon),
-                  title: Text('Dark Mode'),
+                onTap: () {},
+                leading: Icon(Iconsax.moon),
+                title: Text('Dark Mode'),
+                trailing:  GFToggle(
+                  onChanged: (value){
+                    final provider = Provider.of<ThemeProvider>(context, listen: false);
+                    provider.toggleTheme(value!);
+                  },
+                  value: false,
+                  type: GFToggleType.android,
+                  enabledThumbColor: Colors.red,
+                  disabledThumbColor: Colors.grey.shade300,
+                  enabledTrackColor: Colors.grey.shade300,
                 ),
+                ),   
                 ListTile(
                   onTap: () {},
                   leading: Icon(Iconsax.menu),
                   title: Text('Slide Menu'),
                   trailing: Icon(Iconsax.arrow_circle_up),
                 ),
+                  ListTile(
+                  onTap: () {
+                    Get.toNamed('/login');
+                  },
+                  leading: Icon(Iconsax.logout),
+                  title: Text('Sign Out'),
+                ),
                 Spacer(),
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Text(
-                    'Version 1.0.0',
+                    'Version 1.1.0',
                     style: TextStyle(color: Colors.grey.shade500),
                   ),
                 )
@@ -161,13 +179,22 @@ class _ReceptionPageState extends State<ReceptionPage> {
             controller: _controller,
             maxContentHeight: 300,
             enableExpandableContent: true,
-            stickyHeaderHeight: 100,
+            stickyHeaderHeight: 50,
+            stickyHeader: Container(
+              child: Center(child: Icon(Iconsax.more, color: Colors.white,),),
+              decoration: BoxDecoration(
+              color: Colors.red,
+              boxShadow: [BoxShadow(color: Colors.black45, blurRadius: 0)]),
+              ),
             contentBody: SingleChildScrollView(
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                 child: Column(
                   children: [
                     Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
                       margin: EdgeInsets.symmetric(horizontal: 15),
                       child: Column(
                         children: <Widget>[
@@ -175,7 +202,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             onTap: () {
                               Get.toNamed('/home');
                             },
-                            leading: Icon(Iconsax.home),
+                            leading: Icon(Iconsax.home, color: Colors.red),
                             title: Text('Dashboard'),
                           ),
                           Divider(
@@ -183,12 +210,12 @@ class _ReceptionPageState extends State<ReceptionPage> {
                           ),
                           ListTile(
                             onTap: () {},
-                            leading: Icon(Iconsax.task),
+                            leading: Icon(Iconsax.task, color: Colors.red),
                             title: Text('Tasks'),
                           ),
                           ListTile(
                             onTap: () {},
-                            leading: Icon(Iconsax.profile_2user),
+                            leading: Icon(Iconsax.profile_2user, color: Colors.red),
                             title: Text('Contacts'),
                           ),
                           Divider(
@@ -196,25 +223,47 @@ class _ReceptionPageState extends State<ReceptionPage> {
                           ),
                           ListTile(
                             onTap: () {},
-                            leading: Icon(Iconsax.setting_2),
+                            leading: Icon(Iconsax.setting_2, color: Colors.red),
                             title: Text('Settings'),
                           ),
                           ListTile(
                             onTap: () {},
-                            leading: Icon(Iconsax.support),
+                            leading: Icon(Iconsax.support, color: Colors.red),
                             title: Text('Support'),
                           ),
                           Divider(color: Colors.grey.shade500),
                           ListTile(
                             onTap: () {},
-                            leading: Icon(Iconsax.moon),
+                            leading: Icon(Iconsax.moon, color: Colors.red),
                             title: Text('Dark Mode'),
+                            trailing:  GFToggle(
+                            onChanged: (val){
+                              (value) {
+                                  final provider = Provider.of<ThemeProvider>(
+                                      context,
+                                      listen: false);
+                                  provider.toggleTheme(value!);
+                                };
+                            },
+                            value: false,
+                            type: GFToggleType.android,
+                            enabledThumbColor: Colors.red,
+                            disabledThumbColor: Colors.grey.shade300,
+                            enabledTrackColor: Colors.grey.shade300,
+                          ),
                           ),
                           ListTile(
                             onTap: () {},
-                            leading: Icon(Iconsax.menu),
+                            leading: Icon(Iconsax.menu, color: Colors.red),
                             title: Text('Slide Menu'),
-                            trailing: Icon(Iconsax.arrow_circle_up),
+                            trailing: Icon(Iconsax.arrow_circle_up, color: Colors.red),
+                          ),
+                          ListTile(
+                            onTap: () {
+                              Get.toNamed('/login');
+                            },
+                            leading: Icon(Iconsax.logout, color: Colors.red),
+                            title: Text('Sign Out'),
                           ),
                         ],
                       ),
@@ -224,18 +273,6 @@ class _ReceptionPageState extends State<ReceptionPage> {
               ),
             ),
           ),
-          floatingActionButton: FloatingActionButton(
-              mini: true,
-              tooltip: "Menu",
-              backgroundColor: Colors.red,
-              child: _controller.isBottomSheetOpened
-                  ? Icon(Icons.keyboard_arrow_down)
-                  : Icon(Icons.keyboard_arrow_up),
-              onPressed: () {
-                _controller.isBottomSheetOpened
-                    ? _controller.hideBottomSheet()
-                    : _controller.showBottomSheet();
-              }),
           body: CustomScrollView(controller: _scrollController, slivers: [
             SliverAppBar(
               expandedHeight: 150.0,

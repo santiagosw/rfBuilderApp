@@ -30,7 +30,11 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)  {
+    final text = Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark
+        ? 'DarkTheme'
+        : 'LightTheme';
+
     return Scaffold(
         body: SafeArea(
             child: SingleChildScrollView(
@@ -39,8 +43,8 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: [
             Container(
-                child: Image.network(
-              'https://i.imgur.com/EXUF2Fl.png',
+                child: Image.asset(
+              "assets/images/emserLogo.png",
               height: 60,
             )),
             SizedBox(
@@ -60,8 +64,8 @@ class _LoginPageState extends State<LoginPage> {
                       seconds: 1,
                     ),
                     curve: Curves.linear,
-                    child: Image.network(
-                      'https://i.imgur.com/K37Y9HS.png',
+                    child: Image.asset(
+                      'assets/images/1.png',
                       height: 160,
                     ),
                   ),
@@ -75,8 +79,8 @@ class _LoginPageState extends State<LoginPage> {
                     opacity: activeIndex == 1 ? 1 : 0,
                     duration: Duration(seconds: 1),
                     curve: Curves.linear,
-                    child: Image.network(
-                      'https://i.imgur.com/78CvihZ.png',
+                    child:Image.asset(
+                      'assets/images/2.png',
                       height: 160,
                     ),
                   ),
@@ -90,8 +94,8 @@ class _LoginPageState extends State<LoginPage> {
                     opacity: activeIndex == 2 ? 1 : 0,
                     duration: Duration(seconds: 1),
                     curve: Curves.linear,
-                    child: Image.network(
-                      'https://i.imgur.com/9mlOKe2.png',
+                    child: Image.asset(
+                      'assets/images/3.png',
                       height: 160,
                     ),
                   ),
@@ -105,8 +109,8 @@ class _LoginPageState extends State<LoginPage> {
                     opacity: activeIndex == 3 ? 1 : 0,
                     duration: Duration(seconds: 1),
                     curve: Curves.linear,
-                    child: Image.network(
-                      'https://i.imgur.com/rUq1PPb.png',
+                    child: Image.asset(
+                      'assets/images/4.png',
                       height: 160,
                     ),
                   ),
@@ -119,7 +123,7 @@ class _LoginPageState extends State<LoginPage> {
                   fontSize: 36,
                   fontFamily: "Titillium Web",
                   fontWeight: FontWeight.w900,
-                  color: Colors.grey.shade700),
+                  color: Theme.of(context).primaryColor),
             ),
             SizedBox(
               height: 30,
@@ -131,12 +135,12 @@ class _LoginPageState extends State<LoginPage> {
                 labelText: 'Email',
                 hintText: 'Username or e-mail',
                 labelStyle: TextStyle(
-                  color: Colors.black,
+                  color: Theme.of(context).primaryColor,
                   fontSize: 14.0,
                   fontWeight: FontWeight.w400,
                 ),
                 hintStyle: TextStyle(
-                  color: Colors.grey,
+                  color: Theme.of(context).primaryColor,
                   fontSize: 14.0,
                 ),
                 prefixIcon: Icon(
@@ -168,11 +172,11 @@ class _LoginPageState extends State<LoginPage> {
                 labelText: 'Password',
                 hintText: 'Password',
                 hintStyle: TextStyle(
-                  color: Colors.grey,
+                  color: Theme.of(context).primaryColor,
                   fontSize: 14.0,
                 ),
                 labelStyle: TextStyle(
-                  color: Colors.black,
+                  color: Theme.of(context).primaryColor,
                   fontSize: 14.0,
                   fontWeight: FontWeight.w400,
                 ),
@@ -237,7 +241,7 @@ class _LoginPageState extends State<LoginPage> {
                 Text(
                   'Don\'t have an account?',
                   style: TextStyle(
-                      color: Colors.grey.shade600,
+                      color: Theme.of(context).primaryColor,
                       fontSize: 14.0,
                       fontWeight: FontWeight.w400),
                 ),

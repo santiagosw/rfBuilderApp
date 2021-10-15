@@ -110,7 +110,7 @@ packages:
       name: flutter_advanced_drawer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.3+1"
+    version: "1.2.4"
   flutter_launcher_icons:
     dependency: "direct main"
     description:

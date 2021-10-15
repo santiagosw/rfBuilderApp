@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:rfbuilder_app/screens/login.dart';
 import 'package:rfbuilder_app/screens/menu.dart';
@@ -12,42 +13,46 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Material App',
-        themeMode: ThemeMode.system,
-        theme: MyThemes.lightTheme,
-        darkTheme: MyThemes.darkTheme,
-        home: LoginPage(),
-        localizationsDelegates: [
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-        ],
-        supportedLocales: [
-          const Locale('en', 'US'), // English
-        ],
-        getPages: [
-          GetPage(
-              name: "/login",
-              page: () => LoginPage(),
-              transition: Transition.cupertinoDialog),
-          GetPage(
-              name: "/register",
-              page: () => RegisterPage(),
-              transition: Transition.cupertinoDialog),
-          GetPage(
-              name: "/home",
-              page: () => HomePage(),
-              transition: Transition.cupertinoDialog),
-          GetPage(
-              name: "/reception",
-              page: () => ReceptionPage(),
-              transition: Transition.cupertinoDialog),
-          GetPage(
-              name: "/savereception",
-              page: () => SaveReceptionPage(),
-              transition: Transition.cupertinoDialog),
-        ]);
-  }
+  Widget build(BuildContext context) => ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      builder: (context, _) {
+        final themeProvider = Provider.of<ThemeProvider>(context);
+
+        return GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'RFBuilder',
+            themeMode: themeProvider.themeMode,
+            theme: MyThemes.lightTheme,
+            darkTheme: MyThemes.darkTheme,
+            home: LoginPage(),
+            localizationsDelegates: [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: [
+              const Locale('en', 'US'), // English
+            ],
+            getPages: [
+              GetPage(
+                  name: "/login",
+                  page: () => LoginPage(),
+                  transition: Transition.cupertinoDialog),
+              GetPage(
+                  name: "/register",
+                  page: () => RegisterPage(),
+                  transition: Transition.cupertinoDialog),
+              GetPage(
+                  name: "/home",
+                  page: () => HomePage(),
+                  transition: Transition.cupertinoDialog),
+              GetPage(
+                  name: "/reception",
+                  page: () => ReceptionPage(),
+                  transition: Transition.cupertinoDialog),
+              GetPage(
+                  name: "/savereception",
+                  page: () => SaveReceptionPage(),
+                  transition: Transition.cupertinoDialog),
+            ]);
+      });
 }
