@@ -1,6 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
@@ -18,6 +20,8 @@ class _ReceptionPageState extends State<ReceptionPage> {
   late ScrollController _scrollController;
   bool _isScrolled = false;
   String? dropdown;
+  String barcode = '00000000';
+  String barcode1 = '11111111';
 
   @override
   void initState() {
@@ -44,6 +48,10 @@ class _ReceptionPageState extends State<ReceptionPage> {
 
   @override
   Widget build(BuildContext context) {
+    final text = Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark
+        ? 'DarkTheme'
+        : 'LightTheme';
+
     return AdvancedDrawer(
       backdropColor: Colors.grey.shade900,
       controller: _advancedDrawerController,
@@ -80,7 +88,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                       top: 24.0,
                     ),
                     clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration( 
+                    decoration: BoxDecoration(
                       color: Colors.grey.shade800,
                       shape: BoxShape.circle,
                     ),
@@ -130,28 +138,29 @@ class _ReceptionPageState extends State<ReceptionPage> {
                 ),
                 Divider(color: Colors.grey.shade800),
                 ListTile(
-                onTap: () {},
-                leading: Icon(Iconsax.moon),
-                title: Text('Dark Mode'),
-                trailing:  GFToggle(
-                  onChanged: (value){
-                    final provider = Provider.of<ThemeProvider>(context, listen: false);
-                    provider.toggleTheme(value!);
-                  },
-                  value: false,
-                  type: GFToggleType.android,
-                  enabledThumbColor: Colors.red,
-                  disabledThumbColor: Colors.grey.shade300,
-                  enabledTrackColor: Colors.grey.shade300,
+                  onTap: () {},
+                  leading: Icon(Iconsax.moon),
+                  title: Text('Dark Mode'),
+                  trailing: GFToggle(
+                    onChanged: (value) {
+                      final provider =
+                          Provider.of<ThemeProvider>(context, listen: false);
+                      provider.toggleTheme(value!);
+                    },
+                    value: false,
+                    type: GFToggleType.android,
+                    enabledThumbColor: Colors.red,
+                    disabledThumbColor: Colors.grey.shade300,
+                    enabledTrackColor: Colors.grey.shade300,
+                  ),
                 ),
-                ),   
                 ListTile(
                   onTap: () {},
                   leading: Icon(Iconsax.menu),
                   title: Text('Slide Menu'),
                   trailing: Icon(Iconsax.arrow_circle_up),
                 ),
-                  ListTile(
+                ListTile(
                   onTap: () {
                     Get.toNamed('/login');
                   },
@@ -181,11 +190,16 @@ class _ReceptionPageState extends State<ReceptionPage> {
             enableExpandableContent: true,
             stickyHeaderHeight: 50,
             stickyHeader: Container(
-              child: Center(child: Icon(Iconsax.more, color: Colors.white,),),
-              decoration: BoxDecoration(
-              color: Colors.red,
-              boxShadow: [BoxShadow(color: Colors.black45, blurRadius: 0)]),
+              child: Center(
+                child: Icon(
+                  Iconsax.more,
+                  color: Colors.white,
+                ),
               ),
+              decoration: BoxDecoration(
+                  color: Colors.red,
+                  boxShadow: [BoxShadow(color: Colors.black45, blurRadius: 0)]),
+            ),
             contentBody: SingleChildScrollView(
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
@@ -215,7 +229,8 @@ class _ReceptionPageState extends State<ReceptionPage> {
                           ),
                           ListTile(
                             onTap: () {},
-                            leading: Icon(Iconsax.profile_2user, color: Colors.red),
+                            leading:
+                                Icon(Iconsax.profile_2user, color: Colors.red),
                             title: Text('Contacts'),
                           ),
                           Divider(
@@ -236,27 +251,28 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             onTap: () {},
                             leading: Icon(Iconsax.moon, color: Colors.red),
                             title: Text('Dark Mode'),
-                            trailing:  GFToggle(
-                            onChanged: (val){
-                              (value) {
+                            trailing: GFToggle(
+                              onChanged: (val) {
+                                (value) {
                                   final provider = Provider.of<ThemeProvider>(
                                       context,
                                       listen: false);
                                   provider.toggleTheme(value!);
                                 };
-                            },
-                            value: false,
-                            type: GFToggleType.android,
-                            enabledThumbColor: Colors.red,
-                            disabledThumbColor: Colors.grey.shade300,
-                            enabledTrackColor: Colors.grey.shade300,
-                          ),
+                              },
+                              value: false,
+                              type: GFToggleType.android,
+                              enabledThumbColor: Colors.red,
+                              disabledThumbColor: Colors.grey.shade300,
+                              enabledTrackColor: Colors.grey.shade300,
+                            ),
                           ),
                           ListTile(
                             onTap: () {},
                             leading: Icon(Iconsax.menu, color: Colors.red),
                             title: Text('Slide Menu'),
-                            trailing: Icon(Iconsax.arrow_circle_up, color: Colors.red),
+                            trailing: Icon(Iconsax.arrow_circle_up,
+                                color: Colors.red),
                           ),
                           ListTile(
                             onTap: () {
@@ -300,7 +316,9 @@ class _ReceptionPageState extends State<ReceptionPage> {
               actions: [
                 IconButton(
                   icon: Icon(Iconsax.notification, color: Colors.red),
-                  onPressed: () {},
+                  onPressed: () {
+                    scanBarcode;
+                  },
                 ),
                 IconButton(
                   icon: Icon(Iconsax.message_question, color: Colors.red),
@@ -401,9 +419,14 @@ class _ReceptionPageState extends State<ReceptionPage> {
                         TextField(
                           cursorColor: Colors.black,
                           decoration: InputDecoration(
+                            suffix: IconButton(
+                                onPressed: scanBarcode,
+                                icon: Icon(
+                                  Iconsax.camera,
+                                  color: Colors.red,
+                                )),
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Posicion',
-                            hintText: 'Posicion',
                             labelStyle: TextStyle(
                               color: Colors.black,
                               fontSize: 14.0,
@@ -434,13 +457,23 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             ),
                           ),
                         ),
+                        SizedBox(height: 5),
+                        Text(
+                          '$barcode',
+                          style: TextStyle(color: Colors.grey.shade700),
+                        ),
                         SizedBox(height: 10),
                         TextField(
                           cursorColor: Colors.black,
                           decoration: InputDecoration(
+                            suffix: IconButton(
+                                onPressed: scanBarcode1,
+                                icon: Icon(
+                                  Iconsax.camera,
+                                  color: Colors.red,
+                                )),
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Producto',
-                            hintText: 'Producto',
                             labelStyle: TextStyle(
                               color: Colors.black,
                               fontSize: 14.0,
@@ -471,6 +504,10 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             ),
                           ),
                         ),
+                        Text(
+                          '$barcode',
+                          style: TextStyle(color: Colors.grey.shade700),
+                        ),
                         SizedBox(height: 10),
                         Divider(color: Colors.grey.shade800),
                         SizedBox(height: 10),
@@ -482,13 +519,14 @@ class _ReceptionPageState extends State<ReceptionPage> {
                           decoration: InputDecoration(
                             errorMaxLines: 8,
                             helperMaxLines: 8,
-                            hintText: 'Descripcion',
+                            hintText: 'Type Here a Description',
                             labelText: 'Descripcion',
                             labelStyle: TextStyle(
                               color: Colors.black,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
+                            suffixIcon: Icon(Iconsax.text, color: Colors.red),
                             hintStyle: TextStyle(
                               color: Colors.grey,
                               fontSize: 14.0,
@@ -618,6 +656,44 @@ class _ReceptionPageState extends State<ReceptionPage> {
             )
           ])),
     );
+  }
+
+  Future<void> scanBarcode() async {
+    try {
+      final barcode = await FlutterBarcodeScanner.scanBarcode(
+        '#ff6666',
+        'Cancel',
+        true,
+        ScanMode.BARCODE,
+      );
+
+      if (!mounted) return;
+
+      setState(() {
+        this.barcode = barcode;
+      });
+    } on PlatformException {
+      barcode = 'Failed to get platform version.';
+    }
+  }
+
+  Future<void> scanBarcode1() async {
+    try {
+      final barcode1 = await FlutterBarcodeScanner.scanBarcode(
+        '#ff6666',
+        'Cancel',
+        true,
+        ScanMode.BARCODE,
+      );
+
+      if (!mounted) return;
+
+      setState(() {
+        this.barcode1 = barcode1;
+      });
+    } on PlatformException {
+      barcode1 = 'Failed to get platform version.';
+    }
   }
 
   void _handleMenuButtonPressed() {
