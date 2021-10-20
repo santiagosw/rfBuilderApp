@@ -23,6 +23,17 @@ class _ReceptionPageState extends State<ReceptionPage> {
   String barcode = '00000000';
   String barcode1 = '11111111';
 
+  List<dynamic> _services = [
+    ['Dashboard', Iconsax.home, Colors.white],
+    ['Tasks', Iconsax.task, Colors.white],
+    ['Contacts', Iconsax.profile_2user, Colors.white],
+    ['Settings', Iconsax.setting, Colors.white],
+    ['Support', Iconsax.support, Colors.white],
+    ['Dark Mode', Iconsax.moon, Colors.white],
+    ['Slide Menu', Iconsax.menu, Colors.white],
+    ['Sign Out', Iconsax.logout, Colors.white],
+  ];
+
   @override
   void initState() {
     _scrollController = ScrollController();
@@ -75,8 +86,6 @@ class _ReceptionPageState extends State<ReceptionPage> {
         child: Container(
           padding: EdgeInsets.only(top: 20),
           child: ListTileTheme(
-            textColor: Colors.white,
-            iconColor: Colors.white,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -101,7 +110,8 @@ class _ReceptionPageState extends State<ReceptionPage> {
                   child: Text(
                     "Usuario",
                     style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.w600),
+                        color: Theme.of(context).hintColor,
+                        fontWeight: FontWeight.w600),
                   ),
                 ),
                 Spacer(),
@@ -112,35 +122,65 @@ class _ReceptionPageState extends State<ReceptionPage> {
                   onTap: () {
                     Get.toNamed('/home');
                   },
-                  leading: Icon(Iconsax.home),
-                  title: Text('Dashboard'),
+                  leading: Icon(Iconsax.home, color: Colors.red),
+                  title: Text(
+                    'Dashboard',
+                    style: TextStyle(
+                      color: Theme.of(context).hintColor,
+                    ),
+                  ),
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.task),
-                  title: Text('Tasks'),
+                  leading: Icon(Iconsax.task, color: Colors.red),
+                  title: Text(
+                    'Tasks',
+                    style: TextStyle(
+                      color: Theme.of(context).hintColor,
+                    ),
+                  ),
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.profile_2user),
-                  title: Text('Contacts'),
+                  leading: Icon(Iconsax.profile_2user, color: Colors.red),
+                  title: Text(
+                    'Contacts',
+                    style: TextStyle(
+                      color: Theme.of(context).hintColor,
+                    ),
+                  ),
                 ),
                 Divider(color: Colors.grey.shade800),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.setting_2),
-                  title: Text('Settings'),
+                  leading: Icon(Iconsax.setting_2, color: Colors.red),
+                  title: Text(
+                    'Settings',
+                    style: TextStyle(
+                      color: Theme.of(context).hintColor,
+                    ),
+                  ),
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.support),
-                  title: Text('Support'),
+                  leading: Icon(Iconsax.support, color: Colors.red),
+                  title: Text(
+                    'Support',
+                    style: TextStyle(
+                      color: Theme.of(context).hintColor,
+                    ),
+                  ),
                 ),
                 Divider(color: Colors.grey.shade800),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.moon),
-                  title: Text('Dark Mode'),
+                  leading: Icon(Iconsax.moon, color: Colors.red),
+                  title: Text(
+                    'Dark Mode',
+                    style: TextStyle(
+                      color: Theme.of(context).hintColor,
+                    ),
+                  ),
                   trailing: GFToggle(
                     onChanged: (value) {
                       final provider =
@@ -156,16 +196,22 @@ class _ReceptionPageState extends State<ReceptionPage> {
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.menu),
-                  title: Text('Slide Menu'),
-                  trailing: Icon(Iconsax.arrow_circle_up),
+                  leading: Icon(Iconsax.menu, color: Colors.red),
+                  title: Text(
+                    'Slide Menu',
+                    style: TextStyle(color: Theme.of(context).hintColor),
+                  ),
+                  trailing: Icon(Iconsax.arrow_circle_up, color: Colors.red),
                 ),
                 ListTile(
                   onTap: () {
                     Get.toNamed('/login');
                   },
-                  leading: Icon(Iconsax.logout),
-                  title: Text('Sign Out'),
+                  leading: Icon(Iconsax.logout, color: Colors.red),
+                  title: Text('Sign Out',
+                      style: TextStyle(
+                        color: Theme.of(context).hintColor,
+                      )),
                 ),
                 Spacer(),
                 Padding(
@@ -182,11 +228,11 @@ class _ReceptionPageState extends State<ReceptionPage> {
       ),
       child: Scaffold(
           resizeToAvoidBottomInset: false,
-          backgroundColor: Colors.grey.shade100,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           bottomSheet: GFBottomSheet(
             animationDuration: 1000,
             controller: _controller,
-            maxContentHeight: 300,
+            maxContentHeight: 150,
             enableExpandableContent: true,
             stickyHeaderHeight: 50,
             stickyHeader: Container(
@@ -200,91 +246,54 @@ class _ReceptionPageState extends State<ReceptionPage> {
                   color: Colors.red,
                   boxShadow: [BoxShadow(color: Colors.black45, blurRadius: 0)]),
             ),
-            contentBody: SingleChildScrollView(
+            contentBody: SizedBox(
+              height: 20,
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                child: Column(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
+                color: Theme.of(context).scaffoldBackgroundColor,
+                padding: EdgeInsets.only(top: 20),
+                height: 70,
+                width: double.infinity,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: _services.length,
+                  itemBuilder: (context, index) {
+                    return FadeInDown(
+                      duration: Duration(milliseconds: (index + 1) * 100),
+                      child: AspectRatio(
+                        aspectRatio: 1,
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: Column(
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).canvasColor,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Center(
+                                  child: Icon(
+                                    _services[index][1],
+                                    color: Colors.red,
+                                    size: 25,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                _services[index][0],
+                                style: TextStyle(
+                                    color: Theme.of(context).primaryColor),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                      margin: EdgeInsets.symmetric(horizontal: 15),
-                      child: Column(
-                        children: <Widget>[
-                          ListTile(
-                            onTap: () {
-                              Get.toNamed('/home');
-                            },
-                            leading: Icon(Iconsax.home, color: Colors.red),
-                            title: Text('Dashboard'),
-                          ),
-                          Divider(
-                            color: Colors.grey.shade500,
-                          ),
-                          ListTile(
-                            onTap: () {},
-                            leading: Icon(Iconsax.task, color: Colors.red),
-                            title: Text('Tasks'),
-                          ),
-                          ListTile(
-                            onTap: () {},
-                            leading:
-                                Icon(Iconsax.profile_2user, color: Colors.red),
-                            title: Text('Contacts'),
-                          ),
-                          Divider(
-                            color: Colors.grey.shade500,
-                          ),
-                          ListTile(
-                            onTap: () {},
-                            leading: Icon(Iconsax.setting_2, color: Colors.red),
-                            title: Text('Settings'),
-                          ),
-                          ListTile(
-                            onTap: () {},
-                            leading: Icon(Iconsax.support, color: Colors.red),
-                            title: Text('Support'),
-                          ),
-                          Divider(color: Colors.grey.shade500),
-                          ListTile(
-                            onTap: () {},
-                            leading: Icon(Iconsax.moon, color: Colors.red),
-                            title: Text('Dark Mode'),
-                            trailing: GFToggle(
-                              onChanged: (val) {
-                                (value) {
-                                  final provider = Provider.of<ThemeProvider>(
-                                      context,
-                                      listen: false);
-                                  provider.toggleTheme(value!);
-                                };
-                              },
-                              value: false,
-                              type: GFToggleType.android,
-                              enabledThumbColor: Colors.red,
-                              disabledThumbColor: Colors.grey.shade300,
-                              enabledTrackColor: Colors.grey.shade300,
-                            ),
-                          ),
-                          ListTile(
-                            onTap: () {},
-                            leading: Icon(Iconsax.menu, color: Colors.red),
-                            title: Text('Slide Menu'),
-                            trailing: Icon(Iconsax.arrow_circle_up,
-                                color: Colors.red),
-                          ),
-                          ListTile(
-                            onTap: () {
-                              Get.toNamed('/login');
-                            },
-                            leading: Icon(Iconsax.logout, color: Colors.red),
-                            title: Text('Sign Out'),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                    );
+                  },
                 ),
               ),
             ),
@@ -296,7 +305,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
               pinned: true,
               stretch: true,
               toolbarHeight: 80,
-              backgroundColor: Colors.white,
+              backgroundColor: Theme.of(context).cardColor,
               leading: IconButton(
                 color: Colors.red,
                 onPressed: _handleMenuButtonPressed,
@@ -340,7 +349,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                     Text(
                       '\Reception',
                       style: TextStyle(
-                        color: Colors.black,
+                        color: Theme.of(context).hintColor,
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),
@@ -382,7 +391,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                                color: Theme.of(context).hintColor,
                               ),
                             ),
                           ],
@@ -428,7 +437,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Posicion',
                             labelStyle: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context).hintColor,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
@@ -460,7 +469,9 @@ class _ReceptionPageState extends State<ReceptionPage> {
                         SizedBox(height: 5),
                         Text(
                           '$barcode',
-                          style: TextStyle(color: Colors.grey.shade700),
+                          style: TextStyle(
+                            color: Theme.of(context).hintColor,
+                          ),
                         ),
                         SizedBox(height: 10),
                         TextField(
@@ -475,7 +486,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Producto',
                             labelStyle: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context).hintColor,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
@@ -506,7 +517,9 @@ class _ReceptionPageState extends State<ReceptionPage> {
                         ),
                         Text(
                           '$barcode',
-                          style: TextStyle(color: Colors.grey.shade700),
+                          style: TextStyle(
+                            color: Theme.of(context).hintColor,
+                          ),
                         ),
                         SizedBox(height: 10),
                         Divider(color: Colors.grey.shade800),
@@ -522,13 +535,13 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             hintText: 'Type Here a Description',
                             labelText: 'Descripcion',
                             labelStyle: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context).hintColor,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
                             suffixIcon: Icon(Iconsax.text, color: Colors.red),
                             hintStyle: TextStyle(
-                              color: Colors.grey,
+                              color: Theme.of(context).hintColor,
                               fontSize: 14.0,
                             ),
                             enabledBorder: OutlineInputBorder(
@@ -557,12 +570,12 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             labelText: 'Vencimiento',
                             hintText: 'Vencimiento',
                             labelStyle: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context).hintColor,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
                             hintStyle: TextStyle(
-                              color: Colors.grey,
+                              color: Theme.of(context).hintColor,
                               fontSize: 14.0,
                             ),
                             prefixIcon: Icon(
@@ -594,12 +607,12 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             labelText: 'Cantidad',
                             hintText: 'Cantidad',
                             labelStyle: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context).hintColor,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
                             hintStyle: TextStyle(
-                              color: Colors.grey,
+                              color: Theme.of(context).hintColor,
                               fontSize: 14.0,
                             ),
                             prefixIcon: Icon(

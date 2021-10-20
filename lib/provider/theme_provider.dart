@@ -22,6 +22,9 @@ class ThemeProvider extends ChangeNotifier {
 class MyThemes {
   static final darkTheme = ThemeData(
     scaffoldBackgroundColor: Colors.grey.shade900,
+    cardColor: Colors.grey.shade800,
+    hintColor: Colors.white,
+    canvasColor: Colors.white,
     primaryColor: Colors.white,
     colorScheme: ColorScheme.dark(),
     iconTheme: IconThemeData(color: Colors.red, opacity: 0.8),
@@ -29,7 +32,10 @@ class MyThemes {
 
   static final lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
+    hintColor: Colors.white,
     primaryColor: Colors.black,
+    canvasColor: Colors.white,
+    appBarTheme: AppBarTheme(color: Colors.white),
     colorScheme: ColorScheme.light(),
     iconTheme: IconThemeData(color: Colors.red, opacity: 0.8),
   );
