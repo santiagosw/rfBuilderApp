@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   @override
-  Widget build(BuildContext context)  {
+  Widget build(BuildContext context) {
     final text = Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark
         ? 'DarkTheme'
         : 'LightTheme';
@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                     opacity: activeIndex == 1 ? 1 : 0,
                     duration: Duration(seconds: 1),
                     curve: Curves.linear,
-                    child:Image.asset(
+                    child: Image.asset(
                       'assets/images/2.png',
                       height: 160,
                     ),
@@ -129,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
               height: 30,
             ),
             TextField(
-              cursorColor: Colors.black,
+              cursorColor: Theme.of(context).cursorColor,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.all(0.0),
                 labelText: 'Email',
@@ -157,7 +157,7 @@ class _LoginPageState extends State<LoginPage> {
                   fontSize: 18.0,
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black, width: 1.5),
+                  borderSide: BorderSide(color: Colors.red, width: 1.5),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
@@ -166,7 +166,7 @@ class _LoginPageState extends State<LoginPage> {
               height: 20,
             ),
             TextField(
-              cursorColor: Colors.red,
+              cursorColor: Theme.of(context).cursorColor,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.all(0.0),
                 labelText: 'Password',
@@ -190,11 +190,11 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 floatingLabelStyle: TextStyle(
-                  color: Colors.black,
+                  color: Colors.red,
                   fontSize: 18.0,
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black, width: 1.5),
+                  borderSide: BorderSide(color: Colors.red, width: 1.5),
                   borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
@@ -235,30 +235,31 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 5,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Don\'t have an account?',
-                  style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.w400),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Get.toNamed('/register');
-                  },
-                  child: Text(
-                    'Register',
-                    style: TextStyle(
-                        color: Colors.red,
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.w400),
-                  ),
-                )
-              ],
-            ),
+            // No se usa por ahora
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: [
+            //     Text(
+            //       'Don\'t have an account?',
+            //       style: TextStyle(
+            //           color: Theme.of(context).primaryColor,
+            //           fontSize: 14.0,
+            //           fontWeight: FontWeight.w400),
+            //     ),
+            //     TextButton(
+            //       onPressed: () {
+            //         Get.toNamed('/register');
+            //       },
+            //       child: Text(
+            //         'Register',
+            //         style: TextStyle(
+            //             color: Colors.red,
+            //             fontSize: 14.0,
+            //             fontWeight: FontWeight.w400),
+            //       ),
+            //     )
+            //   ],
+            // ),
           ],
         ),
       ),

@@ -185,12 +185,12 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
       ),
       child: Scaffold(
           resizeToAvoidBottomInset: false,
-          backgroundColor: Colors.grey.shade100,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           bottomSheet: GFBottomSheet(
-            animationDuration: 1000,
+            animationDuration: 20,
             controller: _controller,
             maxContentHeight: 150,
-            enableExpandableContent: true,
+            enableExpandableContent: false,
             stickyHeaderHeight: 50,
             stickyHeader: Container(
               child: Center(
@@ -346,7 +346,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.black,
+                                color: Theme.of(context).primaryColor,
                               ),
                             ),
                           ],
@@ -381,13 +381,13 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                       duration: Duration(milliseconds: 500),
                       child: Column(children: [
                         TextField(
-                          cursorColor: Colors.black,
+                          cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'N de Carro',
                             hintText: 'Numero de Carro',
                             labelStyle: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
@@ -411,20 +411,20 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: Colors.black, width: 1.5),
+                                  BorderSide(color: Colors.red, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
                         ),
                         SizedBox(height: 10),
                         TextField(
-                          cursorColor: Colors.black,
+                          cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Producto',
                             hintText: 'Producto',
                             labelStyle: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
@@ -448,22 +448,24 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: Colors.black, width: 1.5),
+                                  BorderSide(color: Colors.red, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
                         ),
                         SizedBox(height: 10),
-                        Divider(color: Colors.grey.shade800),
+                        Divider(
+                          color: Theme.of(context).dividerColor,
+                        ),
                         SizedBox(height: 10),
                         TextField(
-                          cursorColor: Colors.black,
+                          cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Posicion',
                             hintText: 'Posicion',
                             labelStyle: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
@@ -487,20 +489,20 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: Colors.black, width: 1.5),
+                                  BorderSide(color: Colors.red, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
                         ),
                         SizedBox(height: 10),
                         TextField(
-                          cursorColor: Colors.black,
+                          cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Producto',
                             hintText: 'Producto',
                             labelStyle: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
@@ -524,20 +526,20 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: Colors.black, width: 1.5),
+                                  BorderSide(color: Colors.red, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
                         ),
                         SizedBox(height: 10),
                         TextField(
-                          cursorColor: Colors.black,
+                          cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Cantidad',
                             hintText: 'Cantidad',
                             labelStyle: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
@@ -561,13 +563,15 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: Colors.black, width: 1.5),
+                                  BorderSide(color: Colors.red, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
                         ),
                         SizedBox(height: 10),
-                        Divider(),
+                        Divider(
+                          color: Theme.of(context).dividerColor,
+                        ),
                         SizedBox(
                           height: 10,
                         ),
@@ -575,13 +579,13 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                           keyboardType: TextInputType.multiline,
                           minLines: 1,
                           maxLines: 5,
-                          cursorColor: Colors.black,
+                          cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             helperMaxLines: 8,
                             hintText: 'Motivo',
                             labelText: 'Motivo',
                             labelStyle: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
@@ -600,7 +604,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: Colors.black, width: 1.5),
+                                  BorderSide(color: Colors.red, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),

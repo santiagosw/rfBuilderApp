@@ -230,10 +230,10 @@ class _ReceptionPageState extends State<ReceptionPage> {
           resizeToAvoidBottomInset: false,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           bottomSheet: GFBottomSheet(
-            animationDuration: 1000,
+            animationDuration: 20,
             controller: _controller,
             maxContentHeight: 150,
-            enableExpandableContent: true,
+            enableExpandableContent: false,
             stickyHeaderHeight: 50,
             stickyHeader: Container(
               child: Center(
@@ -349,7 +349,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                     Text(
                       '\Reception',
                       style: TextStyle(
-                        color: Theme.of(context).hintColor,
+                        color: Theme.of(context).primaryColor,
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),
@@ -391,7 +391,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
-                                color: Theme.of(context).hintColor,
+                                color: Theme.of(context).primaryColor,
                               ),
                             ),
                           ],
@@ -426,7 +426,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                       duration: Duration(milliseconds: 500),
                       child: Column(children: [
                         TextField(
-                          cursorColor: Colors.black,
+                          cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             suffix: IconButton(
                                 onPressed: scanBarcode,
@@ -437,7 +437,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Posicion',
                             labelStyle: TextStyle(
-                              color: Theme.of(context).hintColor,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
@@ -461,7 +461,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: Colors.black, width: 1.5),
+                                  BorderSide(color: Colors.red, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
@@ -470,12 +470,12 @@ class _ReceptionPageState extends State<ReceptionPage> {
                         Text(
                           '$barcode',
                           style: TextStyle(
-                            color: Theme.of(context).hintColor,
+                            color: Theme.of(context).primaryColor,
                           ),
                         ),
                         SizedBox(height: 10),
                         TextField(
-                          cursorColor: Colors.black,
+                          cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             suffix: IconButton(
                                 onPressed: scanBarcode1,
@@ -486,7 +486,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Producto',
                             labelStyle: TextStyle(
-                              color: Theme.of(context).hintColor,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
@@ -510,7 +510,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: Colors.black, width: 1.5),
+                                  BorderSide(color: Colors.red, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
@@ -518,30 +518,32 @@ class _ReceptionPageState extends State<ReceptionPage> {
                         Text(
                           '$barcode',
                           style: TextStyle(
-                            color: Theme.of(context).hintColor,
+                            color: Theme.of(context).primaryColor,
                           ),
                         ),
                         SizedBox(height: 10),
-                        Divider(color: Colors.grey.shade800),
+                        Divider(
+                          color: Theme.of(context).dividerColor,
+                        ),
                         SizedBox(height: 10),
                         TextField(
                           keyboardType: TextInputType.multiline,
                           minLines: 1,
                           maxLines: 8,
-                          cursorColor: Colors.black,
+                          cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             errorMaxLines: 8,
                             helperMaxLines: 8,
-                            hintText: 'Type Here a Description',
+                            hintText: 'Type here a Description',
                             labelText: 'Descripcion',
                             labelStyle: TextStyle(
-                              color: Theme.of(context).hintColor,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
                             suffixIcon: Icon(Iconsax.text, color: Colors.red),
                             hintStyle: TextStyle(
-                              color: Theme.of(context).hintColor,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                             ),
                             enabledBorder: OutlineInputBorder(
@@ -555,27 +557,27 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: Colors.black, width: 1.5),
+                                  BorderSide(color: Colors.red, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
                         ),
                         SizedBox(height: 10),
-                        Divider(color: Colors.grey.shade800),
+                        Divider(color: Theme.of(context).dividerColor),
                         SizedBox(height: 10),
                         TextField(
-                          cursorColor: Colors.black,
+                          cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Vencimiento',
                             hintText: 'Vencimiento',
                             labelStyle: TextStyle(
-                              color: Theme.of(context).hintColor,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
                             hintStyle: TextStyle(
-                              color: Theme.of(context).hintColor,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                             ),
                             prefixIcon: Icon(
@@ -594,25 +596,25 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: Colors.black, width: 1.5),
+                                  BorderSide(color: Colors.red, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
                         ),
                         SizedBox(height: 10),
                         TextField(
-                          cursorColor: Colors.black,
+                          cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Cantidad',
                             hintText: 'Cantidad',
                             labelStyle: TextStyle(
-                              color: Theme.of(context).hintColor,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
                             hintStyle: TextStyle(
-                              color: Theme.of(context).hintColor,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                             ),
                             prefixIcon: Icon(
@@ -631,7 +633,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
-                                  BorderSide(color: Colors.black, width: 1.5),
+                                  BorderSide(color: Colors.red, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
@@ -642,20 +644,32 @@ class _ReceptionPageState extends State<ReceptionPage> {
                           margin: EdgeInsets.all(20),
                           child: DropdownButtonHideUnderline(
                             child: GFDropdown(
+                              dropdownColor: Theme.of(context).accentColor,
                               icon: Icon(Iconsax.unlimited),
-                              hint: Text('CM'),
+                              hint: Text(
+                                'CM',
+                                style: TextStyle(
+                                    color: Theme.of(context).primaryColor),
+                              ),
                               padding: const EdgeInsets.all(15),
                               borderRadius: BorderRadius.circular(10),
-                              border: const BorderSide(
-                                  color: Colors.black12, width: 1),
-                              dropdownButtonColor: Colors.grey[200],
+                              border:
+                                  const BorderSide(color: Colors.red, width: 1),
+                              dropdownButtonColor:
+                                  Theme.of(context).accentColor,
                               onChanged: (newValue) {
                                 setState(() {});
                               },
                               items: ['CM', 'MM', 'LT', 'DC']
                                   .map((value) => DropdownMenuItem(
                                         value: value,
-                                        child: Text(value),
+                                        child: Text(
+                                          value,
+                                          style: TextStyle(
+                                            color:
+                                                Theme.of(context).primaryColor,
+                                          ),
+                                        ),
                                       ))
                                   .toList(),
                             ),

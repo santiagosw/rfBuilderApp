@@ -15714,8 +15714,8 @@ com.google.android.gms.dynamic.zac
 com.google.common.base.CharMatcher$NegatedFastMatcher
 com.google.common.collect.DenseImmutableTable$RowMap
 com.google.common.collect.TreeBasedTable
-com.google.common.base.FinalizableReferenceQueue
 com.google.common.base.Converter$ConverterComposition
+com.google.common.base.FinalizableReferenceQueue
 com.google.common.util.concurrent.AbstractTransformFuture$AsyncTransformFuture
 com.google.common.graph.ValueGraph
 androidx.constraintlayout.widget.ConstraintsChangedListener:
@@ -22100,6 +22100,6 @@ com.google.android.material.resources.TextAppearance:
     public final boolean textAllCaps
 androidx.appcompat.view.StandaloneActionMode:
     private boolean mFocusable
-androidx.lifecycle.DefaultLifecycleObserver$-CC
 io.flutter.plugin.platform.PlatformView$-CC
+androidx.lifecycle.DefaultLifecycleObserver$-CC
 $r8$backportedMethods$utility$Integer$2$compare

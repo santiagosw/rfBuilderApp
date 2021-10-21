@@ -17,6 +17,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   late ScrollController _scrollController;
   bool _isScrolled = false;
+  Widget? alertWidget;
+  bool showblur = false;
 
   List<dynamic> _services = [
     ['Dashboard', Iconsax.home, Colors.white],
@@ -220,10 +222,10 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           bottomSheet: GFBottomSheet(
-            animationDuration: 1000,
+            animationDuration: 20,
             controller: _controller,
             maxContentHeight: 150,
-            enableExpandableContent: true,
+            enableExpandableContent: false,
             stickyHeaderHeight: 50,
             stickyHeader: Container(
               child: Center(
@@ -319,9 +321,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 IconButton(
                   icon: Icon(Iconsax.message_question, color: Colors.red),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
+                  onPressed: () {},
                 ),
               ],
               shape: RoundedRectangleBorder(
