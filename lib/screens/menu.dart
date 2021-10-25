@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
@@ -6,6 +8,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:rfbuilder_app/widgets/dialog_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,6 +22,15 @@ class _HomePageState extends State<HomePage> {
   bool _isScrolled = false;
   Widget? alertWidget;
   bool showblur = false;
+  int pickingNum = 131227;
+  int cantProd = 14;
+  String codConso = 'FC040';
+  int numConso = 84665;
+  int bu = 84665;
+  int di = 84665;
+  int un = 84665;
+  String obsasig = '';
+  String obsconso = '';
 
   List<dynamic> _services = [
     ['Dashboard', Iconsax.home, Colors.white],
@@ -321,7 +333,16 @@ class _HomePageState extends State<HomePage> {
                 ),
                 IconButton(
                   icon: Icon(Iconsax.message_question, color: Colors.red),
-                  onPressed: () {},
+                  onPressed: () => showAboutDialog(
+                    context: context,
+                    applicationIcon: Icon(
+                      Iconsax.box_search,
+                      color: Colors.red,
+                    ),
+                    applicationName: 'Picking',
+                    applicationLegalese:
+                        'Picking Nro: $pickingNum. \nAsignacion de Productos: \nCant. Prod: $cantProd. \nCod Conso: $codConso. \nNum Conso: $numConso. \nGrupo: \nBU: $bu. \nDI: $di. \nUN: $un. \nObs.Asig: $obsasig. \nObs.Conso: $obsconso.',
+                  ),
                 ),
               ],
               shape: RoundedRectangleBorder(
@@ -437,6 +458,37 @@ class _HomePageState extends State<HomePage> {
                           position: GFPosition.end,
                         ),
                         Divider(),
+                        Tooltip(
+                            message:
+                                "Picking Nro: $pickingNum. \nAsignacion de Productos: \nCant. Prod: $cantProd. \nCod Conso: $codConso. \nNum Conso: $numConso. \nGrupo: \nBU: $bu. \nDI: $di. \nUN: $un. \nObs.Asig: $obsasig. \nObs.Conso: $obsconso.",
+                            verticalOffset: 40,
+                            waitDuration: Duration(seconds: 1),
+                            padding: EdgeInsets.all(10),
+                            showDuration: Duration(seconds: 3),
+                            child: Row(
+                              children: [
+                                SizedBox(width: 60),
+                                GFButton(
+                                  onPressed: () {
+                                    Get.toNamed('/containernum');
+                                  },
+                                  text: "Picking",
+                                  icon: Icon(Iconsax.box_search,
+                                      color: Colors.red),
+                                  textColor: Theme.of(context).primaryColor,
+                                  type: GFButtonType.transparent,
+                                  padding: EdgeInsets.symmetric(horizontal: 80),
+                                  position: GFPosition.end,
+                                ),
+                                GFIconButton(
+                                  icon: Icon(Iconsax.info_circle,
+                                      color: Colors.red),
+                                  type: GFButtonType.transparent,
+                                  onPressed: () => showAlertDialog(context),
+                                )
+                              ],
+                            )),
+                        Divider(),
                         GFButton(
                           onPressed: () {
                             Get.toNamed('/savereception');
@@ -491,4 +543,23 @@ class _HomePageState extends State<HomePage> {
   void _handleMenuButtonPressed() {
     _advancedDrawerController.showDrawer();
   }
+
+  void showAlertDialog(BuildContext context) => showDialog(
+        builder: (context) => AlertDialog(
+          title: Text('Picking Info'),
+          content: Text(
+            'Picking Nro: $pickingNum. \nAsignacion de Productos: \nCant. Prod: $cantProd. \nCod Conso: $codConso. \nNum Conso: $numConso. \nGrupo: \nBU: $bu. \nDI: $di. \nUN: $un. \nObs.Asig: $obsasig. \nObs.Conso: $obsconso.',
+          ),
+          actions: [
+            OutlineButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(
+                'Close',
+              ),
+              color: Colors.red,
+            )
+          ],
+        ),
+        context: context,
+      );
 }

@@ -37,6 +37,7 @@ class MyThemes {
   static final lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
     hintColor: Colors.white,
+    cardColor: Colors.white,
     cursorColor: Colors.black,
     primaryColor: Colors.black,
     buttonColor: Colors.grey.shade900,

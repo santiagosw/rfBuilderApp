@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:rfbuilder_app/screens/login.dart';
 import 'package:rfbuilder_app/screens/menu.dart';
+import 'package:rfbuilder_app/screens/picking/containerNum_page.dart';
+import 'package:rfbuilder_app/screens/picking/picking_page.dart';
 import 'package:rfbuilder_app/screens/reception/reception_page.dart';
 import 'package:rfbuilder_app/screens/register.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -52,6 +54,14 @@ class MyApp extends StatelessWidget {
               GetPage(
                   name: "/savereception",
                   page: () => SaveReceptionPage(),
+                  transition: Transition.cupertinoDialog),
+              GetPage(
+                  name: "/containernum",
+                  page: () => ContainerNum(),
+                  transition: Transition.cupertinoDialog),
+              GetPage(
+                  name: "/picking",
+                  page: () => PickingPage(),
                   transition: Transition.cupertinoDialog),
             ]);
       });
