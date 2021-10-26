@@ -10,6 +10,7 @@ import 'package:rfbuilder_app/screens/reception/reception_page.dart';
 import 'package:rfbuilder_app/screens/register.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:rfbuilder_app/screens/save_reception/sreception_page.dart';
+import 'package:rfbuilder_app/screens/stock/stock_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -62,6 +63,10 @@ class MyApp extends StatelessWidget {
               GetPage(
                   name: "/picking",
                   page: () => PickingPage(),
+                  transition: Transition.cupertinoDialog),
+              GetPage(
+                  name: "/stock",
+                  page: () => StockPage(),
                   transition: Transition.cupertinoDialog),
             ]);
       });

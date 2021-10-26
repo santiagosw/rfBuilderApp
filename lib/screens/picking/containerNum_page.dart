@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_verification_code/flutter_verification_code.dart';
 import 'dart:async';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 
 class ContainerNum extends StatefulWidget {
   const ContainerNum({Key? key}) : super(key: key);
@@ -14,7 +15,8 @@ class _ContainerNumState extends State<ContainerNum> {
   bool _isResendAgain = false;
   bool _isVerified = false;
   bool _isLoading = false;
-
+  final _text = TextEditingController();
+  bool _validate = false;
   String _code = '';
 
   late Timer _timer;
@@ -96,27 +98,52 @@ class _ContainerNumState extends State<ContainerNum> {
                   SizedBox(
                     height: 30,
                   ),
-                  VerificationCode(
-                      length: 6,
-                      textStyle: TextStyle(fontSize: 20),
-                      underlineColor: Colors.blueAccent,
-                      keyboardType: TextInputType.number,
-                      onCompleted: (value) {
-                        setState(() {
-                          _code = value;
-                        });
-                      },
-                      onEditing: (value) {}),
+                  TextField(
+                    controller: _text,
+                    keyboardType: TextInputType.number,
+                    cursorColor: Theme.of(context).cursorColor,
+                    decoration: InputDecoration(
+                      errorText: _validate ? 'Value Can\'t Be Empty' : null,
+                      contentPadding: EdgeInsets.all(0.0),
+                      labelStyle: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      hintStyle: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 14.0,
+                      ),
+                      prefixIcon: Icon(
+                        Iconsax.document,
+                        color: Colors.red,
+                        size: 18,
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide:
+                            BorderSide(color: Colors.grey.shade200, width: 2),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      floatingLabelStyle: TextStyle(
+                        color: Colors.red,
+                        fontSize: 18.0,
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red, width: 1.5),
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  ),
                   SizedBox(
                     height: 50,
                   ),
                   MaterialButton(
                     disabledColor: Colors.grey,
-                    onPressed: _code.length < 6
-                        ? null
-                        : () {
-                            Get.toNamed('/picking');
-                          },
+                    onPressed: () {
+                      setState(() {
+                        Get.toNamed('/picking');
+                      });
+                    },
                     color: Colors.red,
                     minWidth: double.infinity,
                     height: 50,

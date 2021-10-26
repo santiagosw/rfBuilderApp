@@ -1,6 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
@@ -18,6 +20,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
   late ScrollController _scrollController;
   bool _isScrolled = false;
   String? dropdown;
+  String barcode = '00000000';
 
   List<dynamic> _services = [
     ['Dashboard', Iconsax.home, Colors.white],
@@ -381,11 +384,21 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                       duration: Duration(milliseconds: 500),
                       child: Column(children: [
                         TextField(
+                          keyboardType: TextInputType.number,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
+                            prefixText: '$barcode',
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            suffix: IconButton(
+                                onPressed: scanBarcode,
+                                icon: Icon(
+                                  Iconsax.camera,
+                                  color: Colors.red,
+                                )),
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'N de Carro',
-                            hintText: 'Numero de Carro',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -420,9 +433,18 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                         TextField(
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
+                            prefixText: '$barcode',
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            suffix: IconButton(
+                                onPressed: scanBarcode,
+                                icon: Icon(
+                                  Iconsax.camera,
+                                  color: Colors.red,
+                                )),
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Producto',
-                            hintText: 'Producto',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -461,9 +483,18 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                         TextField(
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
+                            prefixText: '$barcode',
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            suffix: IconButton(
+                                onPressed: scanBarcode,
+                                icon: Icon(
+                                  Iconsax.camera,
+                                  color: Colors.red,
+                                )),
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Posicion',
-                            hintText: 'Posicion',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -498,9 +529,18 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                         TextField(
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
+                            prefixText: '$barcode',
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            suffix: IconButton(
+                                onPressed: scanBarcode,
+                                icon: Icon(
+                                  Iconsax.camera,
+                                  color: Colors.red,
+                                )),
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Producto',
-                            hintText: 'Producto',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -533,11 +573,21 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                         ),
                         SizedBox(height: 10),
                         TextField(
+                          keyboardType: TextInputType.number,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
+                            prefixText: '$barcode',
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            suffix: IconButton(
+                                onPressed: scanBarcode,
+                                icon: Icon(
+                                  Iconsax.camera,
+                                  color: Colors.red,
+                                )),
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Cantidad',
-                            hintText: 'Cantidad',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -617,6 +667,25 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
             )
           ])),
     );
+  }
+
+  Future<void> scanBarcode() async {
+    try {
+      final barcode = await FlutterBarcodeScanner.scanBarcode(
+        '#ff6666',
+        'Cancel',
+        true,
+        ScanMode.BARCODE,
+      );
+
+      if (!mounted) return;
+
+      setState(() {
+        this.barcode = barcode;
+      });
+    } on PlatformException {
+      barcode = 'Failed to get platform version.';
+    }
   }
 
   void _handleMenuButtonPressed() {

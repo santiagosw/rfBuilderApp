@@ -20,6 +20,7 @@ class _PickingPageState extends State<PickingPage> {
   late ScrollController _scrollController;
   bool _isScrolled = false;
   String? dropdown;
+  String barcode = '00000000';
 
   List<dynamic> _services = [
     ['Cierra Contenedor', Iconsax.close_circle, Colors.white],
@@ -32,9 +33,9 @@ class _PickingPageState extends State<PickingPage> {
   ];
 
   final List<dynamic> _product = [
-    ['Lumps', Iconsax.box, '10'],
-    ['Display', Iconsax.screenmirroring, '8'],
-    ['Units', Iconsax.element_plus, '8'],
+    ['Lumps', Iconsax.box, '0'],
+    ['Display', Iconsax.screenmirroring, '0'],
+    ['Units', Iconsax.element_plus, '0'],
   ];
 
   final List<dynamic> _advancewunit = [
@@ -434,6 +435,16 @@ class _PickingPageState extends State<PickingPage> {
                         TextField(
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
+                            prefixText: '$barcode',
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            suffix: IconButton(
+                                onPressed: scanBarcode,
+                                icon: Icon(
+                                  Iconsax.camera,
+                                  color: Colors.red,
+                                )),
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Posicion',
                             labelStyle: TextStyle(
@@ -468,8 +479,19 @@ class _PickingPageState extends State<PickingPage> {
                         ),
                         SizedBox(height: 5),
                         TextField(
+                          keyboardType: TextInputType.number,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
+                            prefixText: '$barcode',
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            suffix: IconButton(
+                                onPressed: scanBarcode,
+                                icon: Icon(
+                                  Iconsax.camera,
+                                  color: Colors.red,
+                                )),
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Cantidad',
                             labelStyle: TextStyle(
@@ -510,6 +532,16 @@ class _PickingPageState extends State<PickingPage> {
                         TextField(
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
+                            prefixText: '$barcode',
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            suffix: IconButton(
+                                onPressed: scanBarcode,
+                                icon: Icon(
+                                  Iconsax.camera,
+                                  color: Colors.red,
+                                )),
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Posicion Picking',
                             labelStyle: TextStyle(
@@ -544,8 +576,19 @@ class _PickingPageState extends State<PickingPage> {
                         ),
                         SizedBox(height: 10),
                         TextField(
+                          keyboardType: TextInputType.number,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
+                            prefixText: '$barcode',
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            suffix: IconButton(
+                                onPressed: scanBarcode,
+                                icon: Icon(
+                                  Iconsax.camera,
+                                  color: Colors.red,
+                                )),
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Cod.Producto',
                             labelStyle: TextStyle(
@@ -582,7 +625,7 @@ class _PickingPageState extends State<PickingPage> {
                         Divider(color: Theme.of(context).dividerColor),
                         SizedBox(height: 10),
                         Container(
-                            height: 120,
+                            height: 100,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               color: Theme.of(context).cardColor,
@@ -593,7 +636,8 @@ class _PickingPageState extends State<PickingPage> {
                               itemBuilder: (context, index) {
                                 return GestureDetector(
                                     child: Container(
-                                        width: 110,
+                                        height: 100,
+                                        width: 100,
                                         decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(15),
@@ -633,6 +677,7 @@ class _PickingPageState extends State<PickingPage> {
                             )),
                         SizedBox(height: 10),
                         TextField(
+                          keyboardType: TextInputType.number,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.all(0.0),
@@ -674,7 +719,7 @@ class _PickingPageState extends State<PickingPage> {
                         SizedBox(height: 10),
                         Container(
                             height: 100,
-                            width: 220,
+                            width: 170,
                             decoration: BoxDecoration(
                               color: Theme.of(context).cardColor,
                               borderRadius: BorderRadius.circular(10),
@@ -685,7 +730,7 @@ class _PickingPageState extends State<PickingPage> {
                               itemBuilder: (context, index) {
                                 return GestureDetector(
                                     child: Container(
-                                        width: 100,
+                                        width: 70,
                                         decoration: BoxDecoration(
                                           color: Theme.of(context).cardColor,
                                           borderRadius:
@@ -753,6 +798,25 @@ class _PickingPageState extends State<PickingPage> {
         ),
         context: context,
       );
+
+  Future<void> scanBarcode() async {
+    try {
+      final barcode = await FlutterBarcodeScanner.scanBarcode(
+        '#ff6666',
+        'Cancel',
+        true,
+        ScanMode.BARCODE,
+      );
+
+      if (!mounted) return;
+
+      setState(() {
+        this.barcode = barcode;
+      });
+    } on PlatformException {
+      barcode = 'Failed to get platform version.';
+    }
+  }
 
   void _handleMenuButtonPressed() {
     _advancedDrawerController.showDrawer();

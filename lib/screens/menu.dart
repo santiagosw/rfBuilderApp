@@ -232,6 +232,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       child: Scaffold(
+          resizeToAvoidBottomInset: false,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           bottomSheet: GFBottomSheet(
             animationDuration: 20,
@@ -491,6 +492,28 @@ class _HomePageState extends State<HomePage> {
                         Divider(),
                         GFButton(
                           onPressed: () {
+                            Get.toNamed('/stock');
+                          },
+                          text: "Inventario",
+                          icon: Icon(Iconsax.document, color: Colors.red),
+                          textColor: Theme.of(context).primaryColor,
+                          type: GFButtonType.transparent,
+                          fullWidthButton: true,
+                          position: GFPosition.end,
+                        ),
+                        Divider(),
+                        GFButton(
+                          onPressed: () {},
+                          text: "Reposicion",
+                          icon: Icon(Iconsax.box_tick, color: Colors.red),
+                          textColor: Theme.of(context).primaryColor,
+                          type: GFButtonType.transparent,
+                          fullWidthButton: true,
+                          position: GFPosition.end,
+                        ),
+                        Divider(),
+                        GFButton(
+                          onPressed: () {
                             Get.toNamed('/savereception');
                           },
                           text: "Guardado de Recepción",
@@ -515,16 +538,6 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {},
                           text: "Despacho de carro consolidado",
                           icon: Icon(Iconsax.box, color: Colors.red),
-                          textColor: Theme.of(context).primaryColor,
-                          type: GFButtonType.transparent,
-                          fullWidthButton: true,
-                          position: GFPosition.end,
-                        ),
-                        Divider(),
-                        GFButton(
-                          onPressed: () {},
-                          text: "Ayudante Gondola",
-                          icon: Icon(Iconsax.personalcard, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
                           fullWidthButton: true,

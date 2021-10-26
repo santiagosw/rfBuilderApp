@@ -21,7 +21,6 @@ class _ReceptionPageState extends State<ReceptionPage> {
   bool _isScrolled = false;
   String? dropdown;
   String barcode = '00000000';
-  String barcode1 = '11111111';
 
   List<dynamic> _services = [
     ['Dashboard', Iconsax.home, Colors.white],
@@ -428,6 +427,10 @@ class _ReceptionPageState extends State<ReceptionPage> {
                         TextField(
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
+                            prefixText: '$barcode',
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
                             suffix: IconButton(
                                 onPressed: scanBarcode,
                                 icon: Icon(
@@ -467,18 +470,15 @@ class _ReceptionPageState extends State<ReceptionPage> {
                           ),
                         ),
                         SizedBox(height: 5),
-                        Text(
-                          '$barcode',
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                          ),
-                        ),
-                        SizedBox(height: 10),
                         TextField(
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
+                            prefixText: '$barcode',
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
                             suffix: IconButton(
-                                onPressed: scanBarcode1,
+                                onPressed: scanBarcode,
                                 icon: Icon(
                                   Iconsax.camera,
                                   color: Colors.red,
@@ -513,12 +513,6 @@ class _ReceptionPageState extends State<ReceptionPage> {
                                   BorderSide(color: Colors.red, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
-                          ),
-                        ),
-                        Text(
-                          '$barcode',
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColor,
                           ),
                         ),
                         SizedBox(height: 10),
@@ -566,11 +560,21 @@ class _ReceptionPageState extends State<ReceptionPage> {
                         Divider(color: Theme.of(context).dividerColor),
                         SizedBox(height: 10),
                         TextField(
+                          keyboardType: TextInputType.datetime,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
+                            prefixText: '$barcode',
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            suffix: IconButton(
+                                onPressed: scanBarcode,
+                                icon: Icon(
+                                  Iconsax.camera,
+                                  color: Colors.red,
+                                )),
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Vencimiento',
-                            hintText: 'Vencimiento',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -603,11 +607,21 @@ class _ReceptionPageState extends State<ReceptionPage> {
                         ),
                         SizedBox(height: 10),
                         TextField(
+                          keyboardType: TextInputType.number,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
+                            prefixText: '$barcode',
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            suffix: IconButton(
+                                onPressed: scanBarcode,
+                                icon: Icon(
+                                  Iconsax.camera,
+                                  color: Colors.red,
+                                )),
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: 'Cantidad',
-                            hintText: 'Cantidad',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -701,25 +715,6 @@ class _ReceptionPageState extends State<ReceptionPage> {
       });
     } on PlatformException {
       barcode = 'Failed to get platform version.';
-    }
-  }
-
-  Future<void> scanBarcode1() async {
-    try {
-      final barcode1 = await FlutterBarcodeScanner.scanBarcode(
-        '#ff6666',
-        'Cancel',
-        true,
-        ScanMode.BARCODE,
-      );
-
-      if (!mounted) return;
-
-      setState(() {
-        this.barcode1 = barcode1;
-      });
-    } on PlatformException {
-      barcode1 = 'Failed to get platform version.';
     }
   }
 
