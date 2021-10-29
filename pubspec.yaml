@@ -17,6 +17,9 @@ dependencies:
     
   flutter_localizations:
     sdk: flutter
+  intl: ^0.17.0 
+
+
   cupertino_icons: ^1.0.2
   custom_splash: ^0.0.2
   simple_animations: ^4.0.1
@@ -48,6 +51,7 @@ flutter_icons:
 
 
 flutter:
+  generate: true
   uses-material-design: true
 
   assets:

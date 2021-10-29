@@ -25,12 +25,12 @@ class _StockPageState extends State<StockPage> {
   String barcode = '00000000';
 
   List<dynamic> _services = [
-    ['Cierra Inventario', Iconsax.close_circle, Colors.white],
-    ['Salta el Producto', Iconsax.next, Colors.white],
+    ['Close Inventory', Iconsax.close_circle, Colors.white],
+    ['Skip Product', Iconsax.next, Colors.white],
   ];
 
   final List<dynamic> _advancewunit = [
-    ['Unit Read', Iconsax.save_add, 'UNIDAD'],
+    ['Unit Save', Iconsax.save_2, 'UNIT'],
     ['Stock', Iconsax.box, 'STOCK'],
   ];
 
@@ -108,7 +108,7 @@ class _StockPageState extends State<StockPage> {
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
                   child: Text(
-                    "Usuario",
+                    "User",
                     style: TextStyle(
                         color: Theme.of(context).hintColor,
                         fontWeight: FontWeight.w600),
@@ -447,7 +447,7 @@ class _StockPageState extends State<StockPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Ingrese Posicion',
+                            labelText: 'Enter Position',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -502,7 +502,7 @@ class _StockPageState extends State<StockPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Ingrese Articulo',
+                            labelText: 'Enter Item',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -549,7 +549,7 @@ class _StockPageState extends State<StockPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Vencimiento',
+                            labelText: 'Expiration Date',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -598,7 +598,7 @@ class _StockPageState extends State<StockPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Cantidad',
+                            labelText: 'Amount',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -697,9 +697,9 @@ class _StockPageState extends State<StockPage> {
 
   void showAlertDialog(BuildContext context) => showDialog(
         builder: (context) => AlertDialog(
-          title: Text('Picking Task'),
+          title: Text('Stock Task'),
           content: Text(
-            'En esta pagina podras realizar estas tareas...',
+            'Stock Task Info',
           ),
           actions: [
             OutlineButton(

@@ -6,9 +6,11 @@ import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
+import 'package:rfbuilder_app/provider/locale_provider.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:rfbuilder_app/widgets/dialog_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -113,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
                   child: Text(
-                    "Usuario",
+                    "User",
                     style: TextStyle(
                         color: Theme.of(context).hintColor,
                         fontWeight: FontWeight.w600),
@@ -334,16 +336,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 IconButton(
                   icon: Icon(Iconsax.message_question, color: Colors.red),
-                  onPressed: () => showAboutDialog(
-                    context: context,
-                    applicationIcon: Icon(
-                      Iconsax.box_search,
-                      color: Colors.red,
-                    ),
-                    applicationName: 'Picking',
-                    applicationLegalese:
-                        'Picking Nro: $pickingNum. \nAsignacion de Productos: \nCant. Prod: $cantProd. \nCod Conso: $codConso. \nNum Conso: $numConso. \nGrupo: \nBU: $bu. \nDI: $di. \nUN: $un. \nObs.Asig: $obsasig. \nObs.Conso: $obsconso.',
-                  ),
+                  onPressed: () => showAlertDialog(context),
                 ),
               ],
               shape: RoundedRectangleBorder(
@@ -439,7 +432,7 @@ class _HomePageState extends State<HomePage> {
                       child: Column(children: [
                         GFButton(
                           onPressed: () {},
-                          text: "Transferencias",
+                          text: "Transfers",
                           icon: Icon(Iconsax.arrow_2, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
@@ -451,7 +444,7 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {
                             Get.toNamed('/reception');
                           },
-                          text: "Recepción",
+                          text: "Reception",
                           icon: Icon(Iconsax.box_add, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
@@ -494,7 +487,7 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {
                             Get.toNamed('/stock');
                           },
-                          text: "Inventario",
+                          text: "Stock",
                           icon: Icon(Iconsax.document, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
@@ -503,8 +496,10 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Divider(),
                         GFButton(
-                          onPressed: () {},
-                          text: "Reposicion",
+                          onPressed: () {
+                            Get.toNamed('/replacement');
+                          },
+                          text: "Replacement",
                           icon: Icon(Iconsax.box_tick, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
@@ -516,7 +511,7 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {
                             Get.toNamed('/savereception');
                           },
-                          text: "Guardado de Recepción",
+                          text: "Receiving Guard",
                           icon: Icon(Iconsax.save_2, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
@@ -526,7 +521,7 @@ class _HomePageState extends State<HomePage> {
                         Divider(),
                         GFButton(
                           onPressed: () {},
-                          text: "Control Consolidado",
+                          text: "Consolidated Control",
                           icon: Icon(Iconsax.security, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
@@ -536,7 +531,7 @@ class _HomePageState extends State<HomePage> {
                         Divider(),
                         GFButton(
                           onPressed: () {},
-                          text: "Despacho de carro consolidado",
+                          text: "Consolidated Car Dispatch",
                           icon: Icon(Iconsax.box, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
@@ -559,9 +554,9 @@ class _HomePageState extends State<HomePage> {
 
   void showAlertDialog(BuildContext context) => showDialog(
         builder: (context) => AlertDialog(
-          title: Text('Picking Info'),
+          title: Text('Welcome to RFBuilder'),
           content: Text(
-            'Picking Nro: $pickingNum. \nAsignacion de Productos: \nCant. Prod: $cantProd. \nCod Conso: $codConso. \nNum Conso: $numConso. \nGrupo: \nBU: $bu. \nDI: $di. \nUN: $un. \nObs.Asig: $obsasig. \nObs.Conso: $obsconso.',
+            'Task managers',
           ),
           actions: [
             OutlineButton(

@@ -1,4 +1,4 @@
-#Tue Oct 26 15:50:55 ART 2021
+#Thu Oct 28 15:40:48 ART 2021
 base.0=C\:\\development\\repos\\rfBuilderApp\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

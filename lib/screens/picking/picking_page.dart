@@ -23,17 +23,17 @@ class _PickingPageState extends State<PickingPage> {
   String barcode = '00000000';
 
   List<dynamic> _services = [
-    ['Cierra Contenedor', Iconsax.close_circle, Colors.white],
-    ['Finaliza Producto', Iconsax.tick_circle, Colors.white],
-    ['Proximo Producto', Iconsax.next, Colors.white],
-    ['Contenido Actual', Iconsax.dcube, Colors.white],
-    ['Posiciones', Iconsax.location, Colors.white],
-    ['Solicitud Impresion', Iconsax.document, Colors.white],
-    ['Imprimir etiqueta', Iconsax.printer, Colors.white],
+    ['Close Container', Iconsax.close_circle, Colors.white],
+    ['End Product', Iconsax.tick_circle, Colors.white],
+    ['Next Product', Iconsax.next, Colors.white],
+    ['Current Content', Iconsax.dcube, Colors.white],
+    ['Positions', Iconsax.location, Colors.white],
+    ['Print Request', Iconsax.document, Colors.white],
+    ['Print Label', Iconsax.printer, Colors.white],
   ];
 
   final List<dynamic> _product = [
-    ['Lumps', Iconsax.box, '0'],
+    ['Packages', Iconsax.box, '0'],
     ['Display', Iconsax.screenmirroring, '0'],
     ['Units', Iconsax.element_plus, '0'],
   ];
@@ -117,7 +117,7 @@ class _PickingPageState extends State<PickingPage> {
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
                   child: Text(
-                    "Usuario",
+                    "User",
                     style: TextStyle(
                         color: Theme.of(context).hintColor,
                         fontWeight: FontWeight.w600),
@@ -446,7 +446,7 @@ class _PickingPageState extends State<PickingPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Posicion',
+                            labelText: 'Position',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -493,7 +493,7 @@ class _PickingPageState extends State<PickingPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Cantidad',
+                            labelText: 'Amount',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -543,7 +543,7 @@ class _PickingPageState extends State<PickingPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Posicion Picking',
+                            labelText: 'Position Picking',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -590,7 +590,7 @@ class _PickingPageState extends State<PickingPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Cod.Producto',
+                            labelText: 'Product Code',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -681,7 +681,7 @@ class _PickingPageState extends State<PickingPage> {
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Cantidad',
+                            labelText: 'Amount',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -784,7 +784,7 @@ class _PickingPageState extends State<PickingPage> {
         builder: (context) => AlertDialog(
           title: Text('Picking Task'),
           content: Text(
-            'En esta pagina podras realizar estas tareas...',
+            'Picking Task Info',
           ),
           actions: [
             OutlineButton(

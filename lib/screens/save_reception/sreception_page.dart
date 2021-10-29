@@ -105,7 +105,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
                   child: Text(
-                    "Usuario",
+                    "User",
                     style: TextStyle(
                         color: Colors.white, fontWeight: FontWeight.w600),
                   ),
@@ -289,7 +289,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                 ),
                 IconButton(
                   icon: Icon(Iconsax.message_question, color: Colors.red),
-                  onPressed: () {},
+                  onPressed: () => showAlertDialog(context),
                 ),
               ],
               shape: RoundedRectangleBorder(
@@ -305,7 +305,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                 child: Column(
                   children: [
                     Text(
-                      '\Save Reception',
+                      '\Receiving Guard',
                       style: TextStyle(
                         color: Theme.of(context).primaryColor,
                         fontSize: 22,
@@ -345,7 +345,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                               width: 3,
                             ),
                             Text(
-                              'Save Reception',
+                              'Receiving Guard',
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -398,7 +398,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'N de Carro',
+                            labelText: 'Car Number',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -444,7 +444,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Producto',
+                            labelText: 'Product',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -494,7 +494,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Posicion',
+                            labelText: 'Position',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -540,7 +540,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Producto',
+                            labelText: 'Product',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -587,7 +587,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Cantidad',
+                            labelText: 'Amount',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -632,8 +632,8 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             helperMaxLines: 8,
-                            hintText: 'Motivo',
-                            labelText: 'Motivo',
+                            hintText: 'Reason',
+                            labelText: 'Reason',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -668,6 +668,25 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
           ])),
     );
   }
+
+  void showAlertDialog(BuildContext context) => showDialog(
+        builder: (context) => AlertDialog(
+          title: Text('Receiving Guard Task'),
+          content: Text(
+            'Receiving Guard Task Info',
+          ),
+          actions: [
+            OutlineButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(
+                'Close',
+              ),
+              color: Colors.red,
+            )
+          ],
+        ),
+        context: context,
+      );
 
   Future<void> scanBarcode() async {
     try {

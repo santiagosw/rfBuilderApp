@@ -107,7 +107,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
                   child: Text(
-                    "Usuario",
+                    "User",
                     style: TextStyle(
                         color: Theme.of(context).hintColor,
                         fontWeight: FontWeight.w600),
@@ -330,7 +330,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                 ),
                 IconButton(
                   icon: Icon(Iconsax.message_question, color: Colors.red),
-                  onPressed: () {},
+                  onPressed: () => showAlertDialog(context),
                 ),
               ],
               shape: RoundedRectangleBorder(
@@ -438,7 +438,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Posicion',
+                            labelText: 'Position',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -484,7 +484,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Producto',
+                            labelText: 'Product',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -528,8 +528,8 @@ class _ReceptionPageState extends State<ReceptionPage> {
                           decoration: InputDecoration(
                             errorMaxLines: 8,
                             helperMaxLines: 8,
-                            hintText: 'Type here a Description',
-                            labelText: 'Descripcion',
+                            hintText: 'type here a description',
+                            labelText: 'Description',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -574,7 +574,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Vencimiento',
+                            labelText: 'Expiration',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -621,7 +621,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Cantidad',
+                            labelText: 'Amount',
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -698,6 +698,25 @@ class _ReceptionPageState extends State<ReceptionPage> {
           ])),
     );
   }
+
+  void showAlertDialog(BuildContext context) => showDialog(
+        builder: (context) => AlertDialog(
+          title: Text('Reception Task'),
+          content: Text(
+            'Reception Task Info',
+          ),
+          actions: [
+            OutlineButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(
+                'Close',
+              ),
+              color: Colors.red,
+            )
+          ],
+        ),
+        context: context,
+      );
 
   Future<void> scanBarcode() async {
     try {

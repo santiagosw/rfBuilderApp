@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
+import 'package:rfbuilder_app/l10n/l10n.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:rfbuilder_app/screens/login.dart';
 import 'package:rfbuilder_app/screens/menu.dart';
@@ -8,9 +10,10 @@ import 'package:rfbuilder_app/screens/picking/containerNum_page.dart';
 import 'package:rfbuilder_app/screens/picking/picking_page.dart';
 import 'package:rfbuilder_app/screens/reception/reception_page.dart';
 import 'package:rfbuilder_app/screens/register.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:rfbuilder_app/screens/replacement/replacement_page.dart';
 import 'package:rfbuilder_app/screens/save_reception/sreception_page.dart';
 import 'package:rfbuilder_app/screens/stock/stock_page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,14 +30,14 @@ class MyApp extends StatelessWidget {
             themeMode: themeProvider.themeMode,
             theme: MyThemes.lightTheme,
             darkTheme: MyThemes.darkTheme,
-            home: LoginPage(),
+            supportedLocales: L10n.all,
             localizationsDelegates: [
+              AppLocalizations.delegate,
               GlobalMaterialLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
             ],
-            supportedLocales: [
-              const Locale('en', 'US'), // English
-            ],
+            home: LoginPage(),
             getPages: [
               GetPage(
                   name: "/login",
@@ -67,6 +70,10 @@ class MyApp extends StatelessWidget {
               GetPage(
                   name: "/stock",
                   page: () => StockPage(),
+                  transition: Transition.cupertinoDialog),
+              GetPage(
+                  name: "/replacement",
+                  page: () => ReplacementPage(),
                   transition: Transition.cupertinoDialog),
             ]);
       });
