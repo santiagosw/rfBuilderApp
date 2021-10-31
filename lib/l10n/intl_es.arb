@@ -1,0 +1,38 @@
+{
+    "email": "Correo Electronico",
+    "password": "Contraseña",
+    "forgotpassword": "¿Olvido su contraseña?",
+    "btnlogin": "Ingresar",
+
+    "suser": "Usuario",
+    "mdashboard": "Menu",
+    "mtask": "Tareas",
+    "mcontacts": "Contactos",
+    "msettings": "Configuraciones",
+    "msupport": "Soporte",
+    "mdarkmode": "Modo Oscuro",
+    "mslidem": "Menu Desplegable",
+    "msignout": "Cerrar Sesión",
+
+    "modalhwelcome": "Bienvenido a RFBuilder",
+    "modalhclose": "Cerrar",
+
+    "tlttask": "Tareas",
+    "ttransfer": "Transferencias",
+    "treception": "Recepcion",
+    "tpicking": "Retirar",
+    "tstock": "Inventario",
+    "treplacement": "Reposicion",
+    "treceivinguard": "Guardado de Recepción",
+    "tconsocontrol": "Control Consolidado",
+    "tconsocardis": "Despacho Carro Consolidado",
+    "textWithPlaceholder": "Bienvenido {name}",
+    "textWithPlaceholders": "Mi nom bre es {lastName}, {firstName} {lastName}",
+    "@textWithPlaceholders": {
+        "placeholders": {
+            "firstName": {},
+            "lastName": {}
+        }
+    },
+    "textWithPlural": "{howMany, plural, one{Tienes 1 notificación} other{Tienes {howMany} notificaciones}}"
+}

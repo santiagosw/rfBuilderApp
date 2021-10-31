@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
-import 'package:rfbuilder_app/provider/locale_provider.dart';
+import 'package:rfbuilder_app/generated/l10n.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -132,7 +132,7 @@ class _LoginPageState extends State<LoginPage> {
               cursorColor: Theme.of(context).cursorColor,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.all(0.0),
-                labelText: 'Email',
+                labelText: S.of(context).email,
                 hintText: 'Username or e-mail',
                 labelStyle: TextStyle(
                   color: Theme.of(context).primaryColor,
@@ -169,7 +169,7 @@ class _LoginPageState extends State<LoginPage> {
               cursorColor: Theme.of(context).cursorColor,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.all(0.0),
-                labelText: 'Password',
+                labelText: S.of(context).password,
                 hintText: 'Password',
                 hintStyle: TextStyle(
                   color: Theme.of(context).primaryColor,
@@ -205,7 +205,7 @@ class _LoginPageState extends State<LoginPage> {
                 TextButton(
                   onPressed: () {},
                   child: Text(
-                    'Forgot Password?',
+                    S.of(context).forgotpassword,
                     style: TextStyle(
                         color: Colors.red,
                         fontSize: 14.0,
@@ -224,7 +224,7 @@ class _LoginPageState extends State<LoginPage> {
               height: 45,
               color: Colors.red,
               child: Text(
-                "Login",
+                S.of(context).btnlogin,
                 style: TextStyle(color: Colors.white, fontSize: 16.0),
               ),
               padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50),

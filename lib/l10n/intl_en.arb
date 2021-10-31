@@ -1,0 +1,39 @@
+{
+    "email": "Email",
+    "password": "Paswword",
+    "forgotpassword": "Forgot Password?",
+    "btnlogin": "Login",
+
+    "suser": "User",
+    "mdashboard": "Dashboard",
+    "mtask": "Tasks",
+    "mcontacts": "Contacts",
+    "msettings": "Settings",
+    "msupport": "Support",
+    "mdarkmode": "Dark Mode",
+    "mslidem": "Slide Menu",
+    "msignout": "SignOut",
+    
+    "modalhwelcome": "Welcome to RFBuilder",
+    "modalhclose": "Close",
+
+    "tlttask": "Tasks",
+    "ttransfer": "Transfers",
+    "treception": "Reception",
+    "tpicking": "Picking",
+    "tstock": "Stock",
+    "treplacement": "Replacement",
+    "treceivinguard": "Receiving Guard",
+    "tconsocontrol": "Consolidated Control",
+    "tconsocardis": "Consolidated Car Dispatch",
+    "textWithPlaceholder": "Welcome {name}",
+    "textWithPlaceholders": "My name is {lastName}, {firstName} {lastName}",
+    "@textWithPlaceholders": {
+        "placeholders": {
+            "firstName": {},
+            "lastName": {}
+        }
+    },
+    "textWithPlural": "{howMany, plural, one{You have 1 notification} other{You have {howMany} notifications}}"
+    
+}

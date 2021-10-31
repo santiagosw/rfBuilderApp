@@ -6,11 +6,10 @@ import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
-import 'package:rfbuilder_app/provider/locale_provider.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:rfbuilder_app/widgets/dialog_widget.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:rfbuilder_app/generated/l10n.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -115,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
                   child: Text(
-                    "User",
+                    S.of(context).suser,
                     style: TextStyle(
                         color: Theme.of(context).hintColor,
                         fontWeight: FontWeight.w600),
@@ -131,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                   },
                   leading: Icon(Iconsax.home, color: Colors.red),
                   title: Text(
-                    'Dashboard',
+                    S.of(context).mdashboard,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -141,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {},
                   leading: Icon(Iconsax.task, color: Colors.red),
                   title: Text(
-                    'Tasks',
+                    S.of(context).mtask,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -151,7 +150,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {},
                   leading: Icon(Iconsax.profile_2user, color: Colors.red),
                   title: Text(
-                    'Contacts',
+                    S.of(context).mcontacts,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -162,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {},
                   leading: Icon(Iconsax.setting_2, color: Colors.red),
                   title: Text(
-                    'Settings',
+                    S.of(context).msettings,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -172,7 +171,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {},
                   leading: Icon(Iconsax.support, color: Colors.red),
                   title: Text(
-                    'Support',
+                    S.of(context).msupport,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -183,7 +182,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {},
                   leading: Icon(Iconsax.moon, color: Colors.red),
                   title: Text(
-                    'Dark Mode',
+                    S.of(context).mdarkmode,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -205,7 +204,7 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {},
                   leading: Icon(Iconsax.menu, color: Colors.red),
                   title: Text(
-                    'Slide Menu',
+                    S.of(context).mslidem,
                     style: TextStyle(color: Theme.of(context).hintColor),
                   ),
                   trailing: Icon(Iconsax.arrow_circle_up, color: Colors.red),
@@ -215,7 +214,7 @@ class _HomePageState extends State<HomePage> {
                     Get.toNamed('/login');
                   },
                   leading: Icon(Iconsax.logout, color: Colors.red),
-                  title: Text('Sign Out',
+                  title: Text(S.of(context).msignout,
                       style: TextStyle(
                         color: Theme.of(context).hintColor,
                       )),
@@ -352,7 +351,7 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     Text(
-                      '\Tasks',
+                      S.of(context).tlttask,
                       style: TextStyle(
                         color: Theme.of(context).primaryColor,
                         fontSize: 22,
@@ -392,7 +391,7 @@ class _HomePageState extends State<HomePage> {
                               width: 3,
                             ),
                             Text(
-                              'Tasks',
+                              S.of(context).tlttask,
                               style: TextStyle(
                                 fontSize: 28,
                                 fontWeight: FontWeight.bold,
@@ -432,7 +431,7 @@ class _HomePageState extends State<HomePage> {
                       child: Column(children: [
                         GFButton(
                           onPressed: () {},
-                          text: "Transfers",
+                          text: S.of(context).ttransfer,
                           icon: Icon(Iconsax.arrow_2, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
@@ -444,7 +443,7 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {
                             Get.toNamed('/reception');
                           },
-                          text: "Reception",
+                          text: S.of(context).treception,
                           icon: Icon(Iconsax.box_add, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
@@ -466,7 +465,7 @@ class _HomePageState extends State<HomePage> {
                                   onPressed: () {
                                     Get.toNamed('/containernum');
                                   },
-                                  text: "Picking",
+                                  text: S.of(context).tpicking,
                                   icon: Icon(Iconsax.box_search,
                                       color: Colors.red),
                                   textColor: Theme.of(context).primaryColor,
@@ -487,7 +486,7 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {
                             Get.toNamed('/stock');
                           },
-                          text: "Stock",
+                          text: S.of(context).tstock,
                           icon: Icon(Iconsax.document, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
@@ -499,7 +498,7 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {
                             Get.toNamed('/replacement');
                           },
-                          text: "Replacement",
+                          text: S.of(context).treplacement,
                           icon: Icon(Iconsax.box_tick, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
@@ -511,7 +510,7 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {
                             Get.toNamed('/savereception');
                           },
-                          text: "Receiving Guard",
+                          text: S.of(context).treceivinguard,
                           icon: Icon(Iconsax.save_2, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
@@ -521,7 +520,7 @@ class _HomePageState extends State<HomePage> {
                         Divider(),
                         GFButton(
                           onPressed: () {},
-                          text: "Consolidated Control",
+                          text: S.of(context).tconsocontrol,
                           icon: Icon(Iconsax.security, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
@@ -531,7 +530,7 @@ class _HomePageState extends State<HomePage> {
                         Divider(),
                         GFButton(
                           onPressed: () {},
-                          text: "Consolidated Car Dispatch",
+                          text: S.of(context).tconsocardis,
                           icon: Icon(Iconsax.box, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
@@ -554,7 +553,9 @@ class _HomePageState extends State<HomePage> {
 
   void showAlertDialog(BuildContext context) => showDialog(
         builder: (context) => AlertDialog(
-          title: Text('Welcome to RFBuilder'),
+          title: Text(
+            S.of(context).modalhwelcome,
+          ),
           content: Text(
             'Task managers',
           ),
@@ -562,7 +563,7 @@ class _HomePageState extends State<HomePage> {
             OutlineButton(
               onPressed: () => Navigator.of(context).pop(),
               child: Text(
-                'Close',
+                S.of(context).modalhclose,
               ),
               color: Colors.red,
             )

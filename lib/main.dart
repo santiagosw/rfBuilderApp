@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-import 'package:rfbuilder_app/l10n/l10n.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:rfbuilder_app/screens/login.dart';
 import 'package:rfbuilder_app/screens/menu.dart';
@@ -13,7 +12,8 @@ import 'package:rfbuilder_app/screens/register.dart';
 import 'package:rfbuilder_app/screens/replacement/replacement_page.dart';
 import 'package:rfbuilder_app/screens/save_reception/sreception_page.dart';
 import 'package:rfbuilder_app/screens/stock/stock_page.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'generated/l10n.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() => runApp(MyApp());
 
@@ -30,13 +30,13 @@ class MyApp extends StatelessWidget {
             themeMode: themeProvider.themeMode,
             theme: MyThemes.lightTheme,
             darkTheme: MyThemes.darkTheme,
-            supportedLocales: L10n.all,
             localizationsDelegates: [
-              AppLocalizations.delegate,
+              S.delegate,
               GlobalMaterialLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
               GlobalWidgetsLocalizations.delegate,
             ],
+            supportedLocales: S.delegate.supportedLocales,
             home: LoginPage(),
             getPages: [
               GetPage(
