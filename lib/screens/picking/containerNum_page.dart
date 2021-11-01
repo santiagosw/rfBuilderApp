@@ -3,6 +3,7 @@ import 'package:flutter_verification_code/flutter_verification_code.dart';
 import 'dart:async';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:rfbuilder_app/generated/l10n.dart';
 
 class ContainerNum extends StatefulWidget {
   const ContainerNum({Key? key}) : super(key: key);
@@ -76,7 +77,7 @@ class _ContainerNumState extends State<ContainerNum> {
                     height: 80,
                   ),
                   Text(
-                    "Container",
+                    S.of(context).modalcontainer,
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
@@ -87,7 +88,7 @@ class _ContainerNumState extends State<ContainerNum> {
                     height: 30,
                   ),
                   Text(
-                    "Please enter the  digit code of container picking",
+                    S.of(context).modalcontainerdes,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 16,
@@ -164,7 +165,7 @@ class _ContainerNumState extends State<ContainerNum> {
                                 size: 30,
                               )
                             : Text(
-                                "Continue",
+                                S.of(context).btncontinue,
                                 style: TextStyle(color: Colors.white),
                               ),
                   )

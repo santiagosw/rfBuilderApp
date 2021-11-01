@@ -1,8 +1,14 @@
 {
+    "@_LOGIN_PAGE": {
+    },
+
     "email": "Correo Electronico",
     "password": "Contraseña",
     "forgotpassword": "¿Olvido su contraseña?",
-    "btnlogin": "Ingresar",
+    
+
+    "@_SLIDE_MENU": {
+    },
 
     "suser": "Usuario",
     "mdashboard": "Menu",
@@ -14,10 +20,9 @@
     "mslidem": "Menu Desplegable",
     "msignout": "Cerrar Sesión",
 
-    "modalhwelcome": "Bienvenido a RFBuilder",
-    "modalhclose": "Cerrar",
+    "@_MENU_PAGE": {
+    },
 
-    "tlttask": "Tareas",
     "ttransfer": "Transferencias",
     "treception": "Recepcion",
     "tpicking": "Retirar",
@@ -26,13 +31,71 @@
     "treceivinguard": "Guardado de Recepción",
     "tconsocontrol": "Control Consolidado",
     "tconsocardis": "Despacho Carro Consolidado",
-    "textWithPlaceholder": "Bienvenido {name}",
-    "textWithPlaceholders": "Mi nom bre es {lastName}, {firstName} {lastName}",
-    "@textWithPlaceholders": {
-        "placeholders": {
-            "firstName": {},
-            "lastName": {}
-        }
+
+
+    "@_TITLES": {
     },
-    "textWithPlural": "{howMany, plural, one{Tienes 1 notificación} other{Tienes {howMany} notificaciones}}"
+    "tlttask": "Tareas",
+    "tltreception": "Recepción",
+    "tltpicking": "Retirar",
+    "tltstock": "Inventario",
+    "tltreplacement": "Reposición",
+    "tltreceivinguard": "Guardado de Recepción",
+    
+
+
+    "@_TEXTFIELDS": {
+    },   
+    
+    "tfposition": "Posición",
+    "tfproduct": "Producto",
+    "tfdescription": "Descripción",
+    "tfexpiration": "Vencimiento",
+    "tfamount": "Cantidad",
+    "tfpickingpos": "Posicion de Retiro",
+    "tfprodcod": "Codigo de Producto",
+    "tfenterpos": "Ingresar Posicion",
+    "tfenteritem": "Ingresar Producto",
+    "tforigin": "Origen",
+    "tfdestination": "Destino",
+    "tfcarnum": "Numero de carro",
+    "tfreason": "Razón",
+
+
+    "@_POPUPS_MODALS": {
+    },
+    "modalhwelcome": "Bienvenido a RFBuilder",
+    "modalhclose": "Cerrar",
+    "modalcontainer": "Contenedor",
+    "modalcontainerdes": "Ingrese el codigo de digitos del paquete",
+
+    "@_HINT_TEXTS": {
+    },
+
+    "htdes": "Escribe una descripción",
+
+    "@_BUTTONS": {
+    },
+    
+    "btnlogin": "Ingresar",
+    "btncontinue": "Continuar",
+
+    
+    "@_LABELS": {
+    },
+
+    "lblpackages": "Paquetes",
+    "lbldisplay": "Monitores",
+    "lblunits": "Unidades",
+    "lblpicking": "Retiro",
+    "lblwarehouse": "Deposito",
+    "lblproduct": "Producto",
+    "lblamount": "Cantidad",
+    "lblunit": "Unidad",
+    "lblexpiration": "Vencimiento",
+    "lbldes": "Descripción"
 }
+
+
+
+

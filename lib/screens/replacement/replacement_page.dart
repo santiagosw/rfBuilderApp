@@ -6,6 +6,7 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
+import 'package:rfbuilder_app/generated/l10n.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -107,7 +108,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
                   child: Text(
-                    "User",
+                    S.of(context).suser,
                     style: TextStyle(
                         color: Theme.of(context).hintColor,
                         fontWeight: FontWeight.w600),
@@ -123,7 +124,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                   },
                   leading: Icon(Iconsax.home, color: Colors.red),
                   title: Text(
-                    'Dashboard',
+                    S.of(context).mdashboard,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -133,7 +134,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.task, color: Colors.red),
                   title: Text(
-                    'Tasks',
+                    S.of(context).mtask,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -143,7 +144,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.profile_2user, color: Colors.red),
                   title: Text(
-                    'Contacts',
+                    S.of(context).mtask,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -154,7 +155,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.setting_2, color: Colors.red),
                   title: Text(
-                    'Settings',
+                    S.of(context).msettings,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -164,7 +165,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.support, color: Colors.red),
                   title: Text(
-                    'Support',
+                    S.of(context).msupport,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -175,7 +176,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.moon, color: Colors.red),
                   title: Text(
-                    'Dark Mode',
+                    S.of(context).mdarkmode,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -197,7 +198,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.menu, color: Colors.red),
                   title: Text(
-                    'Slide Menu',
+                    S.of(context).mslidem,
                     style: TextStyle(color: Theme.of(context).hintColor),
                   ),
                   trailing: Icon(Iconsax.arrow_circle_up, color: Colors.red),
@@ -207,7 +208,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                     Get.toNamed('/login');
                   },
                   leading: Icon(Iconsax.logout, color: Colors.red),
-                  title: Text('Sign Out',
+                  title: Text(S.of(context).msignout,
                       style: TextStyle(
                         color: Theme.of(context).hintColor,
                       )),
@@ -344,7 +345,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                 child: Column(
                   children: [
                     Text(
-                      '\Replacement',
+                      S.of(context).tltreplacement,
                       style: TextStyle(
                         color: Theme.of(context).primaryColor,
                         fontSize: 22,
@@ -384,7 +385,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                               width: 3,
                             ),
                             Text(
-                              'Replacement',
+                              S.of(context).tltreplacement,
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -424,7 +425,8 @@ class _ReplacementPageState extends State<ReplacementPage> {
                         Row(
                           children: [
                             Text(
-                              'Warehouse: $almacen',
+                              S.of(context).lblwarehouse,
+                              semanticsLabel: '$almacen',
                               style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                                 fontSize: 15,
@@ -433,7 +435,8 @@ class _ReplacementPageState extends State<ReplacementPage> {
                             ),
                             SizedBox(width: 10),
                             Text(
-                              'Picking: $picking',
+                              S.of(context).lblpicking,
+                              semanticsLabel: '$picking',
                               style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                                 fontSize: 15,
@@ -450,7 +453,8 @@ class _ReplacementPageState extends State<ReplacementPage> {
                         Row(
                           children: [
                             Text(
-                              'Product: $producto',
+                              S.of(context).lblproduct,
+                              semanticsLabel: '$producto',
                               style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                                 fontSize: 15,
@@ -459,7 +463,8 @@ class _ReplacementPageState extends State<ReplacementPage> {
                             ),
                             SizedBox(width: 5),
                             Text(
-                              'Amount: $cantidad',
+                              S.of(context).lblamount,
+                              semanticsLabel: '$cantidad',
                               style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                                 fontSize: 15,
@@ -468,7 +473,8 @@ class _ReplacementPageState extends State<ReplacementPage> {
                             ),
                             SizedBox(width: 5),
                             Text(
-                              'Unit: $unmed',
+                              S.of(context).lblunit,
+                              semanticsLabel: '$unmed',
                               style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                                 fontSize: 15,
@@ -485,7 +491,8 @@ class _ReplacementPageState extends State<ReplacementPage> {
                         Row(
                           children: [
                             Text(
-                              'Expiration: $vto',
+                              S.of(context).lblexpiration,
+                              semanticsLabel: '$vto',
                               style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                                 fontSize: 15,
@@ -511,7 +518,8 @@ class _ReplacementPageState extends State<ReplacementPage> {
                                   height: 100,
                                   width: 300,
                                   child: Text(
-                                    'Description: $des',
+                                    S.of(context).lbldes,
+                                    semanticsLabel: '$des',
                                     style: TextStyle(
                                       color: Theme.of(context).primaryColor,
                                       fontSize: 15,
@@ -543,7 +551,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Origin',
+                            labelText: S.of(context).tforigin,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -593,7 +601,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Product',
+                            labelText: S.of(context).tfproduct,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -640,7 +648,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Amount',
+                            labelText: S.of(context).tfamount,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -679,7 +687,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Destination',
+                            labelText: S.of(context).tfdestination,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,

@@ -6,6 +6,7 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
+import 'package:rfbuilder_app/generated/l10n.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -81,8 +82,6 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
         child: Container(
           padding: EdgeInsets.only(top: 20),
           child: ListTileTheme(
-            textColor: Colors.white,
-            iconColor: Colors.white,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -105,9 +104,10 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
                   child: Text(
-                    "User",
+                    S.of(context).suser,
                     style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.w600),
+                        color: Theme.of(context).hintColor,
+                        fontWeight: FontWeight.w600),
                   ),
                 ),
                 Spacer(),
@@ -118,35 +118,65 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                   onTap: () {
                     Get.toNamed('/home');
                   },
-                  leading: Icon(Iconsax.home),
-                  title: Text('Dashboard'),
+                  leading: Icon(Iconsax.home, color: Colors.red),
+                  title: Text(
+                    S.of(context).mdashboard,
+                    style: TextStyle(
+                      color: Theme.of(context).hintColor,
+                    ),
+                  ),
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.task),
-                  title: Text('Tasks'),
+                  leading: Icon(Iconsax.task, color: Colors.red),
+                  title: Text(
+                    S.of(context).mtask,
+                    style: TextStyle(
+                      color: Theme.of(context).hintColor,
+                    ),
+                  ),
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.profile_2user),
-                  title: Text('Contacts'),
+                  leading: Icon(Iconsax.profile_2user, color: Colors.red),
+                  title: Text(
+                    S.of(context).mtask,
+                    style: TextStyle(
+                      color: Theme.of(context).hintColor,
+                    ),
+                  ),
                 ),
                 Divider(color: Colors.grey.shade800),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.setting_2),
-                  title: Text('Settings'),
+                  leading: Icon(Iconsax.setting_2, color: Colors.red),
+                  title: Text(
+                    S.of(context).msettings,
+                    style: TextStyle(
+                      color: Theme.of(context).hintColor,
+                    ),
+                  ),
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.support),
-                  title: Text('Support'),
+                  leading: Icon(Iconsax.support, color: Colors.red),
+                  title: Text(
+                    S.of(context).msupport,
+                    style: TextStyle(
+                      color: Theme.of(context).hintColor,
+                    ),
+                  ),
                 ),
                 Divider(color: Colors.grey.shade800),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.moon),
-                  title: Text('Dark Mode'),
+                  leading: Icon(Iconsax.moon, color: Colors.red),
+                  title: Text(
+                    S.of(context).mdarkmode,
+                    style: TextStyle(
+                      color: Theme.of(context).hintColor,
+                    ),
+                  ),
                   trailing: GFToggle(
                     onChanged: (value) {
                       final provider =
@@ -162,16 +192,22 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.menu),
-                  title: Text('Slide Menu'),
-                  trailing: Icon(Iconsax.arrow_circle_up),
+                  leading: Icon(Iconsax.menu, color: Colors.red),
+                  title: Text(
+                    S.of(context).mslidem,
+                    style: TextStyle(color: Theme.of(context).hintColor),
+                  ),
+                  trailing: Icon(Iconsax.arrow_circle_up, color: Colors.red),
                 ),
                 ListTile(
                   onTap: () {
                     Get.toNamed('/login');
                   },
-                  leading: Icon(Iconsax.logout),
-                  title: Text('Sign Out'),
+                  leading: Icon(Iconsax.logout, color: Colors.red),
+                  title: Text(S.of(context).msignout,
+                      style: TextStyle(
+                        color: Theme.of(context).hintColor,
+                      )),
                 ),
                 Spacer(),
                 Padding(
@@ -305,7 +341,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                 child: Column(
                   children: [
                     Text(
-                      '\Receiving Guard',
+                      S.of(context).tltreceivinguard,
                       style: TextStyle(
                         color: Theme.of(context).primaryColor,
                         fontSize: 22,
@@ -345,7 +381,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                               width: 3,
                             ),
                             Text(
-                              'Receiving Guard',
+                              S.of(context).tltreceivinguard,
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -398,7 +434,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Car Number',
+                            labelText: S.of(context).tfcarnum,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -444,7 +480,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Product',
+                            labelText: S.of(context).tfproduct,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -494,7 +530,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Position',
+                            labelText: S.of(context).tfposition,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -540,7 +576,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Product',
+                            labelText: S.of(context).tfproduct,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -587,7 +623,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Amount',
+                            labelText: S.of(context).tfamount,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -632,8 +668,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             helperMaxLines: 8,
-                            hintText: 'Reason',
-                            labelText: 'Reason',
+                            labelText: S.of(context).tfreason,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,

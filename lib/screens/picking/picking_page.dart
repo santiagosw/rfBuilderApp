@@ -6,6 +6,7 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
+import 'package:rfbuilder_app/generated/l10n.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -117,7 +118,7 @@ class _PickingPageState extends State<PickingPage> {
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
                   child: Text(
-                    "User",
+                    S.of(context).suser,
                     style: TextStyle(
                         color: Theme.of(context).hintColor,
                         fontWeight: FontWeight.w600),
@@ -133,7 +134,7 @@ class _PickingPageState extends State<PickingPage> {
                   },
                   leading: Icon(Iconsax.home, color: Colors.red),
                   title: Text(
-                    'Dashboard',
+                    S.of(context).mdashboard,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -143,7 +144,7 @@ class _PickingPageState extends State<PickingPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.task, color: Colors.red),
                   title: Text(
-                    'Tasks',
+                    S.of(context).mtask,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -153,7 +154,7 @@ class _PickingPageState extends State<PickingPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.profile_2user, color: Colors.red),
                   title: Text(
-                    'Contacts',
+                    S.of(context).mcontacts,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -164,7 +165,7 @@ class _PickingPageState extends State<PickingPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.setting_2, color: Colors.red),
                   title: Text(
-                    'Settings',
+                    S.of(context).msettings,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -174,7 +175,7 @@ class _PickingPageState extends State<PickingPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.support, color: Colors.red),
                   title: Text(
-                    'Support',
+                    S.of(context).msupport,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -185,7 +186,7 @@ class _PickingPageState extends State<PickingPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.moon, color: Colors.red),
                   title: Text(
-                    'Dark Mode',
+                    S.of(context).mdarkmode,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -207,7 +208,7 @@ class _PickingPageState extends State<PickingPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.menu, color: Colors.red),
                   title: Text(
-                    'Slide Menu',
+                    S.of(context).mslidem,
                     style: TextStyle(color: Theme.of(context).hintColor),
                   ),
                   trailing: Icon(Iconsax.arrow_circle_up, color: Colors.red),
@@ -217,7 +218,7 @@ class _PickingPageState extends State<PickingPage> {
                     Get.toNamed('/login');
                   },
                   leading: Icon(Iconsax.logout, color: Colors.red),
-                  title: Text('Sign Out',
+                  title: Text(S.of(context).msignout,
                       style: TextStyle(
                         color: Theme.of(context).hintColor,
                       )),
@@ -354,7 +355,7 @@ class _PickingPageState extends State<PickingPage> {
                 child: Column(
                   children: [
                     Text(
-                      '\Picking',
+                      S.of(context).tltpicking,
                       style: TextStyle(
                         color: Theme.of(context).primaryColor,
                         fontSize: 22,
@@ -394,7 +395,7 @@ class _PickingPageState extends State<PickingPage> {
                               width: 3,
                             ),
                             Text(
-                              'Picking',
+                              S.of(context).tltpicking,
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -446,7 +447,7 @@ class _PickingPageState extends State<PickingPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Position',
+                            labelText: S.of(context).tfposition,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -493,7 +494,7 @@ class _PickingPageState extends State<PickingPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Amount',
+                            labelText: S.of(context).tfamount,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -543,7 +544,7 @@ class _PickingPageState extends State<PickingPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Position Picking',
+                            labelText: S.of(context).tfpickingpos,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -590,7 +591,7 @@ class _PickingPageState extends State<PickingPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Product Code',
+                            labelText: S.of(context).tfprodcod,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -681,7 +682,7 @@ class _PickingPageState extends State<PickingPage> {
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Amount',
+                            labelText: S.of(context).tfamount,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,

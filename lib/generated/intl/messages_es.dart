@@ -19,23 +19,31 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'es';
 
-  static String m0(name) => "Bienvenido ${name}";
-
-  static String m1(firstName, lastName) =>
-      "Mi nom bre es ${lastName}, ${firstName} ${lastName}";
-
-  static String m2(howMany) =>
-      "${Intl.plural(howMany, one: 'Tienes 1 notificación', other: 'Tienes ${howMany} notificaciones')}";
-
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "btncontinue": MessageLookupByLibrary.simpleMessage("Continuar"),
         "btnlogin": MessageLookupByLibrary.simpleMessage("Ingresar"),
         "email": MessageLookupByLibrary.simpleMessage("Correo Electronico"),
         "forgotpassword":
             MessageLookupByLibrary.simpleMessage("¿Olvido su contraseña?"),
+        "htdes":
+            MessageLookupByLibrary.simpleMessage("Escribe una descripción"),
+        "lblamount": MessageLookupByLibrary.simpleMessage("Cantidad"),
+        "lbldes": MessageLookupByLibrary.simpleMessage("Descripción"),
+        "lbldisplay": MessageLookupByLibrary.simpleMessage("Monitores"),
+        "lblexpiration": MessageLookupByLibrary.simpleMessage("Vencimiento"),
+        "lblpackages": MessageLookupByLibrary.simpleMessage("Paquetes"),
+        "lblpicking": MessageLookupByLibrary.simpleMessage("Retiro"),
+        "lblproduct": MessageLookupByLibrary.simpleMessage("Producto"),
+        "lblunit": MessageLookupByLibrary.simpleMessage("Unidad"),
+        "lblunits": MessageLookupByLibrary.simpleMessage("Unidades"),
+        "lblwarehouse": MessageLookupByLibrary.simpleMessage("Deposito"),
         "mcontacts": MessageLookupByLibrary.simpleMessage("Contactos"),
         "mdarkmode": MessageLookupByLibrary.simpleMessage("Modo Oscuro"),
         "mdashboard": MessageLookupByLibrary.simpleMessage("Menu"),
+        "modalcontainer": MessageLookupByLibrary.simpleMessage("Contenedor"),
+        "modalcontainerdes": MessageLookupByLibrary.simpleMessage(
+            "Ingrese el codigo de digitos del paquete"),
         "modalhclose": MessageLookupByLibrary.simpleMessage("Cerrar"),
         "modalhwelcome":
             MessageLookupByLibrary.simpleMessage("Bienvenido a RFBuilder"),
@@ -50,9 +58,27 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Despacho Carro Consolidado"),
         "tconsocontrol":
             MessageLookupByLibrary.simpleMessage("Control Consolidado"),
-        "textWithPlaceholder": m0,
-        "textWithPlaceholders": m1,
-        "textWithPlural": m2,
+        "tfamount": MessageLookupByLibrary.simpleMessage("Cantidad"),
+        "tfcarnum": MessageLookupByLibrary.simpleMessage("Numero de carro"),
+        "tfdescription": MessageLookupByLibrary.simpleMessage("Descripción"),
+        "tfdestination": MessageLookupByLibrary.simpleMessage("Destino"),
+        "tfenteritem":
+            MessageLookupByLibrary.simpleMessage("Ingresar Producto"),
+        "tfenterpos": MessageLookupByLibrary.simpleMessage("Ingresar Posicion"),
+        "tfexpiration": MessageLookupByLibrary.simpleMessage("Vencimiento"),
+        "tforigin": MessageLookupByLibrary.simpleMessage("Origen"),
+        "tfpickingpos":
+            MessageLookupByLibrary.simpleMessage("Posicion de Retiro"),
+        "tfposition": MessageLookupByLibrary.simpleMessage("Posición"),
+        "tfprodcod": MessageLookupByLibrary.simpleMessage("Codigo de Producto"),
+        "tfproduct": MessageLookupByLibrary.simpleMessage("Producto"),
+        "tfreason": MessageLookupByLibrary.simpleMessage("Razón"),
+        "tltpicking": MessageLookupByLibrary.simpleMessage("Retirar"),
+        "tltreceivinguard":
+            MessageLookupByLibrary.simpleMessage("Guardado de Recepción"),
+        "tltreception": MessageLookupByLibrary.simpleMessage("Recepción"),
+        "tltreplacement": MessageLookupByLibrary.simpleMessage("Reposición"),
+        "tltstock": MessageLookupByLibrary.simpleMessage("Inventario"),
         "tlttask": MessageLookupByLibrary.simpleMessage("Tareas"),
         "tpicking": MessageLookupByLibrary.simpleMessage("Retirar"),
         "treceivinguard":

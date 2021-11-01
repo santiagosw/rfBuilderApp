@@ -1,8 +1,13 @@
 {
+    "@_LOGIN_PAGE": {
+    },
+
     "email": "Email",
     "password": "Paswword",
     "forgotpassword": "Forgot Password?",
-    "btnlogin": "Login",
+
+    "@_SLIDE_MENU": {
+    },
 
     "suser": "User",
     "mdashboard": "Dashboard",
@@ -14,10 +19,9 @@
     "mslidem": "Slide Menu",
     "msignout": "SignOut",
     
-    "modalhwelcome": "Welcome to RFBuilder",
-    "modalhclose": "Close",
+    "@_MENU_PAGE": {
+    },
 
-    "tlttask": "Tasks",
     "ttransfer": "Transfers",
     "treception": "Reception",
     "tpicking": "Picking",
@@ -26,14 +30,66 @@
     "treceivinguard": "Receiving Guard",
     "tconsocontrol": "Consolidated Control",
     "tconsocardis": "Consolidated Car Dispatch",
-    "textWithPlaceholder": "Welcome {name}",
-    "textWithPlaceholders": "My name is {lastName}, {firstName} {lastName}",
-    "@textWithPlaceholders": {
-        "placeholders": {
-            "firstName": {},
-            "lastName": {}
-        }
+
+  
+    "@_TITLES": {
     },
-    "textWithPlural": "{howMany, plural, one{You have 1 notification} other{You have {howMany} notifications}}"
+    "tlttask": "Tasks",
+    "tltreception": "Reception",
+    "tltpicking": "Picking",
+    "tltstock": "Stock",
+    "tltreplacement": "Replacement",
+    "tltreceivinguard": "Save Reception",
+    
+
+    "@_TEXTFIELDS": {
+    },   
+    
+    "tfposition": "Position",
+    "tfproduct": "Product",
+    "tfdescription": "Description",
+    "tfexpiration": "Expiration",
+    "tfamount": "Amount",
+    "tfpickingpos": "Position Picking",
+    "tfprodcod": "Product Code",
+    "tfenterpos": "Enter Position",
+    "tfenteritem": "Enter Item",
+    "tforigin": "Origin",
+    "tfdestination": "Destination",
+    "tfcarnum": "Car Number",
+    "tfreason": "Reason",
+
+
+    "@_POPUPS_MODALS": {
+    },
+    "modalhwelcome": "Welcome to RFBuilder",
+    "modalhclose": "Close",
+    "modalcontainer": "Container",
+    "modalcontainerdes": "Please enter te digitcode of container picking",
+
+    "@_HINT_TEXTS": {
+    },
+
+    "htdes": "type here a description",
+ 
+    "@_BUTTONS": {
+    },
+
+    "btnlogin": "Login",
+    "btncontinue": "Continue",
+
+    "@_LABELS": {
+    },
+
+    "lblpackages": "Packages",
+    "lbldisplay": "Display",
+    "lblunits": "Units",
+    "lblpicking": "Picking",
+    "lblwarehouse": "Warehouse",
+    "lblproduct": "Product",
+    "lblamount": "Amount",
+    "lblunit": "Unit",
+    "lblexpiration": "Expiration",
+    "lbldes": "Description"
     
 }

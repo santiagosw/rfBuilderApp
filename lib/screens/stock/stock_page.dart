@@ -6,6 +6,7 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
+import 'package:rfbuilder_app/generated/l10n.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -108,7 +109,7 @@ class _StockPageState extends State<StockPage> {
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
                   child: Text(
-                    "User",
+                    S.of(context).suser,
                     style: TextStyle(
                         color: Theme.of(context).hintColor,
                         fontWeight: FontWeight.w600),
@@ -124,7 +125,7 @@ class _StockPageState extends State<StockPage> {
                   },
                   leading: Icon(Iconsax.home, color: Colors.red),
                   title: Text(
-                    'Dashboard',
+                    S.of(context).mdashboard,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -134,7 +135,7 @@ class _StockPageState extends State<StockPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.task, color: Colors.red),
                   title: Text(
-                    'Tasks',
+                    S.of(context).mtask,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -144,7 +145,7 @@ class _StockPageState extends State<StockPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.profile_2user, color: Colors.red),
                   title: Text(
-                    'Contacts',
+                    S.of(context).mtask,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -155,7 +156,7 @@ class _StockPageState extends State<StockPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.setting_2, color: Colors.red),
                   title: Text(
-                    'Settings',
+                    S.of(context).msettings,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -165,7 +166,7 @@ class _StockPageState extends State<StockPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.support, color: Colors.red),
                   title: Text(
-                    'Support',
+                    S.of(context).msupport,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -176,7 +177,7 @@ class _StockPageState extends State<StockPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.moon, color: Colors.red),
                   title: Text(
-                    'Dark Mode',
+                    S.of(context).mdarkmode,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -198,7 +199,7 @@ class _StockPageState extends State<StockPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.menu, color: Colors.red),
                   title: Text(
-                    'Slide Menu',
+                    S.of(context).mslidem,
                     style: TextStyle(color: Theme.of(context).hintColor),
                   ),
                   trailing: Icon(Iconsax.arrow_circle_up, color: Colors.red),
@@ -208,7 +209,7 @@ class _StockPageState extends State<StockPage> {
                     Get.toNamed('/login');
                   },
                   leading: Icon(Iconsax.logout, color: Colors.red),
-                  title: Text('Sign Out',
+                  title: Text(S.of(context).msignout,
                       style: TextStyle(
                         color: Theme.of(context).hintColor,
                       )),
@@ -345,7 +346,7 @@ class _StockPageState extends State<StockPage> {
                 child: Column(
                   children: [
                     Text(
-                      '\Stock',
+                      S.of(context).tltstock,
                       style: TextStyle(
                         color: Theme.of(context).primaryColor,
                         fontSize: 22,
@@ -385,7 +386,7 @@ class _StockPageState extends State<StockPage> {
                               width: 3,
                             ),
                             Text(
-                              'Stock',
+                              S.of(context).tltstock,
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -423,7 +424,8 @@ class _StockPageState extends State<StockPage> {
                     FadeInDown(
                       duration: Duration(milliseconds: 500),
                       child: Column(children: [
-                        Text('Position: $position',
+                        Text(S.of(context).tfposition,
+                            semanticsLabel: 'Position: $position',
                             style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                                 fontSize: 14.0,
@@ -447,7 +449,7 @@ class _StockPageState extends State<StockPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Enter Position',
+                            labelText: S.of(context).tfenterpos,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -479,7 +481,8 @@ class _StockPageState extends State<StockPage> {
                           ),
                         ),
                         SizedBox(height: 10),
-                        Text('Product: $product',
+                        Text(S.of(context).tfproduct,
+                            semanticsLabel: 'Product: $product',
                             style: TextStyle(
                                 color: Theme.of(context).primaryColor,
                                 fontSize: 14.0,
@@ -502,7 +505,7 @@ class _StockPageState extends State<StockPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Enter Item',
+                            labelText: S.of(context).tfenteritem,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -549,7 +552,7 @@ class _StockPageState extends State<StockPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Expiration Date',
+                            labelText: S.of(context).tfexpiration,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -598,7 +601,7 @@ class _StockPageState extends State<StockPage> {
                                   color: Colors.red,
                                 )),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: 'Amount',
+                            labelText: S.of(context).tfamount,
                             labelStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,

@@ -19,23 +19,31 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(name) => "Welcome ${name}";
-
-  static String m1(firstName, lastName) =>
-      "My name is ${lastName}, ${firstName} ${lastName}";
-
-  static String m2(howMany) =>
-      "${Intl.plural(howMany, one: 'You have 1 notification', other: 'You have ${howMany} notifications')}";
-
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "btncontinue": MessageLookupByLibrary.simpleMessage("Continue"),
         "btnlogin": MessageLookupByLibrary.simpleMessage("Login"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "forgotpassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+        "htdes":
+            MessageLookupByLibrary.simpleMessage("type here a description"),
+        "lblamount": MessageLookupByLibrary.simpleMessage("Amount"),
+        "lbldes": MessageLookupByLibrary.simpleMessage("Description"),
+        "lbldisplay": MessageLookupByLibrary.simpleMessage("Display"),
+        "lblexpiration": MessageLookupByLibrary.simpleMessage("Expiration"),
+        "lblpackages": MessageLookupByLibrary.simpleMessage("Packages"),
+        "lblpicking": MessageLookupByLibrary.simpleMessage("Picking"),
+        "lblproduct": MessageLookupByLibrary.simpleMessage("Product"),
+        "lblunit": MessageLookupByLibrary.simpleMessage("Unit"),
+        "lblunits": MessageLookupByLibrary.simpleMessage("Units"),
+        "lblwarehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),
         "mcontacts": MessageLookupByLibrary.simpleMessage("Contacts"),
         "mdarkmode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
         "mdashboard": MessageLookupByLibrary.simpleMessage("Dashboard"),
+        "modalcontainer": MessageLookupByLibrary.simpleMessage("Container"),
+        "modalcontainerdes": MessageLookupByLibrary.simpleMessage(
+            "Please enter te digitcode of container picking"),
         "modalhclose": MessageLookupByLibrary.simpleMessage("Close"),
         "modalhwelcome":
             MessageLookupByLibrary.simpleMessage("Welcome to RFBuilder"),
@@ -50,9 +58,26 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Consolidated Car Dispatch"),
         "tconsocontrol":
             MessageLookupByLibrary.simpleMessage("Consolidated Control"),
-        "textWithPlaceholder": m0,
-        "textWithPlaceholders": m1,
-        "textWithPlural": m2,
+        "tfamount": MessageLookupByLibrary.simpleMessage("Amount"),
+        "tfcarnum": MessageLookupByLibrary.simpleMessage("Car Number"),
+        "tfdescription": MessageLookupByLibrary.simpleMessage("Description"),
+        "tfdestination": MessageLookupByLibrary.simpleMessage("Destination"),
+        "tfenteritem": MessageLookupByLibrary.simpleMessage("Enter Item"),
+        "tfenterpos": MessageLookupByLibrary.simpleMessage("Enter Position"),
+        "tfexpiration": MessageLookupByLibrary.simpleMessage("Expiration"),
+        "tforigin": MessageLookupByLibrary.simpleMessage("Origin"),
+        "tfpickingpos":
+            MessageLookupByLibrary.simpleMessage("Position Picking"),
+        "tfposition": MessageLookupByLibrary.simpleMessage("Position"),
+        "tfprodcod": MessageLookupByLibrary.simpleMessage("Product Code"),
+        "tfproduct": MessageLookupByLibrary.simpleMessage("Product"),
+        "tfreason": MessageLookupByLibrary.simpleMessage("Reason"),
+        "tltpicking": MessageLookupByLibrary.simpleMessage("Picking"),
+        "tltreceivinguard":
+            MessageLookupByLibrary.simpleMessage("Save Reception"),
+        "tltreception": MessageLookupByLibrary.simpleMessage("Reception"),
+        "tltreplacement": MessageLookupByLibrary.simpleMessage("Replacement"),
+        "tltstock": MessageLookupByLibrary.simpleMessage("Stock"),
         "tlttask": MessageLookupByLibrary.simpleMessage("Tasks"),
         "tpicking": MessageLookupByLibrary.simpleMessage("Picking"),
         "treceivinguard":

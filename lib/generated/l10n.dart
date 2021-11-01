@@ -80,16 +80,6 @@ class S {
     );
   }
 
-  /// `Login`
-  String get btnlogin {
-    return Intl.message(
-      'Login',
-      name: 'btnlogin',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `User`
   String get suser {
     return Intl.message(
@@ -180,36 +170,6 @@ class S {
     );
   }
 
-  /// `Welcome to RFBuilder`
-  String get modalhwelcome {
-    return Intl.message(
-      'Welcome to RFBuilder',
-      name: 'modalhwelcome',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Close`
-  String get modalhclose {
-    return Intl.message(
-      'Close',
-      name: 'modalhclose',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Tasks`
-  String get tlttask {
-    return Intl.message(
-      'Tasks',
-      name: 'tlttask',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Transfers`
   String get ttransfer {
     return Intl.message(
@@ -290,35 +250,363 @@ class S {
     );
   }
 
-  /// `Welcome {name}`
-  String textWithPlaceholder(Object name) {
+  /// `Tasks`
+  String get tlttask {
     return Intl.message(
-      'Welcome $name',
-      name: 'textWithPlaceholder',
+      'Tasks',
+      name: 'tlttask',
       desc: '',
-      args: [name],
+      args: [],
     );
   }
 
-  /// `My name is {lastName}, {firstName} {lastName}`
-  String textWithPlaceholders(Object firstName, Object lastName) {
+  /// `Reception`
+  String get tltreception {
     return Intl.message(
-      'My name is $lastName, $firstName $lastName',
-      name: 'textWithPlaceholders',
+      'Reception',
+      name: 'tltreception',
       desc: '',
-      args: [firstName, lastName],
+      args: [],
     );
   }
 
-  /// `{howMany, plural, one{You have 1 notification} other{You have {howMany} notifications}}`
-  String textWithPlural(num howMany) {
-    return Intl.plural(
-      howMany,
-      one: 'You have 1 notification',
-      other: 'You have $howMany notifications',
-      name: 'textWithPlural',
+  /// `Picking`
+  String get tltpicking {
+    return Intl.message(
+      'Picking',
+      name: 'tltpicking',
       desc: '',
-      args: [howMany],
+      args: [],
+    );
+  }
+
+  /// `Stock`
+  String get tltstock {
+    return Intl.message(
+      'Stock',
+      name: 'tltstock',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Replacement`
+  String get tltreplacement {
+    return Intl.message(
+      'Replacement',
+      name: 'tltreplacement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Reception`
+  String get tltreceivinguard {
+    return Intl.message(
+      'Save Reception',
+      name: 'tltreceivinguard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Position`
+  String get tfposition {
+    return Intl.message(
+      'Position',
+      name: 'tfposition',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Product`
+  String get tfproduct {
+    return Intl.message(
+      'Product',
+      name: 'tfproduct',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get tfdescription {
+    return Intl.message(
+      'Description',
+      name: 'tfdescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expiration`
+  String get tfexpiration {
+    return Intl.message(
+      'Expiration',
+      name: 'tfexpiration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amount`
+  String get tfamount {
+    return Intl.message(
+      'Amount',
+      name: 'tfamount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Position Picking`
+  String get tfpickingpos {
+    return Intl.message(
+      'Position Picking',
+      name: 'tfpickingpos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Product Code`
+  String get tfprodcod {
+    return Intl.message(
+      'Product Code',
+      name: 'tfprodcod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Position`
+  String get tfenterpos {
+    return Intl.message(
+      'Enter Position',
+      name: 'tfenterpos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Item`
+  String get tfenteritem {
+    return Intl.message(
+      'Enter Item',
+      name: 'tfenteritem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Origin`
+  String get tforigin {
+    return Intl.message(
+      'Origin',
+      name: 'tforigin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Destination`
+  String get tfdestination {
+    return Intl.message(
+      'Destination',
+      name: 'tfdestination',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Car Number`
+  String get tfcarnum {
+    return Intl.message(
+      'Car Number',
+      name: 'tfcarnum',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reason`
+  String get tfreason {
+    return Intl.message(
+      'Reason',
+      name: 'tfreason',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to RFBuilder`
+  String get modalhwelcome {
+    return Intl.message(
+      'Welcome to RFBuilder',
+      name: 'modalhwelcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Close`
+  String get modalhclose {
+    return Intl.message(
+      'Close',
+      name: 'modalhclose',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Container`
+  String get modalcontainer {
+    return Intl.message(
+      'Container',
+      name: 'modalcontainer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter te digitcode of container picking`
+  String get modalcontainerdes {
+    return Intl.message(
+      'Please enter te digitcode of container picking',
+      name: 'modalcontainerdes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `type here a description`
+  String get htdes {
+    return Intl.message(
+      'type here a description',
+      name: 'htdes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get btnlogin {
+    return Intl.message(
+      'Login',
+      name: 'btnlogin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get btncontinue {
+    return Intl.message(
+      'Continue',
+      name: 'btncontinue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Packages`
+  String get lblpackages {
+    return Intl.message(
+      'Packages',
+      name: 'lblpackages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Display`
+  String get lbldisplay {
+    return Intl.message(
+      'Display',
+      name: 'lbldisplay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Units`
+  String get lblunits {
+    return Intl.message(
+      'Units',
+      name: 'lblunits',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Picking`
+  String get lblpicking {
+    return Intl.message(
+      'Picking',
+      name: 'lblpicking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Warehouse`
+  String get lblwarehouse {
+    return Intl.message(
+      'Warehouse',
+      name: 'lblwarehouse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Product`
+  String get lblproduct {
+    return Intl.message(
+      'Product',
+      name: 'lblproduct',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amount`
+  String get lblamount {
+    return Intl.message(
+      'Amount',
+      name: 'lblamount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unit`
+  String get lblunit {
+    return Intl.message(
+      'Unit',
+      name: 'lblunit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expiration`
+  String get lblexpiration {
+    return Intl.message(
+      'Expiration',
+      name: 'lblexpiration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get lbldes {
+    return Intl.message(
+      'Description',
+      name: 'lbldes',
+      desc: '',
+      args: [],
     );
   }
 }
