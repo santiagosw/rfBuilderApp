@@ -140,7 +140,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                   onTap: () {},
                   leading: Icon(Iconsax.profile_2user, color: Colors.red),
                   title: Text(
-                    S.of(context).mtask,
+                    S.of(context).mcontacts,
                     style: TextStyle(
                       color: Theme.of(context).hintColor,
                     ),
@@ -148,7 +148,9 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                 ),
                 Divider(color: Colors.grey.shade800),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed('/settings');
+                  },
                   leading: Icon(Iconsax.setting_2, color: Colors.red),
                   title: Text(
                     S.of(context).msettings,
@@ -168,37 +170,6 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                   ),
                 ),
                 Divider(color: Colors.grey.shade800),
-                ListTile(
-                  onTap: () {},
-                  leading: Icon(Iconsax.moon, color: Colors.red),
-                  title: Text(
-                    S.of(context).mdarkmode,
-                    style: TextStyle(
-                      color: Theme.of(context).hintColor,
-                    ),
-                  ),
-                  trailing: GFToggle(
-                    onChanged: (value) {
-                      final provider =
-                          Provider.of<ThemeProvider>(context, listen: false);
-                      provider.toggleTheme(value!);
-                    },
-                    value: false,
-                    type: GFToggleType.android,
-                    enabledThumbColor: Colors.red,
-                    disabledThumbColor: Colors.grey.shade300,
-                    enabledTrackColor: Colors.grey.shade300,
-                  ),
-                ),
-                ListTile(
-                  onTap: () {},
-                  leading: Icon(Iconsax.menu, color: Colors.red),
-                  title: Text(
-                    S.of(context).mslidem,
-                    style: TextStyle(color: Theme.of(context).hintColor),
-                  ),
-                  trailing: Icon(Iconsax.arrow_circle_up, color: Colors.red),
-                ),
                 ListTile(
                   onTap: () {
                     Get.toNamed('/login');

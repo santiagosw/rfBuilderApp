@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
@@ -8,7 +6,6 @@ import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:rfbuilder_app/widgets/dialog_widget.dart';
 import 'package:rfbuilder_app/generated/l10n.dart';
 
 class HomePage extends StatefulWidget {
@@ -158,7 +155,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Divider(color: Colors.grey.shade800),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed('/settings');
+                  },
                   leading: Icon(Iconsax.setting_2, color: Colors.red),
                   title: Text(
                     S.of(context).msettings,
@@ -178,37 +177,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Divider(color: Colors.grey.shade800),
-                ListTile(
-                  onTap: () {},
-                  leading: Icon(Iconsax.moon, color: Colors.red),
-                  title: Text(
-                    S.of(context).mdarkmode,
-                    style: TextStyle(
-                      color: Theme.of(context).hintColor,
-                    ),
-                  ),
-                  trailing: GFToggle(
-                    onChanged: (value) {
-                      final provider =
-                          Provider.of<ThemeProvider>(context, listen: false);
-                      provider.toggleTheme(value!);
-                    },
-                    value: false,
-                    type: GFToggleType.android,
-                    enabledThumbColor: Colors.red,
-                    disabledThumbColor: Colors.grey.shade300,
-                    enabledTrackColor: Colors.grey.shade300,
-                  ),
-                ),
-                ListTile(
-                  onTap: () {},
-                  leading: Icon(Iconsax.menu, color: Colors.red),
-                  title: Text(
-                    S.of(context).mslidem,
-                    style: TextStyle(color: Theme.of(context).hintColor),
-                  ),
-                  trailing: Icon(Iconsax.arrow_circle_up, color: Colors.red),
-                ),
                 ListTile(
                   onTap: () {
                     Get.toNamed('/login');

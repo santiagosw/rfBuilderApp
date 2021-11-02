@@ -10,6 +10,8 @@ import 'package:rfbuilder_app/screens/reception/reception_page.dart';
 import 'package:rfbuilder_app/screens/register.dart';
 import 'package:rfbuilder_app/screens/replacement/replacement_page.dart';
 import 'package:rfbuilder_app/screens/save_reception/sreception_page.dart';
+import 'package:rfbuilder_app/screens/settings_page/edit_profile.dart';
+import 'package:rfbuilder_app/screens/settings_page/settings_page.dart';
 import 'package:rfbuilder_app/screens/stock/stock_page.dart';
 import 'generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -73,6 +75,10 @@ class MyApp extends StatelessWidget {
               GetPage(
                   name: "/replacement",
                   page: () => ReplacementPage(),
+                  transition: Transition.cupertinoDialog),
+              GetPage(
+                  name: "/settings",
+                  page: () => SettingsUI(),
                   transition: Transition.cupertinoDialog),
             ]);
       });

@@ -78,6 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Guardado de Recepción"),
         "tltreception": MessageLookupByLibrary.simpleMessage("Recepción"),
         "tltreplacement": MessageLookupByLibrary.simpleMessage("Reposición"),
+        "tltsetting": MessageLookupByLibrary.simpleMessage("Configuraciones"),
         "tltstock": MessageLookupByLibrary.simpleMessage("Inventario"),
         "tlttask": MessageLookupByLibrary.simpleMessage("Tareas"),
         "tpicking": MessageLookupByLibrary.simpleMessage("Retirar"),

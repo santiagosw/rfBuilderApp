@@ -310,6 +310,16 @@ class S {
     );
   }
 
+  /// `Settings`
+  String get tltsetting {
+    return Intl.message(
+      'Settings',
+      name: 'tltsetting',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Position`
   String get tfposition {
     return Intl.message(
