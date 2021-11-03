@@ -163,7 +163,7 @@ class _PickingPageState extends State<PickingPage> {
                 Divider(color: Colors.grey.shade800),
                 ListTile(
                   onTap: () {
-                    Get.toNamed('/settings');
+                    Get.toNamed('/editprofile');
                   },
                   leading: Icon(Iconsax.setting_2, color: Colors.red),
                   title: Text(

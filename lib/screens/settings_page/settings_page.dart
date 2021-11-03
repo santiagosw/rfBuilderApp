@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:getwidget/getwidget.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +15,7 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
@@ -34,7 +37,10 @@ class _SettingsPageState extends State<SettingsPage> {
           children: [
             Text(
               "Settings",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+              style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w500,
+                  color: Theme.of(context).primaryColor),
             ),
             SizedBox(
               height: 40,
@@ -50,7 +56,10 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
                 Text(
                   "Account",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).primaryColor),
                 ),
               ],
             ),
@@ -78,20 +87,54 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
                 Text(
                   "Application",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).primaryColor),
                 ),
               ],
             ),
             Divider(
               height: 15,
               thickness: 2,
+              color: Theme.of(context).dividerColor,
             ),
             SizedBox(
               height: 10,
             ),
-            buildNotificationOptionRow("Dark Mode", true),
-            buildNotificationOptionRow("Notification", false),
-            buildNotificationOptionRow("Slide Menu", false),
+            GFListTile(
+                title: Text('Dark mode',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: Theme.of(context).primaryColor,
+                    )),
+                icon: GFToggle(
+                    disabledTrackColor: Colors.grey.shade300,
+                    enabledThumbColor: Colors.white,
+                    disabledThumbColor: Colors.white,
+                    enabledTrackColor: Colors.red,
+                    value: themeProvider.isDarkMode,
+                    onChanged: (value) {
+                      final provider =
+                          Provider.of<ThemeProvider>(context, listen: false);
+                      provider.toggleTheme(value!);
+                    })),
+            SizedBox(height: 10),
+            GFListTile(
+                title: Text('Slide menu',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: Theme.of(context).primaryColor,
+                    )),
+                icon: GFToggle(
+                    disabledTrackColor: Colors.grey.shade300,
+                    enabledThumbColor: Colors.white,
+                    disabledThumbColor: Colors.white,
+                    enabledTrackColor: Colors.red,
+                    value: false,
+                    onChanged: (value) {})),
             SizedBox(
               height: 50,
             ),
@@ -100,37 +143,19 @@ class _SettingsPageState extends State<SettingsPage> {
                 padding: EdgeInsets.symmetric(horizontal: 40),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed('/login');
+                },
                 child: Text("SIGN OUT",
                     style: TextStyle(
-                        fontSize: 16, letterSpacing: 2.2, color: Colors.black)),
+                        fontSize: 16,
+                        letterSpacing: 2.2,
+                        color: Theme.of(context).primaryColor)),
               ),
             )
           ],
         ),
       ),
-    );
-  }
-
-  Row buildNotificationOptionRow(String title, bool isActive) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          title,
-          style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey[600]),
-        ),
-        Transform.scale(
-            scale: 0.7,
-            child: CupertinoSwitch(
-              activeColor: Colors.red,
-              value: isActive,
-              onChanged: (bool val) {},
-            ))
-      ],
     );
   }
 
@@ -170,7 +195,7 @@ class _SettingsPageState extends State<SettingsPage> {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
-                color: Colors.grey[600],
+                color: Theme.of(context).primaryColor,
               ),
             ),
             Icon(

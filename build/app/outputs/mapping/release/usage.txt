@@ -11388,8 +11388,8 @@ android.support.v4.media.MediaBrowserCompat$MediaItem$Flags
 com.google.android.gms.internal.vision.zzfj:
     public final void zza(java.lang.Throwable,java.lang.Throwable)
 com.google.common.util.concurrent.CycleDetectingLockFactory$Policies$3
-androidx.media.MediaBrowserServiceCompat$ServiceBinderImpl
 com.google.android.gms.tasks.zzp
+androidx.media.MediaBrowserServiceCompat$ServiceBinderImpl
 io.flutter.plugins.googlesignin.GoogleSignInPlugin$IDelegate
 com.google.android.material.transition.MaterialFadeThrough
 com.google.android.material.transformation.TransformationChildCard:
@@ -22100,6 +22100,6 @@ com.google.android.material.resources.TextAppearance:
     public final boolean textAllCaps
 androidx.appcompat.view.StandaloneActionMode:
     private boolean mFocusable
-androidx.lifecycle.DefaultLifecycleObserver$-CC
 io.flutter.plugin.platform.PlatformView$-CC
+androidx.lifecycle.DefaultLifecycleObserver$-CC
 $r8$backportedMethods$utility$Integer$2$compare

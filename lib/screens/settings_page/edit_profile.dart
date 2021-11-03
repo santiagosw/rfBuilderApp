@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:getwidget/components/button/gf_icon_button.dart';
 import 'package:getwidget/shape/gf_icon_button_shape.dart';
 import 'package:iconsax/iconsax.dart';
@@ -6,17 +7,6 @@ import 'package:rfbuilder_app/screens/settings_page/settings_page.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:rfbuilder_app/generated/l10n.dart';
-
-class SettingsUI extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "Setting UI",
-      home: EditProfilePage(),
-    );
-  }
-}
 
 class EditProfilePage extends StatefulWidget {
   @override
@@ -27,6 +17,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
   bool showPassword = false;
   @override
   Widget build(BuildContext context) {
+    final text = Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark
+        ? 'DarkTheme'
+        : 'LightTheme';
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
@@ -37,19 +30,19 @@ class _EditProfilePageState extends State<EditProfilePage> {
             Iconsax.arrow_left,
             color: Colors.red,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
         ),
         actions: [
           IconButton(
-            icon: Icon(
-              Iconsax.setting,
-              color: Colors.red,
-            ),
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => SettingsPage()));
-            },
-          ),
+              icon: Icon(
+                Iconsax.setting,
+                color: Colors.red,
+              ),
+              onPressed: () {
+                Get.toNamed('/settings');
+              }),
         ],
       ),
       body: Container(
@@ -121,18 +114,24 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   OutlineButton(
+                    hoverColor: Colors.red,
                     padding: EdgeInsets.symmetric(horizontal: 50),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
                     child: Text("CANCEL",
                         style: TextStyle(
-                            fontSize: 14,
-                            letterSpacing: 2.2,
-                            color: Colors.black)),
+                          fontSize: 14,
+                          letterSpacing: 2.2,
+                          color: Theme.of(context).primaryColor,
+                        )),
                   ),
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
                     color: Colors.red,
                     padding: EdgeInsets.symmetric(horizontal: 50),
                     elevation: 2,
@@ -160,6 +159,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 35.0),
       child: TextField(
+        cursorColor: Theme.of(context).cursorColor,
         obscureText: isPasswordTextField ? showPassword : false,
         decoration: InputDecoration(
             suffixIcon: isPasswordTextField
@@ -171,21 +171,21 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     },
                     icon: Icon(
                       Iconsax.eye,
-                      color: Colors.grey,
+                      color: Colors.red,
                     ),
                   )
                 : null,
             contentPadding: EdgeInsets.only(bottom: 3),
             labelText: labelText,
+            labelStyle: TextStyle(color: Theme.of(context).primaryColor),
             focusColor: Colors.red,
             floatingLabelBehavior: FloatingLabelBehavior.always,
             hintText: placeholder,
             hoverColor: Colors.red,
             hintStyle: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            )),
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Theme.of(context).primaryColor)),
       ),
     );
   }

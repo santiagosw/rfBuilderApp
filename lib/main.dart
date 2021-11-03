@@ -77,8 +77,12 @@ class MyApp extends StatelessWidget {
                   page: () => ReplacementPage(),
                   transition: Transition.cupertinoDialog),
               GetPage(
+                  name: "/editprofile",
+                  page: () => EditProfilePage(),
+                  transition: Transition.cupertinoDialog),
+              GetPage(
                   name: "/settings",
-                  page: () => SettingsUI(),
+                  page: () => SettingsPage(),
                   transition: Transition.cupertinoDialog),
             ]);
       });
