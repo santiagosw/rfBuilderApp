@@ -1,4 +1,8 @@
 {
+    "language": "Idioma",
+    "systemLanguage": "Idioma del sistema",
+
+
     "@_LOGIN_PAGE": {
     },
 

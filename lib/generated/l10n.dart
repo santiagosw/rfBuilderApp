@@ -50,6 +50,26 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Idioma`
+  String get language {
+    return Intl.message(
+      'Idioma',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Idioma del sistema`
+  String get systemLanguage {
+    return Intl.message(
+      'Idioma del sistema',
+      name: 'systemLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Email`
   String get email {
     return Intl.message(

@@ -24,7 +24,11 @@ class _PickingPageState extends State<PickingPage> {
   String barcode = '00000000';
 
   List<dynamic> _services = [
-    ['Close Container', Iconsax.close_circle, Colors.white],
+    [
+      'Close Container',
+      Iconsax.close_circle,
+      Colors.white,
+    ],
     ['End Product', Iconsax.tick_circle, Colors.white],
     ['Next Product', Iconsax.next, Colors.white],
     ['Current Content', Iconsax.dcube, Colors.white],
@@ -33,13 +37,24 @@ class _PickingPageState extends State<PickingPage> {
     ['Print Label', Iconsax.printer, Colors.white],
   ];
 
-  final List<dynamic> _product = [
+  final List<dynamic> _productes = [
+    ['Paquetes', Iconsax.box, '0'],
+    ['Monitores', Iconsax.screenmirroring, '0'],
+    ['Unidades', Iconsax.element_plus, '0'],
+  ];
+
+  final List<dynamic> _producten = [
     ['Packages', Iconsax.box, '0'],
     ['Display', Iconsax.screenmirroring, '0'],
     ['Units', Iconsax.element_plus, '0'],
   ];
 
-  final List<dynamic> _advancewunit = [
+  final List<dynamic> _advancewunites = [
+    ['Unidad', Iconsax.transaction_minus, 'CM'],
+    ['Avance', Iconsax.arrow_circle_up, '[0/14]'],
+  ];
+
+  final List<dynamic> _advancewuniten = [
     ['Unit', Iconsax.transaction_minus, 'CM'],
     ['Advance', Iconsax.arrow_circle_up, '[0/14]'],
   ];
@@ -210,71 +225,74 @@ class _PickingPageState extends State<PickingPage> {
       child: Scaffold(
           resizeToAvoidBottomInset: false,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          bottomSheet: GFBottomSheet(
-            animationDuration: 20,
-            controller: _controller,
-            maxContentHeight: 150,
-            enableExpandableContent: false,
-            stickyHeaderHeight: 50,
-            stickyHeader: Container(
-              child: Center(
-                child: Icon(
-                  Iconsax.more,
-                  color: Colors.white,
+          bottomSheet: Visibility(
+            visible: true,
+            child: GFBottomSheet(
+              animationDuration: 20,
+              controller: _controller,
+              maxContentHeight: 150,
+              enableExpandableContent: false,
+              stickyHeaderHeight: 50,
+              stickyHeader: Container(
+                child: Center(
+                  child: Icon(
+                    Iconsax.more,
+                    color: Colors.white,
+                  ),
                 ),
+                decoration: BoxDecoration(color: Colors.red, boxShadow: [
+                  BoxShadow(color: Colors.black45, blurRadius: 0)
+                ]),
               ),
-              decoration: BoxDecoration(
-                  color: Colors.red,
-                  boxShadow: [BoxShadow(color: Colors.black45, blurRadius: 0)]),
-            ),
-            contentBody: SizedBox(
-              height: 20,
-              child: Container(
-                color: Theme.of(context).scaffoldBackgroundColor,
-                padding: EdgeInsets.only(top: 20),
-                height: 70,
-                width: double.infinity,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: _services.length,
-                  itemBuilder: (context, index) {
-                    return FadeInDown(
-                      duration: Duration(milliseconds: (index + 1) * 100),
-                      child: AspectRatio(
-                        aspectRatio: 1,
-                        child: GestureDetector(
-                          onTap: () {},
-                          child: Column(
-                            children: [
-                              Container(
-                                width: 50,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).canvasColor,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Center(
-                                  child: Icon(
-                                    _services[index][1],
-                                    color: Colors.red,
-                                    size: 25,
+              contentBody: SizedBox(
+                height: 20,
+                child: Container(
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  padding: EdgeInsets.only(top: 20),
+                  height: 70,
+                  width: double.infinity,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: _services.length,
+                    itemBuilder: (context, index) {
+                      return FadeInDown(
+                        duration: Duration(milliseconds: (index + 1) * 100),
+                        child: AspectRatio(
+                          aspectRatio: 1,
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context).canvasColor,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Center(
+                                    child: Icon(
+                                      _services[index][1],
+                                      color: Colors.red,
+                                      size: 25,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                _services[index][0],
-                                style: TextStyle(
-                                    color: Theme.of(context).primaryColor),
-                              ),
-                            ],
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  _services[index][0],
+                                  style: TextStyle(
+                                      color: Theme.of(context).primaryColor),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
               ),
             ),
@@ -604,7 +622,7 @@ class _PickingPageState extends State<PickingPage> {
                             ),
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
-                              itemCount: _product.length,
+                              itemCount: _productes.length,
                               itemBuilder: (context, index) {
                                 return GestureDetector(
                                     child: Container(
@@ -621,13 +639,13 @@ class _PickingPageState extends State<PickingPage> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
-                                            Icon(_product[index][1],
+                                            Icon(_productes[index][1],
                                                 color: Colors.red),
                                             SizedBox(
                                               height: 10,
                                             ),
                                             Text(
-                                              _product[index][0],
+                                              _productes[index][0],
                                               style: TextStyle(
                                                   fontSize: 15,
                                                   fontWeight: FontWeight.w500,
@@ -638,7 +656,7 @@ class _PickingPageState extends State<PickingPage> {
                                               height: 5,
                                             ),
                                             Text(
-                                              "${_product[index][2]}",
+                                              "${_productes[index][2]}",
                                               style: TextStyle(
                                                   color: Theme.of(context)
                                                       .primaryColor),
@@ -698,7 +716,7 @@ class _PickingPageState extends State<PickingPage> {
                             ),
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
-                              itemCount: _advancewunit.length,
+                              itemCount: _advancewunites.length,
                               itemBuilder: (context, index) {
                                 return GestureDetector(
                                     child: Container(
@@ -715,13 +733,13 @@ class _PickingPageState extends State<PickingPage> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
-                                            Icon(_advancewunit[index][1],
+                                            Icon(_advancewunites[index][1],
                                                 color: Colors.red),
                                             SizedBox(
                                               height: 10,
                                             ),
                                             Text(
-                                              _advancewunit[index][0],
+                                              _advancewunites[index][0],
                                               style: TextStyle(
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.w500,
@@ -733,7 +751,7 @@ class _PickingPageState extends State<PickingPage> {
                                               height: 5,
                                             ),
                                             Text(
-                                              "${_advancewunit[index][2]}",
+                                              "${_advancewunites[index][2]}",
                                               style: TextStyle(
                                                   color: Theme.of(context)
                                                       .primaryColor),

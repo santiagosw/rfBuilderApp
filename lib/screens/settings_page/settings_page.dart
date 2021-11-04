@@ -15,6 +15,7 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
+    bool isVisible = false;
     final themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -134,7 +135,11 @@ class _SettingsPageState extends State<SettingsPage> {
                     disabledThumbColor: Colors.white,
                     enabledTrackColor: Colors.red,
                     value: false,
-                    onChanged: (value) {})),
+                    onChanged: (value) {
+                      setState(() {
+                        isVisible = !isVisible;
+                      });
+                    })),
             SizedBox(
               height: 50,
             ),

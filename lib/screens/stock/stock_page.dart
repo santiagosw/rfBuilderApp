@@ -30,9 +30,14 @@ class _StockPageState extends State<StockPage> {
     ['Skip Product', Iconsax.next, Colors.white],
   ];
 
-  final List<dynamic> _advancewunit = [
+  final List<dynamic> _advancewuniten = [
     ['Unit Save', Iconsax.save_2, 'UNIT'],
     ['Stock', Iconsax.box, 'STOCK'],
+  ];
+
+  final List<dynamic> _advancewunites = [
+    ['Guardado', Iconsax.save_2, 'UNIT'],
+    ['Inventario', Iconsax.box, 'STOCK'],
   ];
 
   @override
@@ -201,71 +206,74 @@ class _StockPageState extends State<StockPage> {
       child: Scaffold(
           resizeToAvoidBottomInset: false,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          bottomSheet: GFBottomSheet(
-            animationDuration: 20,
-            controller: _controller,
-            maxContentHeight: 150,
-            enableExpandableContent: false,
-            stickyHeaderHeight: 50,
-            stickyHeader: Container(
-              child: Center(
-                child: Icon(
-                  Iconsax.more,
-                  color: Colors.white,
+          bottomSheet: Visibility(
+            visible: true,
+            child: GFBottomSheet(
+              animationDuration: 20,
+              controller: _controller,
+              maxContentHeight: 150,
+              enableExpandableContent: false,
+              stickyHeaderHeight: 50,
+              stickyHeader: Container(
+                child: Center(
+                  child: Icon(
+                    Iconsax.more,
+                    color: Colors.white,
+                  ),
                 ),
+                decoration: BoxDecoration(color: Colors.red, boxShadow: [
+                  BoxShadow(color: Colors.black45, blurRadius: 0)
+                ]),
               ),
-              decoration: BoxDecoration(
-                  color: Colors.red,
-                  boxShadow: [BoxShadow(color: Colors.black45, blurRadius: 0)]),
-            ),
-            contentBody: SizedBox(
-              height: 20,
-              child: Container(
-                color: Theme.of(context).scaffoldBackgroundColor,
-                padding: EdgeInsets.only(top: 20),
-                height: 70,
-                width: double.infinity,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: _services.length,
-                  itemBuilder: (context, index) {
-                    return FadeInDown(
-                      duration: Duration(milliseconds: (index + 1) * 100),
-                      child: AspectRatio(
-                        aspectRatio: 1,
-                        child: GestureDetector(
-                          onTap: () {},
-                          child: Column(
-                            children: [
-                              Container(
-                                width: 50,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).canvasColor,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Center(
-                                  child: Icon(
-                                    _services[index][1],
-                                    color: Colors.red,
-                                    size: 25,
+              contentBody: SizedBox(
+                height: 20,
+                child: Container(
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  padding: EdgeInsets.only(top: 20),
+                  height: 70,
+                  width: double.infinity,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: _services.length,
+                    itemBuilder: (context, index) {
+                      return FadeInDown(
+                        duration: Duration(milliseconds: (index + 1) * 100),
+                        child: AspectRatio(
+                          aspectRatio: 1,
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context).canvasColor,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Center(
+                                    child: Icon(
+                                      _services[index][1],
+                                      color: Colors.red,
+                                      size: 25,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                _services[index][0],
-                                style: TextStyle(
-                                    color: Theme.of(context).primaryColor),
-                              ),
-                            ],
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  _services[index][0],
+                                  style: TextStyle(
+                                      color: Theme.of(context).primaryColor),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
               ),
             ),
@@ -608,14 +616,14 @@ class _StockPageState extends State<StockPage> {
                         SizedBox(height: 10),
                         Container(
                             height: 100,
-                            width: 180,
+                            width: 190,
                             decoration: BoxDecoration(
                               color: Theme.of(context).cardColor,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
-                              itemCount: _advancewunit.length,
+                              itemCount: _advancewunites.length,
                               itemBuilder: (context, index) {
                                 return GestureDetector(
                                     child: Container(
@@ -632,13 +640,13 @@ class _StockPageState extends State<StockPage> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
-                                            Icon(_advancewunit[index][1],
+                                            Icon(_advancewunites[index][1],
                                                 color: Colors.red),
                                             SizedBox(
                                               height: 10,
                                             ),
                                             Text(
-                                              _advancewunit[index][0],
+                                              _advancewunites[index][0],
                                               style: TextStyle(
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.w500,
@@ -650,7 +658,7 @@ class _StockPageState extends State<StockPage> {
                                               height: 5,
                                             ),
                                             Text(
-                                              "${_advancewunit[index][2]}",
+                                              "${_advancewunites[index][2]}",
                                               style: TextStyle(
                                                   color: Theme.of(context)
                                                       .primaryColor),

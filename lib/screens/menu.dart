@@ -4,9 +4,8 @@ import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
-import 'package:rfbuilder_app/provider/theme_provider.dart';
-import 'package:provider/provider.dart';
 import 'package:rfbuilder_app/generated/l10n.dart';
+import 'settings_page/settings_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -31,7 +30,11 @@ class _HomePageState extends State<HomePage> {
   String obsconso = '';
 
   List<dynamic> _services = [
-    ['Dashboard', Iconsax.home, Colors.white],
+    [
+      'Dashboard',
+      Iconsax.home,
+      Colors.white,
+    ],
     ['Tasks', Iconsax.task, Colors.white],
     ['Contacts', Iconsax.profile_2user, Colors.white],
     ['Settings', Iconsax.setting, Colors.white],
@@ -203,71 +206,74 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
           resizeToAvoidBottomInset: false,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          bottomSheet: GFBottomSheet(
-            animationDuration: 20,
-            controller: _controller,
-            maxContentHeight: 150,
-            enableExpandableContent: false,
-            stickyHeaderHeight: 50,
-            stickyHeader: Container(
-              child: Center(
-                child: Icon(
-                  Iconsax.more,
-                  color: Colors.white,
+          bottomSheet: Visibility(
+            visible: true,
+            child: GFBottomSheet(
+              animationDuration: 20,
+              controller: _controller,
+              maxContentHeight: 150,
+              enableExpandableContent: false,
+              stickyHeaderHeight: 50,
+              stickyHeader: Container(
+                child: Center(
+                  child: Icon(
+                    Iconsax.more,
+                    color: Colors.white,
+                  ),
                 ),
+                decoration: BoxDecoration(color: Colors.red, boxShadow: [
+                  BoxShadow(color: Colors.black45, blurRadius: 0)
+                ]),
               ),
-              decoration: BoxDecoration(
-                  color: Colors.red,
-                  boxShadow: [BoxShadow(color: Colors.black45, blurRadius: 0)]),
-            ),
-            contentBody: SizedBox(
-              height: 20,
-              child: Container(
-                color: Theme.of(context).scaffoldBackgroundColor,
-                padding: EdgeInsets.only(top: 20),
-                height: 70,
-                width: double.infinity,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: _services.length,
-                  itemBuilder: (context, index) {
-                    return FadeInDown(
-                      duration: Duration(milliseconds: (index + 1) * 100),
-                      child: AspectRatio(
-                        aspectRatio: 1,
-                        child: GestureDetector(
-                          onTap: () {},
-                          child: Column(
-                            children: [
-                              Container(
-                                width: 50,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).canvasColor,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Center(
-                                  child: Icon(
-                                    _services[index][1],
-                                    color: Colors.red,
-                                    size: 25,
+              contentBody: SizedBox(
+                height: 20,
+                child: Container(
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  padding: EdgeInsets.only(top: 20),
+                  height: 70,
+                  width: double.infinity,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: _services.length,
+                    itemBuilder: (context, index) {
+                      return FadeInDown(
+                        duration: Duration(milliseconds: (index + 1) * 100),
+                        child: AspectRatio(
+                          aspectRatio: 1,
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Column(
+                              children: [
+                                Container(
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context).canvasColor,
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Center(
+                                    child: Icon(
+                                      _services[index][1],
+                                      color: Colors.red,
+                                      size: 25,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                _services[index][0],
-                                style: TextStyle(
-                                    color: Theme.of(context).primaryColor),
-                              ),
-                            ],
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  _services[index][0],
+                                  style: TextStyle(
+                                      color: Theme.of(context).primaryColor),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
               ),
             ),

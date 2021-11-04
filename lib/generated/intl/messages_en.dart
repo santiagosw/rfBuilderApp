@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "htdes":
             MessageLookupByLibrary.simpleMessage("type here a description"),
+        "language": MessageLookupByLibrary.simpleMessage("Idioma"),
         "lblamount": MessageLookupByLibrary.simpleMessage("Amount"),
         "lbldes": MessageLookupByLibrary.simpleMessage("Description"),
         "lbldisplay": MessageLookupByLibrary.simpleMessage("Display"),
@@ -54,6 +55,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "mtask": MessageLookupByLibrary.simpleMessage("Tasks"),
         "password": MessageLookupByLibrary.simpleMessage("Paswword"),
         "suser": MessageLookupByLibrary.simpleMessage("User"),
+        "systemLanguage":
+            MessageLookupByLibrary.simpleMessage("Idioma del sistema"),
         "tconsocardis":
             MessageLookupByLibrary.simpleMessage("Consolidated Car Dispatch"),
         "tconsocontrol":
