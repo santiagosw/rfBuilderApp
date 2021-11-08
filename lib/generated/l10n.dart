@@ -130,11 +130,11 @@ class S {
     );
   }
 
-  /// `Contacts`
-  String get mcontacts {
+  /// `Statistics`
+  String get mstatis {
     return Intl.message(
-      'Contacts',
-      name: 'mcontacts',
+      'Statistics',
+      name: 'mstatis',
       desc: '',
       args: [],
     );
@@ -185,6 +185,16 @@ class S {
     return Intl.message(
       'SignOut',
       name: 'msignout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Language`
+  String get mchanguelang {
+    return Intl.message(
+      'Change Language',
+      name: 'mchanguelang',
       desc: '',
       args: [],
     );
@@ -510,10 +520,10 @@ class S {
     );
   }
 
-  /// `type here a description`
+  /// `Description Product`
   String get htdes {
     return Intl.message(
-      'type here a description',
+      'Description Product',
       name: 'htdes',
       desc: '',
       args: [],
@@ -535,6 +545,26 @@ class S {
     return Intl.message(
       'Continue',
       name: 'btncontinue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CANCEL`
+  String get btncancel {
+    return Intl.message(
+      'CANCEL',
+      name: 'btncancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SAVE`
+  String get btnsave {
+    return Intl.message(
+      'SAVE',
+      name: 'btnsave',
       desc: '',
       args: [],
     );
@@ -635,6 +665,46 @@ class S {
     return Intl.message(
       'Description',
       name: 'lbldes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Profile`
+  String get lbleditprof {
+    return Intl.message(
+      'Edit Profile',
+      name: 'lbleditprof',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full Name`
+  String get lblfullname {
+    return Intl.message(
+      'Full Name',
+      name: 'lblfullname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location`
+  String get lbllocation {
+    return Intl.message(
+      'Location',
+      name: 'lbllocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Aplication`
+  String get lblapplication {
+    return Intl.message(
+      'Aplication',
+      name: 'lblapplication',
       desc: '',
       args: [],
     );

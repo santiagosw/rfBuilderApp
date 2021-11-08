@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return AdvancedDrawer(
-      backdropColor: Colors.grey.shade900,
+      backdropColor: Theme.of(context).splashColor,
       controller: _advancedDrawerController,
       animationCurve: Curves.easeInOut,
       animationDuration: const Duration(milliseconds: 300),
@@ -80,10 +80,7 @@ class _HomePageState extends State<HomePage> {
       childDecoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.shade900,
-            blurRadius: 20.0,
-            spreadRadius: 5.0,
-            offset: Offset(-20.0, 0.0),
+            color: Colors.grey.withOpacity(0.5),
           ),
         ],
         borderRadius: BorderRadius.circular(30),
@@ -109,18 +106,20 @@ class _HomePageState extends State<HomePage> {
                     ),
                     child: Image.asset('assets/images/user.png')),
                 SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
                   child: Text(
                     S.of(context).suser,
                     style: TextStyle(
-                        color: Theme.of(context).hintColor,
+                        color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.w600),
                   ),
                 ),
-                Spacer(),
+                SizedBox(
+                  height: 40,
+                ),
                 Divider(
                   color: Colors.grey.shade800,
                 ),
@@ -132,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                   title: Text(
                     S.of(context).mdashboard,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -142,17 +141,17 @@ class _HomePageState extends State<HomePage> {
                   title: Text(
                     S.of(context).mtask,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.profile_2user, color: Colors.red),
+                  leading: Icon(Iconsax.diagram, color: Colors.red),
                   title: Text(
-                    S.of(context).mcontacts,
+                    S.of(context).mstatis,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -165,17 +164,19 @@ class _HomePageState extends State<HomePage> {
                   title: Text(
                     S.of(context).msettings,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed('/support');
+                  },
                   leading: Icon(Iconsax.support, color: Colors.red),
                   title: Text(
                     S.of(context).msupport,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -187,7 +188,7 @@ class _HomePageState extends State<HomePage> {
                   leading: Icon(Iconsax.logout, color: Colors.red),
                   title: Text(S.of(context).msignout,
                       style: TextStyle(
-                        color: Theme.of(context).hintColor,
+                        color: Theme.of(context).primaryColor,
                       )),
                 ),
                 Spacer(),
@@ -195,7 +196,9 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(20.0),
                   child: Text(
                     'Version 1.1.0',
-                    style: TextStyle(color: Colors.grey.shade500),
+                    style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+                    ),
                   ),
                 )
               ],
@@ -206,78 +209,6 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
           resizeToAvoidBottomInset: false,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          bottomSheet: Visibility(
-            visible: true,
-            child: GFBottomSheet(
-              animationDuration: 20,
-              controller: _controller,
-              maxContentHeight: 150,
-              enableExpandableContent: false,
-              stickyHeaderHeight: 50,
-              stickyHeader: Container(
-                child: Center(
-                  child: Icon(
-                    Iconsax.more,
-                    color: Colors.white,
-                  ),
-                ),
-                decoration: BoxDecoration(color: Colors.red, boxShadow: [
-                  BoxShadow(color: Colors.black45, blurRadius: 0)
-                ]),
-              ),
-              contentBody: SizedBox(
-                height: 20,
-                child: Container(
-                  color: Theme.of(context).scaffoldBackgroundColor,
-                  padding: EdgeInsets.only(top: 20),
-                  height: 70,
-                  width: double.infinity,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: _services.length,
-                    itemBuilder: (context, index) {
-                      return FadeInDown(
-                        duration: Duration(milliseconds: (index + 1) * 100),
-                        child: AspectRatio(
-                          aspectRatio: 1,
-                          child: GestureDetector(
-                            onTap: () {},
-                            child: Column(
-                              children: [
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    color: Theme.of(context).canvasColor,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Center(
-                                    child: Icon(
-                                      _services[index][1],
-                                      color: Colors.red,
-                                      size: 25,
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
-                                  _services[index][0],
-                                  style: TextStyle(
-                                      color: Theme.of(context).primaryColor),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ),
-            ),
-          ),
           body: CustomScrollView(controller: _scrollController, slivers: [
             SliverAppBar(
               expandedHeight: 250.0,
@@ -309,7 +240,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 IconButton(
                   icon: Icon(Iconsax.message_question, color: Colors.red),
-                  onPressed: () => showAlertDialog(context),
+                  onPressed: () => showAlertDialoghelp(context),
                 ),
               ],
               shape: RoundedRectangleBorder(
@@ -409,7 +340,7 @@ class _HomePageState extends State<HomePage> {
                           icon: Icon(Iconsax.arrow_2, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
-                          position: GFPosition.end,
+                          position: GFPosition.start,
                           fullWidthButton: true,
                         ),
                         Divider(),
@@ -422,7 +353,7 @@ class _HomePageState extends State<HomePage> {
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
                           fullWidthButton: true,
-                          position: GFPosition.end,
+                          position: GFPosition.start,
                         ),
                         Divider(),
                         Tooltip(
@@ -445,7 +376,7 @@ class _HomePageState extends State<HomePage> {
                                   textColor: Theme.of(context).primaryColor,
                                   type: GFButtonType.transparent,
                                   padding: EdgeInsets.symmetric(horizontal: 80),
-                                  position: GFPosition.end,
+                                  position: GFPosition.start,
                                 ),
                                 GFIconButton(
                                   icon: Icon(Iconsax.info_circle,
@@ -465,7 +396,7 @@ class _HomePageState extends State<HomePage> {
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
                           fullWidthButton: true,
-                          position: GFPosition.end,
+                          position: GFPosition.start,
                         ),
                         Divider(),
                         GFButton(
@@ -477,7 +408,7 @@ class _HomePageState extends State<HomePage> {
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
                           fullWidthButton: true,
-                          position: GFPosition.end,
+                          position: GFPosition.start,
                         ),
                         Divider(),
                         GFButton(
@@ -489,7 +420,7 @@ class _HomePageState extends State<HomePage> {
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
                           fullWidthButton: true,
-                          position: GFPosition.end,
+                          position: GFPosition.start,
                         ),
                         Divider(),
                         GFButton(
@@ -499,7 +430,7 @@ class _HomePageState extends State<HomePage> {
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
                           fullWidthButton: true,
-                          position: GFPosition.end,
+                          position: GFPosition.start,
                         ),
                         Divider(),
                         GFButton(
@@ -509,7 +440,7 @@ class _HomePageState extends State<HomePage> {
                           textColor: Theme.of(context).primaryColor,
                           type: GFButtonType.transparent,
                           fullWidthButton: true,
-                          position: GFPosition.end,
+                          position: GFPosition.start,
                         ),
                       ]),
                     ),
@@ -527,12 +458,27 @@ class _HomePageState extends State<HomePage> {
 
   void showAlertDialog(BuildContext context) => showDialog(
         builder: (context) => AlertDialog(
-          title: Text(
-            S.of(context).modalhwelcome,
-          ),
+          title: Text('Picking Info'),
           content: Text(
-            'Task managers',
+            "Picking Nro: $pickingNum. \nAsignacion de Productos: \nCant. Prod: $cantProd. \nCod Conso: $codConso. \nNum Conso: $numConso. \nGrupo: \nBU: $bu. \nDI: $di. \nUN: $un. \nObs.Asig: $obsasig. \nObs.Conso: $obsconso.",
           ),
+          actions: [
+            OutlineButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text(
+                S.of(context).modalhclose,
+              ),
+              color: Colors.red,
+            )
+          ],
+        ),
+        context: context,
+      );
+
+  void showAlertDialoghelp(BuildContext context) => showDialog(
+        builder: (context) => AlertDialog(
+          title: Text(S.of(context).modalhwelcome),
+          content: Text('Listado de tareas disponibles segun tus permisos'),
           actions: [
             OutlineButton(
               onPressed: () => Navigator.of(context).pop(),

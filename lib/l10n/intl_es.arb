@@ -17,12 +17,13 @@
     "suser": "Usuario",
     "mdashboard": "Menu",
     "mtask": "Tareas",
-    "mcontacts": "Contactos",
+    "mstatis": "Estadisticas",
     "msettings": "Configuraciones",
     "msupport": "Soporte",
     "mdarkmode": "Modo Oscuro",
     "mslidem": "Menu Desplegable",
     "msignout": "Cerrar Sesión",
+    "mchanguelang": "Cambiar Lenguaje",
 
     "@_MENU_PAGE": {
     },
@@ -76,14 +77,15 @@
 
     "@_HINT_TEXTS": {
     },
-
-    "htdes": "Escribe una descripción",
+    "htdes": "Descripción del producto",
 
     "@_BUTTONS": {
     },
     
     "btnlogin": "Ingresar",
     "btncontinue": "Continuar",
+    "btncancel": "CANCELAR",
+    "btnsave": "GUARDAR",
 
     
     "@_LABELS": {
@@ -98,7 +100,11 @@
     "lblamount": "Cantidad",
     "lblunit": "Unidad",
     "lblexpiration": "Vencimiento",
-    "lbldes": "Descripción"
+    "lbldes": "Descripción",
+    "lbleditprof": "Editar Perfil",
+    "lblfullname": "Nombre Completo",
+    "lbllocation": "Localidad",
+    "lblapplication": "Aplicación"
 }
 
 

@@ -21,7 +21,7 @@ class _PickingPageState extends State<PickingPage> {
   late ScrollController _scrollController;
   bool _isScrolled = false;
   String? dropdown;
-  String barcode = '00000000';
+  String barcode = '';
 
   List<dynamic> _services = [
     [
@@ -89,7 +89,7 @@ class _PickingPageState extends State<PickingPage> {
         : 'LightTheme';
 
     return AdvancedDrawer(
-      backdropColor: Colors.grey.shade900,
+      backdropColor: Theme.of(context).splashColor,
       controller: _advancedDrawerController,
       animationCurve: Curves.easeInOut,
       animationDuration: const Duration(milliseconds: 300),
@@ -99,10 +99,7 @@ class _PickingPageState extends State<PickingPage> {
       childDecoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.shade900,
-            blurRadius: 20.0,
-            spreadRadius: 5.0,
-            offset: Offset(-20.0, 0.0),
+            color: Colors.grey.withOpacity(0.5),
           ),
         ],
         borderRadius: BorderRadius.circular(30),
@@ -128,18 +125,20 @@ class _PickingPageState extends State<PickingPage> {
                     ),
                     child: Image.asset('assets/images/user.png')),
                 SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
                   child: Text(
                     S.of(context).suser,
                     style: TextStyle(
-                        color: Theme.of(context).hintColor,
+                        color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.w600),
                   ),
                 ),
-                Spacer(),
+                SizedBox(
+                  height: 40,
+                ),
                 Divider(
                   color: Colors.grey.shade800,
                 ),
@@ -151,7 +150,7 @@ class _PickingPageState extends State<PickingPage> {
                   title: Text(
                     S.of(context).mdashboard,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -161,17 +160,17 @@ class _PickingPageState extends State<PickingPage> {
                   title: Text(
                     S.of(context).mtask,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.profile_2user, color: Colors.red),
+                  leading: Icon(Iconsax.diagram, color: Colors.red),
                   title: Text(
-                    S.of(context).mcontacts,
+                    S.of(context).mstatis,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -184,7 +183,7 @@ class _PickingPageState extends State<PickingPage> {
                   title: Text(
                     S.of(context).msettings,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -194,7 +193,7 @@ class _PickingPageState extends State<PickingPage> {
                   title: Text(
                     S.of(context).msupport,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -206,7 +205,7 @@ class _PickingPageState extends State<PickingPage> {
                   leading: Icon(Iconsax.logout, color: Colors.red),
                   title: Text(S.of(context).msignout,
                       style: TextStyle(
-                        color: Theme.of(context).hintColor,
+                        color: Theme.of(context).primaryColor,
                       )),
                 ),
                 Spacer(),
@@ -214,7 +213,9 @@ class _PickingPageState extends State<PickingPage> {
                   padding: const EdgeInsets.all(20.0),
                   child: Text(
                     'Version 1.1.0',
-                    style: TextStyle(color: Colors.grey.shade500),
+                    style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+                    ),
                   ),
                 )
               ],

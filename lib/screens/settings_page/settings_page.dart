@@ -15,7 +15,6 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
-    bool isVisible = false;
     final themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -37,43 +36,12 @@ class _SettingsPageState extends State<SettingsPage> {
         child: ListView(
           children: [
             Text(
-              "Settings",
+              S.of(context).msettings,
               style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.w500,
                   color: Theme.of(context).primaryColor),
             ),
-            SizedBox(
-              height: 40,
-            ),
-            Row(
-              children: [
-                Icon(
-                  Iconsax.user,
-                  color: Colors.red,
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-                Text(
-                  "Account",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).primaryColor),
-                ),
-              ],
-            ),
-            Divider(
-              height: 15,
-              thickness: 2,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            buildAccountOptionRow(context, "Change password"),
-            buildAccountOptionRow(context, "Language"),
-            buildAccountOptionRow(context, "Privacy and security"),
             SizedBox(
               height: 40,
             ),
@@ -87,7 +55,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   width: 8,
                 ),
                 Text(
-                  "Application",
+                  S.of(context).lblapplication,
                   style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -104,7 +72,7 @@ class _SettingsPageState extends State<SettingsPage> {
               height: 10,
             ),
             GFListTile(
-                title: Text('Dark mode',
+                title: Text(S.of(context).mdarkmode,
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
@@ -123,7 +91,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     })),
             SizedBox(height: 10),
             GFListTile(
-                title: Text('Slide menu',
+                title: Text(S.of(context).mchanguelang,
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
@@ -136,9 +104,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     enabledTrackColor: Colors.red,
                     value: false,
                     onChanged: (value) {
-                      setState(() {
-                        isVisible = !isVisible;
-                      });
+                      setState(() {});
                     })),
             SizedBox(
               height: 50,
@@ -151,7 +117,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 onPressed: () {
                   Get.toNamed('/login');
                 },
-                child: Text("SIGN OUT",
+                child: Text(S.of(context).msignout,
                     style: TextStyle(
                         fontSize: 16,
                         letterSpacing: 2.2,

@@ -21,25 +21,32 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "btncancel": MessageLookupByLibrary.simpleMessage("CANCELAR"),
         "btncontinue": MessageLookupByLibrary.simpleMessage("Continuar"),
         "btnlogin": MessageLookupByLibrary.simpleMessage("Ingresar"),
+        "btnsave": MessageLookupByLibrary.simpleMessage("GUARDAR"),
         "email": MessageLookupByLibrary.simpleMessage("Correo Electronico"),
         "forgotpassword":
             MessageLookupByLibrary.simpleMessage("¿Olvido su contraseña?"),
         "htdes":
-            MessageLookupByLibrary.simpleMessage("Escribe una descripción"),
+            MessageLookupByLibrary.simpleMessage("Descripción del producto"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lblamount": MessageLookupByLibrary.simpleMessage("Cantidad"),
+        "lblapplication": MessageLookupByLibrary.simpleMessage("Aplicación"),
         "lbldes": MessageLookupByLibrary.simpleMessage("Descripción"),
         "lbldisplay": MessageLookupByLibrary.simpleMessage("Monitores"),
+        "lbleditprof": MessageLookupByLibrary.simpleMessage("Editar Perfil"),
         "lblexpiration": MessageLookupByLibrary.simpleMessage("Vencimiento"),
+        "lblfullname": MessageLookupByLibrary.simpleMessage("Nombre Completo"),
+        "lbllocation": MessageLookupByLibrary.simpleMessage("Localidad"),
         "lblpackages": MessageLookupByLibrary.simpleMessage("Paquetes"),
         "lblpicking": MessageLookupByLibrary.simpleMessage("Retiro"),
         "lblproduct": MessageLookupByLibrary.simpleMessage("Producto"),
         "lblunit": MessageLookupByLibrary.simpleMessage("Unidad"),
         "lblunits": MessageLookupByLibrary.simpleMessage("Unidades"),
         "lblwarehouse": MessageLookupByLibrary.simpleMessage("Deposito"),
-        "mcontacts": MessageLookupByLibrary.simpleMessage("Contactos"),
+        "mchanguelang":
+            MessageLookupByLibrary.simpleMessage("Cambiar Lenguaje"),
         "mdarkmode": MessageLookupByLibrary.simpleMessage("Modo Oscuro"),
         "mdashboard": MessageLookupByLibrary.simpleMessage("Menu"),
         "modalcontainer": MessageLookupByLibrary.simpleMessage("Contenedor"),
@@ -51,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "msettings": MessageLookupByLibrary.simpleMessage("Configuraciones"),
         "msignout": MessageLookupByLibrary.simpleMessage("Cerrar Sesión"),
         "mslidem": MessageLookupByLibrary.simpleMessage("Menu Desplegable"),
+        "mstatis": MessageLookupByLibrary.simpleMessage("Estadisticas"),
         "msupport": MessageLookupByLibrary.simpleMessage("Soporte"),
         "mtask": MessageLookupByLibrary.simpleMessage("Tareas"),
         "password": MessageLookupByLibrary.simpleMessage("Contraseña"),

@@ -54,7 +54,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
           child: ListView(
             children: [
               Text(
-                "Edit Profile",
+                S.of(context).lblapplication,
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
               ),
               SizedBox(
@@ -103,10 +103,13 @@ class _EditProfilePageState extends State<EditProfilePage> {
               SizedBox(
                 height: 35,
               ),
-              buildTextField("Full Name", "User", false),
-              buildTextField("E-mail", "user@gmail.com", false),
-              buildTextField("Password", "********", true),
-              buildTextField("Location", "Location", false),
+              buildTextField(
+                  S.of(context).lblfullname, S.of(context).lblfullname, false),
+              buildTextField(S.of(context).email, S.of(context).email, false),
+              buildTextField(
+                  S.of(context).password, S.of(context).password, true),
+              buildTextField(
+                  S.of(context).lbllocation, S.of(context).lbllocation, false),
               SizedBox(
                 height: 35,
               ),
@@ -121,12 +124,15 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: Text("CANCEL",
+                    child: Text(S.of(context).btncancel,
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 12,
                           letterSpacing: 2.2,
                           color: Theme.of(context).primaryColor,
                         )),
+                  ),
+                  SizedBox(
+                    width: 5,
                   ),
                   RaisedButton(
                     onPressed: () {
@@ -138,9 +144,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                     child: Text(
-                      "SAVE",
+                      S.of(context).btnsave,
                       style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 12,
                           letterSpacing: 2.2,
                           color: Colors.white),
                     ),

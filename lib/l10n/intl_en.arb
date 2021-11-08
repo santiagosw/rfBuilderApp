@@ -16,12 +16,13 @@
     "suser": "User",
     "mdashboard": "Dashboard",
     "mtask": "Tasks",
-    "mcontacts": "Contacts",
+    "mstatis": "Statistics",
     "msettings": "Settings",
     "msupport": "Support",
     "mdarkmode": "Dark Mode",
     "mslidem": "Slide Menu",
     "msignout": "SignOut",
+    "mchanguelang": "Change Language",
     
     "@_MENU_PAGE": {
     },
@@ -75,13 +76,15 @@
     "@_HINT_TEXTS": {
     },
 
-    "htdes": "type here a description",
+    "htdes": "Description Product",
  
     "@_BUTTONS": {
     },
 
     "btnlogin": "Login",
     "btncontinue": "Continue",
+    "btncancel": "CANCEL",
+    "btnsave": "SAVE",
 
     "@_LABELS": {
     },
@@ -95,6 +98,10 @@
     "lblamount": "Amount",
     "lblunit": "Unit",
     "lblexpiration": "Expiration",
-    "lbldes": "Description"
+    "lbldes": "Description",
+    "lbleditprof": "Edit Profile",
+    "lblfullname": "Full Name",
+    "lbllocation": "Location",
+    "lblapplication": "Aplication"
     
 }

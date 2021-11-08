@@ -21,7 +21,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
   late ScrollController _scrollController;
   bool _isScrolled = false;
   String? dropdown;
-  String barcode = '00000000';
+  String barcode = '';
 
   List<dynamic> _services = [
     ['No Options', Iconsax.search_normal, Colors.white],
@@ -57,7 +57,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
         : 'LightTheme';
 
     return AdvancedDrawer(
-      backdropColor: Colors.grey.shade900,
+      backdropColor: Theme.of(context).splashColor,
       controller: _advancedDrawerController,
       animationCurve: Curves.easeInOut,
       animationDuration: const Duration(milliseconds: 300),
@@ -67,10 +67,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
       childDecoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.shade900,
-            blurRadius: 20.0,
-            spreadRadius: 5.0,
-            offset: Offset(-20.0, 0.0),
+            color: Colors.grey.withOpacity(0.5),
           ),
         ],
         borderRadius: BorderRadius.circular(30),
@@ -96,18 +93,20 @@ class _ReceptionPageState extends State<ReceptionPage> {
                     ),
                     child: Image.asset('assets/images/user.png')),
                 SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
                   child: Text(
                     S.of(context).suser,
                     style: TextStyle(
-                        color: Theme.of(context).hintColor,
+                        color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.w600),
                   ),
                 ),
-                Spacer(),
+                SizedBox(
+                  height: 40,
+                ),
                 Divider(
                   color: Colors.grey.shade800,
                 ),
@@ -119,7 +118,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                   title: Text(
                     S.of(context).mdashboard,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -129,17 +128,17 @@ class _ReceptionPageState extends State<ReceptionPage> {
                   title: Text(
                     S.of(context).mtask,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.profile_2user, color: Colors.red),
+                  leading: Icon(Iconsax.diagram, color: Colors.red),
                   title: Text(
-                    S.of(context).mcontacts,
+                    S.of(context).mstatis,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -152,7 +151,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                   title: Text(
                     S.of(context).msettings,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -162,7 +161,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                   title: Text(
                     S.of(context).msupport,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -174,7 +173,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                   leading: Icon(Iconsax.logout, color: Colors.red),
                   title: Text(S.of(context).msignout,
                       style: TextStyle(
-                        color: Theme.of(context).hintColor,
+                        color: Theme.of(context).primaryColor,
                       )),
                 ),
                 Spacer(),
@@ -182,7 +181,9 @@ class _ReceptionPageState extends State<ReceptionPage> {
                   padding: const EdgeInsets.all(20.0),
                   child: Text(
                     'Version 1.1.0',
-                    style: TextStyle(color: Colors.grey.shade500),
+                    style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+                    ),
                   ),
                 )
               ],
@@ -193,78 +194,6 @@ class _ReceptionPageState extends State<ReceptionPage> {
       child: Scaffold(
           resizeToAvoidBottomInset: false,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          bottomSheet: Visibility(
-            visible: true,
-            child: GFBottomSheet(
-              animationDuration: 20,
-              controller: _controller,
-              maxContentHeight: 150,
-              enableExpandableContent: false,
-              stickyHeaderHeight: 50,
-              stickyHeader: Container(
-                child: Center(
-                  child: Icon(
-                    Iconsax.more,
-                    color: Colors.white,
-                  ),
-                ),
-                decoration: BoxDecoration(color: Colors.red, boxShadow: [
-                  BoxShadow(color: Colors.black45, blurRadius: 0)
-                ]),
-              ),
-              contentBody: SizedBox(
-                height: 20,
-                child: Container(
-                  color: Theme.of(context).scaffoldBackgroundColor,
-                  padding: EdgeInsets.only(top: 20),
-                  height: 70,
-                  width: double.infinity,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: _services.length,
-                    itemBuilder: (context, index) {
-                      return FadeInDown(
-                        duration: Duration(milliseconds: (index + 1) * 100),
-                        child: AspectRatio(
-                          aspectRatio: 1,
-                          child: GestureDetector(
-                            onTap: () {},
-                            child: Column(
-                              children: [
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    color: Theme.of(context).canvasColor,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Center(
-                                    child: Icon(
-                                      _services[index][1],
-                                      color: Colors.red,
-                                      size: 25,
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
-                                  _services[index][0],
-                                  style: TextStyle(
-                                      color: Theme.of(context).primaryColor),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ),
-            ),
-          ),
           body: CustomScrollView(controller: _scrollController, slivers: [
             SliverAppBar(
               expandedHeight: 150.0,
@@ -489,6 +418,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                         ),
                         SizedBox(height: 10),
                         TextField(
+                          readOnly: true,
                           keyboardType: TextInputType.multiline,
                           minLines: 1,
                           maxLines: 8,
@@ -503,7 +433,6 @@ class _ReceptionPageState extends State<ReceptionPage> {
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
                             ),
-                            suffixIcon: Icon(Iconsax.text, color: Colors.red),
                             hintStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
@@ -620,40 +549,45 @@ class _ReceptionPageState extends State<ReceptionPage> {
                             ),
                           ),
                         ),
-                        Container(
-                          height: 50,
-                          width: MediaQuery.of(context).size.width,
-                          margin: EdgeInsets.all(20),
-                          child: DropdownButtonHideUnderline(
-                            child: GFDropdown(
-                              dropdownColor: Theme.of(context).accentColor,
-                              icon: Icon(Iconsax.unlimited),
-                              hint: Text(
-                                'CM',
-                                style: TextStyle(
-                                    color: Theme.of(context).primaryColor),
-                              ),
-                              padding: const EdgeInsets.all(15),
-                              borderRadius: BorderRadius.circular(10),
-                              border:
-                                  const BorderSide(color: Colors.red, width: 1),
-                              dropdownButtonColor:
-                                  Theme.of(context).accentColor,
-                              onChanged: (newValue) {
-                                setState(() {});
-                              },
-                              items: ['CM', 'MM', 'LT', 'DC']
-                                  .map((value) => DropdownMenuItem(
-                                        value: value,
-                                        child: Text(
-                                          value,
-                                          style: TextStyle(
-                                            color:
-                                                Theme.of(context).primaryColor,
-                                          ),
-                                        ),
-                                      ))
-                                  .toList(),
+                        SizedBox(height: 10),
+                        TextField(
+                          readOnly: false,
+                          keyboardType: TextInputType.number,
+                          cursorColor: Theme.of(context).cursorColor,
+                          decoration: InputDecoration(
+                            prefixText: 'Unidad de Medida',
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            contentPadding: EdgeInsets.all(0.0),
+                            labelText: S.of(context).lblunit,
+                            labelStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            hintStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontSize: 14.0,
+                            ),
+                            prefixIcon: Icon(
+                              Iconsax.weight,
+                              color: Colors.red,
+                              size: 18,
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade200, width: 2),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            floatingLabelStyle: TextStyle(
+                              color: Colors.red,
+                              fontSize: 18.0,
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.red, width: 1.5),
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
                         ),

@@ -21,7 +21,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
   late ScrollController _scrollController;
   bool _isScrolled = false;
   String? dropdown;
-  String barcode = '00000000';
+  String barcode = '';
   String almacen = 'WAREHOUSE';
   String picking = 'PICKING';
   int producto = 00000;
@@ -64,7 +64,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
         : 'LightTheme';
 
     return AdvancedDrawer(
-      backdropColor: Colors.grey.shade900,
+      backdropColor: Theme.of(context).scaffoldBackgroundColor,
       controller: _advancedDrawerController,
       animationCurve: Curves.easeInOut,
       animationDuration: const Duration(milliseconds: 300),
@@ -74,10 +74,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
       childDecoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.shade900,
-            blurRadius: 20.0,
-            spreadRadius: 5.0,
-            offset: Offset(-20.0, 0.0),
+            color: Colors.grey.withOpacity(0.5),
           ),
         ],
         borderRadius: BorderRadius.circular(30),
@@ -103,18 +100,20 @@ class _ReplacementPageState extends State<ReplacementPage> {
                     ),
                     child: Image.asset('assets/images/user.png')),
                 SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
                   child: Text(
                     S.of(context).suser,
                     style: TextStyle(
-                        color: Theme.of(context).hintColor,
+                        color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.w600),
                   ),
                 ),
-                Spacer(),
+                SizedBox(
+                  height: 40,
+                ),
                 Divider(
                   color: Colors.grey.shade800,
                 ),
@@ -126,7 +125,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                   title: Text(
                     S.of(context).mdashboard,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -136,17 +135,17 @@ class _ReplacementPageState extends State<ReplacementPage> {
                   title: Text(
                     S.of(context).mtask,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.profile_2user, color: Colors.red),
+                  leading: Icon(Iconsax.diagram, color: Colors.red),
                   title: Text(
-                    S.of(context).mcontacts,
+                    S.of(context).mstatis,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -159,7 +158,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                   title: Text(
                     S.of(context).msettings,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -169,7 +168,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                   title: Text(
                     S.of(context).msupport,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -181,7 +180,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                   leading: Icon(Iconsax.logout, color: Colors.red),
                   title: Text(S.of(context).msignout,
                       style: TextStyle(
-                        color: Theme.of(context).hintColor,
+                        color: Theme.of(context).primaryColor,
                       )),
                 ),
                 Spacer(),
@@ -189,7 +188,9 @@ class _ReplacementPageState extends State<ReplacementPage> {
                   padding: const EdgeInsets.all(20.0),
                   child: Text(
                     'Version 1.1.0',
-                    style: TextStyle(color: Colors.grey.shade500),
+                    style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+                    ),
                   ),
                 )
               ],
@@ -199,7 +200,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
       ),
       child: Scaffold(
           resizeToAvoidBottomInset: false,
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          backgroundColor: Theme.of(context).splashColor,
           bottomSheet: Visibility(
             visible: true,
             child: GFBottomSheet(
@@ -478,32 +479,42 @@ class _ReplacementPageState extends State<ReplacementPage> {
                         Divider(
                           color: Theme.of(context).dividerColor,
                         ),
-                        Row(
-                          children: [
-                            Container(
-                              margin: EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 10),
-                              child: GFBorder(
-                                radius: Radius.circular(20),
-                                color: Colors.red,
-                                dashedLine: [5, 5],
-                                type: GFBorderType.rect,
-                                child: Container(
-                                  height: 100,
-                                  width: 300,
-                                  child: Text(
-                                    S.of(context).lbldes,
-                                    semanticsLabel: '$des',
-                                    style: TextStyle(
-                                      color: Theme.of(context).primaryColor,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                                  ),
-                                ),
-                              ),
+                        SizedBox(height: 5),
+                        TextField(
+                          readOnly: true,
+                          keyboardType: TextInputType.multiline,
+                          minLines: 1,
+                          maxLines: 8,
+                          cursorColor: Theme.of(context).cursorColor,
+                          decoration: InputDecoration(
+                            errorMaxLines: 8,
+                            helperMaxLines: 8,
+                            hintText: S.of(context).htdes,
+                            labelText: S.of(context).tfdescription,
+                            labelStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w400,
                             ),
-                          ],
+                            hintStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontSize: 14.0,
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade200, width: 2),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            floatingLabelStyle: TextStyle(
+                              color: Colors.red,
+                              fontSize: 18.0,
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.red, width: 1.5),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                          ),
                         ),
                         SizedBox(height: 5),
                         Divider(

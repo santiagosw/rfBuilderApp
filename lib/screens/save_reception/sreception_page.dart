@@ -21,7 +21,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
   late ScrollController _scrollController;
   bool _isScrolled = false;
   String? dropdown;
-  String barcode = '00000000';
+  String barcode = '';
 
   List<dynamic> _services = [
     ['No Options', Iconsax.search_normal, Colors.white],
@@ -53,7 +53,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
   @override
   Widget build(BuildContext context) {
     return AdvancedDrawer(
-      backdropColor: Colors.grey.shade900,
+      backdropColor: Theme.of(context).splashColor,
       controller: _advancedDrawerController,
       animationCurve: Curves.easeInOut,
       animationDuration: const Duration(milliseconds: 300),
@@ -63,10 +63,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
       childDecoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.shade900,
-            blurRadius: 20.0,
-            spreadRadius: 5.0,
-            offset: Offset(-20.0, 0.0),
+            color: Colors.grey.withOpacity(0.5),
           ),
         ],
         borderRadius: BorderRadius.circular(30),
@@ -92,18 +89,20 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                     ),
                     child: Image.asset('assets/images/user.png')),
                 SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 30.0),
                   child: Text(
                     S.of(context).suser,
                     style: TextStyle(
-                        color: Theme.of(context).hintColor,
+                        color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.w600),
                   ),
                 ),
-                Spacer(),
+                SizedBox(
+                  height: 40,
+                ),
                 Divider(
                   color: Colors.grey.shade800,
                 ),
@@ -115,7 +114,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                   title: Text(
                     S.of(context).mdashboard,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -125,17 +124,17 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                   title: Text(
                     S.of(context).mtask,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
                 ListTile(
                   onTap: () {},
-                  leading: Icon(Iconsax.profile_2user, color: Colors.red),
+                  leading: Icon(Iconsax.diagram, color: Colors.red),
                   title: Text(
-                    S.of(context).mcontacts,
+                    S.of(context).mstatis,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -148,7 +147,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                   title: Text(
                     S.of(context).msettings,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -158,7 +157,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                   title: Text(
                     S.of(context).msupport,
                     style: TextStyle(
-                      color: Theme.of(context).hintColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -170,7 +169,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                   leading: Icon(Iconsax.logout, color: Colors.red),
                   title: Text(S.of(context).msignout,
                       style: TextStyle(
-                        color: Theme.of(context).hintColor,
+                        color: Theme.of(context).primaryColor,
                       )),
                 ),
                 Spacer(),
@@ -178,7 +177,9 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                   padding: const EdgeInsets.all(20.0),
                   child: Text(
                     'Version 1.1.0',
-                    style: TextStyle(color: Colors.grey.shade500),
+                    style: TextStyle(
+                      color: Theme.of(context).primaryColor,
+                    ),
                   ),
                 )
               ],
@@ -189,78 +190,6 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
       child: Scaffold(
           resizeToAvoidBottomInset: false,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          bottomSheet: Visibility(
-            visible: true,
-            child: GFBottomSheet(
-              animationDuration: 20,
-              controller: _controller,
-              maxContentHeight: 150,
-              enableExpandableContent: false,
-              stickyHeaderHeight: 50,
-              stickyHeader: Container(
-                child: Center(
-                  child: Icon(
-                    Iconsax.more,
-                    color: Colors.white,
-                  ),
-                ),
-                decoration: BoxDecoration(color: Colors.red, boxShadow: [
-                  BoxShadow(color: Colors.black45, blurRadius: 0)
-                ]),
-              ),
-              contentBody: SizedBox(
-                height: 20,
-                child: Container(
-                  color: Theme.of(context).scaffoldBackgroundColor,
-                  padding: EdgeInsets.only(top: 20),
-                  height: 70,
-                  width: double.infinity,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: _services.length,
-                    itemBuilder: (context, index) {
-                      return FadeInDown(
-                        duration: Duration(milliseconds: (index + 1) * 100),
-                        child: AspectRatio(
-                          aspectRatio: 1,
-                          child: GestureDetector(
-                            onTap: () {},
-                            child: Column(
-                              children: [
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    color: Theme.of(context).canvasColor,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Center(
-                                    child: Icon(
-                                      _services[index][1],
-                                      color: Colors.red,
-                                      size: 25,
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
-                                  _services[index][0],
-                                  style: TextStyle(
-                                      color: Theme.of(context).primaryColor),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ),
-            ),
-          ),
           body: CustomScrollView(controller: _scrollController, slivers: [
             SliverAppBar(
               expandedHeight: 150.0,
@@ -629,6 +558,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                           height: 10,
                         ),
                         TextField(
+                          readOnly: true,
                           keyboardType: TextInputType.multiline,
                           minLines: 1,
                           maxLines: 5,
