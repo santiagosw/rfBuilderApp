@@ -47,6 +47,7 @@
     "tltreplacement": "Reposición",
     "tltreceivinguard": "Guardado de Recepción",
     "tltsetting": "Configuraciones",
+    "tltstatics": "Estadisticas",
     
 
 
@@ -78,6 +79,10 @@
     "@_HINT_TEXTS": {
     },
     "htdes": "Descripción del producto",
+    "htpos": "Posicion del producto",
+    "htamount": "Cantidad del producto",
+
+    
 
     "@_BUTTONS": {
     },
@@ -104,7 +109,8 @@
     "lbleditprof": "Editar Perfil",
     "lblfullname": "Nombre Completo",
     "lbllocation": "Localidad",
-    "lblapplication": "Aplicación"
+    "lblapplication": "Aplicación",
+    "lblavance": "Avance"
 }
 
 

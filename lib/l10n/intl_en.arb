@@ -7,7 +7,7 @@
     },
 
     "email": "Email",
-    "password": "Paswword",
+    "password": "Password",
     "forgotpassword": "Forgot Password?",
 
     "@_SLIDE_MENU": {
@@ -46,6 +46,7 @@
     "tltreplacement": "Replacement",
     "tltreceivinguard": "Save Reception",
     "tltsetting": "Settings",
+    "tltstatics": "Statistics",
     
 
     "@_TEXTFIELDS": {
@@ -76,7 +77,9 @@
     "@_HINT_TEXTS": {
     },
 
-    "htdes": "Description Product",
+    "htdes": "Product Description",
+    "htpos": "Product Position",
+    "htamount": "Product Amount",
  
     "@_BUTTONS": {
     },
@@ -102,6 +105,7 @@
     "lbleditprof": "Edit Profile",
     "lblfullname": "Full Name",
     "lbllocation": "Location",
-    "lblapplication": "Aplication"
+    "lblapplication": "Aplication",
+    "lblavance": "Advance"
     
 }

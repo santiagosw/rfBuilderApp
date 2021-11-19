@@ -80,10 +80,10 @@ class S {
     );
   }
 
-  /// `Paswword`
+  /// `Password`
   String get password {
     return Intl.message(
-      'Paswword',
+      'Password',
       name: 'password',
       desc: '',
       args: [],
@@ -350,6 +350,16 @@ class S {
     );
   }
 
+  /// `Statistics`
+  String get tltstatics {
+    return Intl.message(
+      'Statistics',
+      name: 'tltstatics',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Position`
   String get tfposition {
     return Intl.message(
@@ -520,11 +530,31 @@ class S {
     );
   }
 
-  /// `Description Product`
+  /// `Product Description`
   String get htdes {
     return Intl.message(
-      'Description Product',
+      'Product Description',
       name: 'htdes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Product Position`
+  String get htpos {
+    return Intl.message(
+      'Product Position',
+      name: 'htpos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Product Amount`
+  String get htamount {
+    return Intl.message(
+      'Product Amount',
+      name: 'htamount',
       desc: '',
       args: [],
     );
@@ -705,6 +735,16 @@ class S {
     return Intl.message(
       'Aplication',
       name: 'lblapplication',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Advance`
+  String get lblavance {
+    return Intl.message(
+      'Advance',
+      name: 'lblavance',
       desc: '',
       args: [],
     );

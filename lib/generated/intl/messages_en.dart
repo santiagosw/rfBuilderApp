@@ -8,6 +8,7 @@
 // ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
 // ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
+// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
 
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
@@ -28,10 +29,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "forgotpassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
-        "htdes": MessageLookupByLibrary.simpleMessage("Description Product"),
+        "htamount": MessageLookupByLibrary.simpleMessage("Product Amount"),
+        "htdes": MessageLookupByLibrary.simpleMessage("Product Description"),
+        "htpos": MessageLookupByLibrary.simpleMessage("Product Position"),
         "language": MessageLookupByLibrary.simpleMessage("Idioma"),
         "lblamount": MessageLookupByLibrary.simpleMessage("Amount"),
         "lblapplication": MessageLookupByLibrary.simpleMessage("Aplication"),
+        "lblavance": MessageLookupByLibrary.simpleMessage("Advance"),
         "lbldes": MessageLookupByLibrary.simpleMessage("Description"),
         "lbldisplay": MessageLookupByLibrary.simpleMessage("Display"),
         "lbleditprof": MessageLookupByLibrary.simpleMessage("Edit Profile"),
@@ -59,7 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "mstatis": MessageLookupByLibrary.simpleMessage("Statistics"),
         "msupport": MessageLookupByLibrary.simpleMessage("Support"),
         "mtask": MessageLookupByLibrary.simpleMessage("Tasks"),
-        "password": MessageLookupByLibrary.simpleMessage("Paswword"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
         "suser": MessageLookupByLibrary.simpleMessage("User"),
         "systemLanguage":
             MessageLookupByLibrary.simpleMessage("Idioma del sistema"),
@@ -87,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "tltreception": MessageLookupByLibrary.simpleMessage("Reception"),
         "tltreplacement": MessageLookupByLibrary.simpleMessage("Replacement"),
         "tltsetting": MessageLookupByLibrary.simpleMessage("Settings"),
+        "tltstatics": MessageLookupByLibrary.simpleMessage("Statistics"),
         "tltstock": MessageLookupByLibrary.simpleMessage("Stock"),
         "tlttask": MessageLookupByLibrary.simpleMessage("Tasks"),
         "tpicking": MessageLookupByLibrary.simpleMessage("Picking"),

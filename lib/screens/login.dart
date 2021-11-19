@@ -118,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
               ]),
             ),
             Text(
-              "RF Builder",
+              "Fast2Ship",
               style: TextStyle(
                   fontSize: 36,
                   fontFamily: "Titillium Web",

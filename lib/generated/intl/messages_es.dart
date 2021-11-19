@@ -8,6 +8,7 @@
 // ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
 // ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
+// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
 
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
@@ -28,11 +29,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "email": MessageLookupByLibrary.simpleMessage("Correo Electronico"),
         "forgotpassword":
             MessageLookupByLibrary.simpleMessage("¿Olvido su contraseña?"),
+        "htamount":
+            MessageLookupByLibrary.simpleMessage("Cantidad del producto"),
         "htdes":
             MessageLookupByLibrary.simpleMessage("Descripción del producto"),
+        "htpos": MessageLookupByLibrary.simpleMessage("Posicion del producto"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lblamount": MessageLookupByLibrary.simpleMessage("Cantidad"),
         "lblapplication": MessageLookupByLibrary.simpleMessage("Aplicación"),
+        "lblavance": MessageLookupByLibrary.simpleMessage("Avance"),
         "lbldes": MessageLookupByLibrary.simpleMessage("Descripción"),
         "lbldisplay": MessageLookupByLibrary.simpleMessage("Monitores"),
         "lbleditprof": MessageLookupByLibrary.simpleMessage("Editar Perfil"),
@@ -90,6 +95,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "tltreception": MessageLookupByLibrary.simpleMessage("Recepción"),
         "tltreplacement": MessageLookupByLibrary.simpleMessage("Reposición"),
         "tltsetting": MessageLookupByLibrary.simpleMessage("Configuraciones"),
+        "tltstatics": MessageLookupByLibrary.simpleMessage("Estadisticas"),
         "tltstock": MessageLookupByLibrary.simpleMessage("Inventario"),
         "tlttask": MessageLookupByLibrary.simpleMessage("Tareas"),
         "tpicking": MessageLookupByLibrary.simpleMessage("Retirar"),

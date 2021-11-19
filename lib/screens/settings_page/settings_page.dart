@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:rfbuilder_app/provider/languageChangeProvider.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:rfbuilder_app/generated/l10n.dart';
@@ -89,23 +90,38 @@ class _SettingsPageState extends State<SettingsPage> {
                           Provider.of<ThemeProvider>(context, listen: false);
                       provider.toggleTheme(value!);
                     })),
+            Divider(
+              height: 15,
+              thickness: 2,
+              color: Theme.of(context).dividerColor,
+            ),
             SizedBox(height: 10),
             GFListTile(
-                title: Text(S.of(context).mchanguelang,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Theme.of(context).primaryColor,
-                    )),
-                icon: GFToggle(
-                    disabledTrackColor: Colors.grey.shade300,
-                    enabledThumbColor: Colors.white,
-                    disabledThumbColor: Colors.white,
-                    enabledTrackColor: Colors.red,
-                    value: false,
-                    onChanged: (value) {
-                      setState(() {});
-                    })),
+              title: Text(S.of(context).mchanguelang,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    color: Theme.of(context).primaryColor,
+                  )),
+            ),
+            Row(
+              children: [
+                SizedBox(width: 30),
+                GFButton(
+                    color: Colors.red,
+                    onPressed: () => context
+                        .read<LanguageChangeProvider>()
+                        .changeLocale("es"),
+                    child: Text("Spanish")),
+                SizedBox(width: 15),
+                GFButton(
+                    color: Colors.red,
+                    onPressed: () => context
+                        .read<LanguageChangeProvider>()
+                        .changeLocale("en"),
+                    child: Text("English")),
+              ],
+            ),
             SizedBox(
               height: 50,
             ),
@@ -124,55 +140,6 @@ class _SettingsPageState extends State<SettingsPage> {
                         color: Theme.of(context).primaryColor)),
               ),
             )
-          ],
-        ),
-      ),
-    );
-  }
-
-  GestureDetector buildAccountOptionRow(BuildContext context, String title) {
-    return GestureDetector(
-      onTap: () {
-        showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                title: Text(title),
-                content: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text("Option 1"),
-                    Text("Option 2"),
-                    Text("Option 3"),
-                  ],
-                ),
-                actions: [
-                  FlatButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: Text("Close")),
-                ],
-              );
-            });
-      },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-                color: Theme.of(context).primaryColor,
-              ),
-            ),
-            Icon(
-              Icons.arrow_forward_ios,
-              color: Colors.grey,
-            ),
           ],
         ),
       ),

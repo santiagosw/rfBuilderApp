@@ -26,6 +26,10 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
   List<dynamic> _services = [
     ['No Options', Iconsax.search_normal, Colors.white],
   ];
+  final List<dynamic> _advancewunites = [
+    ['Unidad', Iconsax.transaction_minus, 'CM'],
+    ['Cantidad', Iconsax.arrow_circle_up, 'CANTIDAD'],
+  ];
 
   @override
   void initState() {
@@ -110,16 +114,6 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                   onTap: () {
                     Get.toNamed('/home');
                   },
-                  leading: Icon(Iconsax.home, color: Colors.red),
-                  title: Text(
-                    S.of(context).mdashboard,
-                    style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                ),
-                ListTile(
-                  onTap: () {},
                   leading: Icon(Iconsax.task, color: Colors.red),
                   title: Text(
                     S.of(context).mtask,
@@ -129,7 +123,9 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                   ),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed('/chart');
+                  },
                   leading: Icon(Iconsax.diagram, color: Colors.red),
                   title: Text(
                     S.of(context).mstatis,
@@ -152,7 +148,9 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                   ),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed('/support');
+                  },
                   leading: Icon(Iconsax.support, color: Colors.red),
                   title: Text(
                     S.of(context).msupport,
@@ -363,18 +361,14 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                         ),
                         SizedBox(height: 10),
                         TextField(
+                          autofocus: true,
+                          readOnly: true,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
-                            prefixText: '$barcode',
+                            prefixText: S.of(context).lblproduct,
                             prefixStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                             ),
-                            suffix: IconButton(
-                                onPressed: scanBarcode,
-                                icon: Icon(
-                                  Iconsax.camera,
-                                  color: Colors.red,
-                                )),
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: S.of(context).tfproduct,
                             labelStyle: TextStyle(
@@ -504,52 +498,58 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                           ),
                         ),
                         SizedBox(height: 10),
-                        TextField(
-                          keyboardType: TextInputType.number,
-                          cursorColor: Theme.of(context).cursorColor,
-                          decoration: InputDecoration(
-                            prefixText: '$barcode',
-                            prefixStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
+                        Container(
+                            height: 100,
+                            width: 220,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Theme.of(context).cardColor,
                             ),
-                            suffix: IconButton(
-                                onPressed: scanBarcode,
-                                icon: Icon(
-                                  Iconsax.camera,
-                                  color: Colors.red,
-                                )),
-                            contentPadding: EdgeInsets.all(0.0),
-                            labelText: S.of(context).tfamount,
-                            labelStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.w400,
-                            ),
-                            hintStyle: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 14.0,
-                            ),
-                            prefixIcon: Icon(
-                              Iconsax.box_add,
-                              color: Colors.red,
-                              size: 18,
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.grey.shade200, width: 2),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            floatingLabelStyle: TextStyle(
-                              color: Colors.red,
-                              fontSize: 18.0,
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.red, width: 1.5),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                          ),
-                        ),
+                            child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: _advancewunites.length,
+                              itemBuilder: (context, index) {
+                                return GestureDetector(
+                                    child: Container(
+                                        height: 100,
+                                        width: 100,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                            color: Theme.of(context).cardColor),
+                                        margin: EdgeInsets.only(right: 20),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(_advancewunites[index][1],
+                                                color: Colors.red),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Text(
+                                              _advancewunites[index][0],
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Theme.of(context)
+                                                      .primaryColor),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Text(
+                                              "${_advancewunites[index][2]}",
+                                              style: TextStyle(
+                                                  color: Theme.of(context)
+                                                      .primaryColor),
+                                            )
+                                          ],
+                                        )));
+                              },
+                            )),
                         SizedBox(height: 10),
                         Divider(
                           color: Theme.of(context).dividerColor,
@@ -558,7 +558,6 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                           height: 10,
                         ),
                         TextField(
-                          readOnly: true,
                           keyboardType: TextInputType.multiline,
                           minLines: 1,
                           maxLines: 5,
@@ -621,22 +620,21 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
       );
 
   Future<void> scanBarcode() async {
+    String scanResult = "";
     try {
-      final barcode = await FlutterBarcodeScanner.scanBarcode(
+      scanResult = await FlutterBarcodeScanner.scanBarcode(
         '#ff6666',
         'Cancel',
         true,
         ScanMode.BARCODE,
       );
-
-      if (!mounted) return;
-
-      setState(() {
-        this.barcode = barcode;
-      });
     } on PlatformException {
-      barcode = 'Failed to get platform version.';
+      scanResult = 'Failed to get platform version.';
     }
+
+    if (!mounted) return;
+
+    setState(() => this.barcode = barcode);
   }
 
   void _handleMenuButtonPressed() {

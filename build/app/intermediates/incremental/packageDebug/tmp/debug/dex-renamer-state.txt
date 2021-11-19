@@ -1,10 +1,7 @@
-#Mon Nov 08 14:06:45 ART 2021
-base.2=C\:\\development\\repos\\rfBuilderApp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
-path.2=classes3.dex
+#Thu Nov 18 15:21:12 ART 2021
 base.1=C\:\\development\\repos\\rfBuilderApp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
 path.1=classes2.dex
 base.0=C\:\\development\\repos\\rfBuilderApp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
 path.0=classes.dex

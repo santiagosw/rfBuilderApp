@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
+import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:iconsax/iconsax.dart';
@@ -39,7 +40,7 @@ class _PickingPageState extends State<PickingPage> {
 
   final List<dynamic> _productes = [
     ['Paquetes', Iconsax.box, '0'],
-    ['Monitores', Iconsax.screenmirroring, '0'],
+    ['Display', Iconsax.screenmirroring, '0'],
     ['Unidades', Iconsax.element_plus, '0'],
   ];
 
@@ -51,7 +52,7 @@ class _PickingPageState extends State<PickingPage> {
 
   final List<dynamic> _advancewunites = [
     ['Unidad', Iconsax.transaction_minus, 'CM'],
-    ['Avance', Iconsax.arrow_circle_up, '[0/14]'],
+    ['Cantidad', Iconsax.arrow_circle_up, 'CANTIDAD'],
   ];
 
   final List<dynamic> _advancewuniten = [
@@ -146,16 +147,6 @@ class _PickingPageState extends State<PickingPage> {
                   onTap: () {
                     Get.toNamed('/home');
                   },
-                  leading: Icon(Iconsax.home, color: Colors.red),
-                  title: Text(
-                    S.of(context).mdashboard,
-                    style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                ),
-                ListTile(
-                  onTap: () {},
                   leading: Icon(Iconsax.task, color: Colors.red),
                   title: Text(
                     S.of(context).mtask,
@@ -165,7 +156,9 @@ class _PickingPageState extends State<PickingPage> {
                   ),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed('/chart');
+                  },
                   leading: Icon(Iconsax.diagram, color: Colors.red),
                   title: Text(
                     S.of(context).mstatis,
@@ -188,7 +181,9 @@ class _PickingPageState extends State<PickingPage> {
                   ),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed('/support');
+                  },
                   leading: Icon(Iconsax.support, color: Colors.red),
                   title: Text(
                     S.of(context).msupport,
@@ -424,9 +419,11 @@ class _PickingPageState extends State<PickingPage> {
                       duration: Duration(milliseconds: 500),
                       child: Column(children: [
                         TextField(
+                          readOnly: true,
+                          autofocus: true,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
-                            prefixText: '$barcode',
+                            prefixText: S.of(context).htpos,
                             prefixStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                             ),
@@ -468,12 +465,14 @@ class _PickingPageState extends State<PickingPage> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 5),
+                        SizedBox(height: 10),
                         TextField(
+                          readOnly: true,
+                          autofocus: true,
                           keyboardType: TextInputType.number,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
-                            prefixText: '$barcode',
+                            prefixText: S.of(context).htamount,
                             prefixStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                             ),
@@ -546,6 +545,54 @@ class _PickingPageState extends State<PickingPage> {
                             ),
                             prefixIcon: Icon(
                               Iconsax.box,
+                              color: Colors.red,
+                              size: 18,
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade200, width: 2),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            floatingLabelStyle: TextStyle(
+                              color: Colors.red,
+                              fontSize: 18.0,
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.red, width: 1.5),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        TextField(
+                          readOnly: true,
+                          autofocus: true,
+                          cursorColor: Theme.of(context).cursorColor,
+                          decoration: InputDecoration(
+                            prefixText: S.of(context).lblproduct,
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            suffix: IconButton(
+                                onPressed: scanBarcode,
+                                icon: Icon(
+                                  Iconsax.camera,
+                                  color: Colors.red,
+                                )),
+                            contentPadding: EdgeInsets.all(0.0),
+                            labelText: S.of(context).lblproduct,
+                            labelStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            hintStyle: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 14.0,
+                            ),
+                            prefixIcon: Icon(
+                              Iconsax.location,
                               color: Colors.red,
                               size: 18,
                             ),
@@ -667,42 +714,28 @@ class _PickingPageState extends State<PickingPage> {
                               },
                             )),
                         SizedBox(height: 10),
-                        TextField(
-                          keyboardType: TextInputType.number,
-                          cursorColor: Theme.of(context).cursorColor,
-                          decoration: InputDecoration(
-                            contentPadding: EdgeInsets.all(0.0),
-                            labelText: S.of(context).tfamount,
-                            labelStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.w400,
-                            ),
-                            hintStyle: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 14.0,
-                            ),
-                            prefixIcon: Icon(
-                              Iconsax.add,
-                              color: Colors.red,
-                              size: 18,
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.grey.shade200, width: 2),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            floatingLabelStyle: TextStyle(
-                              color: Colors.red,
-                              fontSize: 18.0,
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.red, width: 1.5),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                          ),
+                        Text(
+                          S.of(context).lblavance,
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              color: Theme.of(context).primaryColor),
                         ),
+                        Center(
+                            child: FAProgressBar(
+                          progressColor: Colors.red,
+                          maxValue: 14,
+                          currentValue: 10,
+                          displayText: "/14",
+                          displayTextStyle: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              color: Theme.of(context).primaryColor),
+                          changeProgressColor: Colors.red.shade600,
+                          direction: Axis.horizontal,
+                          backgroundColor: Colors.grey.shade800,
+                          borderRadius: BorderRadius.circular(15),
+                        )),
                         SizedBox(height: 10),
                         Divider(
                           color: Theme.of(context).dividerColor,
@@ -791,22 +824,21 @@ class _PickingPageState extends State<PickingPage> {
       );
 
   Future<void> scanBarcode() async {
+    String scanResult = "";
     try {
-      final barcode = await FlutterBarcodeScanner.scanBarcode(
+      scanResult = await FlutterBarcodeScanner.scanBarcode(
         '#ff6666',
         'Cancel',
         true,
         ScanMode.BARCODE,
       );
-
-      if (!mounted) return;
-
-      setState(() {
-        this.barcode = barcode;
-      });
     } on PlatformException {
-      barcode = 'Failed to get platform version.';
+      scanResult = 'Failed to get platform version.';
     }
+
+    if (!mounted) return;
+
+    setState(() => this.barcode = barcode);
   }
 
   void _handleMenuButtonPressed() {

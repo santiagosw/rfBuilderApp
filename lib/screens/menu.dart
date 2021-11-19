@@ -127,16 +127,6 @@ class _HomePageState extends State<HomePage> {
                   onTap: () {
                     Get.toNamed('/home');
                   },
-                  leading: Icon(Iconsax.home, color: Colors.red),
-                  title: Text(
-                    S.of(context).mdashboard,
-                    style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                ),
-                ListTile(
-                  onTap: () {},
                   leading: Icon(Iconsax.task, color: Colors.red),
                   title: Text(
                     S.of(context).mtask,
@@ -146,7 +136,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed('/stats');
+                  },
                   leading: Icon(Iconsax.diagram, color: Colors.red),
                   title: Text(
                     S.of(context).mstatis,

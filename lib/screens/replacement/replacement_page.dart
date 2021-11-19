@@ -34,6 +34,11 @@ class _ReplacementPageState extends State<ReplacementPage> {
     ['Send To End', Iconsax.arrow_swap_horizontal, Colors.white],
   ];
 
+  final List<dynamic> _advancewunites = [
+    ['Unidad', Iconsax.transaction_minus, 'CM'],
+    ['Cantidad', Iconsax.arrow_circle_up, 'CANTIDAD'],
+  ];
+
   @override
   void initState() {
     _scrollController = ScrollController();
@@ -121,16 +126,6 @@ class _ReplacementPageState extends State<ReplacementPage> {
                   onTap: () {
                     Get.toNamed('/home');
                   },
-                  leading: Icon(Iconsax.home, color: Colors.red),
-                  title: Text(
-                    S.of(context).mdashboard,
-                    style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                ),
-                ListTile(
-                  onTap: () {},
                   leading: Icon(Iconsax.task, color: Colors.red),
                   title: Text(
                     S.of(context).mtask,
@@ -140,7 +135,9 @@ class _ReplacementPageState extends State<ReplacementPage> {
                   ),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed('/chart');
+                  },
                   leading: Icon(Iconsax.diagram, color: Colors.red),
                   title: Text(
                     S.of(context).mstatis,
@@ -163,7 +160,9 @@ class _ReplacementPageState extends State<ReplacementPage> {
                   ),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed('/support');
+                  },
                   leading: Icon(Iconsax.support, color: Colors.red),
                   title: Text(
                     S.of(context).msupport,
@@ -481,6 +480,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                         ),
                         SizedBox(height: 5),
                         TextField(
+                          autofocus: true,
                           readOnly: true,
                           keyboardType: TextInputType.multiline,
                           minLines: 1,
@@ -522,7 +522,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                         ),
                         SizedBox(height: 5),
                         TextField(
-                          keyboardType: TextInputType.number,
+                          keyboardType: TextInputType.text,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             prefixText: '$barcode',
@@ -618,57 +618,65 @@ class _ReplacementPageState extends State<ReplacementPage> {
                           ),
                         ),
                         SizedBox(height: 10),
-                        TextField(
-                          keyboardType: TextInputType.number,
-                          cursorColor: Theme.of(context).cursorColor,
-                          decoration: InputDecoration(
-                            prefixText: '$barcode',
-                            prefixStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
+                        Container(
+                            height: 100,
+                            width: 190,
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).cardColor,
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                            suffix: IconButton(
-                                onPressed: scanBarcode,
-                                icon: Icon(
-                                  Iconsax.camera,
-                                  color: Colors.red,
-                                )),
-                            contentPadding: EdgeInsets.all(0.0),
-                            labelText: S.of(context).tfamount,
-                            labelStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.w400,
-                            ),
-                            hintStyle: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 14.0,
-                            ),
-                            prefixIcon: Icon(
-                              Iconsax.element_plus,
-                              color: Colors.red,
-                              size: 18,
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.grey.shade200, width: 2),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            floatingLabelStyle: TextStyle(
-                              color: Colors.red,
-                              fontSize: 18.0,
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.red, width: 1.5),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                          ),
-                        ),
+                            child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: _advancewunites.length,
+                              itemBuilder: (context, index) {
+                                return GestureDetector(
+                                    child: Container(
+                                        height: 75,
+                                        decoration: BoxDecoration(
+                                          color: Theme.of(context).cardColor,
+                                          borderRadius:
+                                              BorderRadius.circular(15),
+                                        ),
+                                        margin: EdgeInsets.only(
+                                            right: 20, left: 15),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(_advancewunites[index][1],
+                                                color: Colors.red),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Text(
+                                              _advancewunites[index][0],
+                                              style: TextStyle(
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.w500,
+                                                color: Theme.of(context)
+                                                    .primaryColor,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Text(
+                                              "${_advancewunites[index][2]}",
+                                              style: TextStyle(
+                                                  color: Theme.of(context)
+                                                      .primaryColor),
+                                            )
+                                          ],
+                                        )));
+                              },
+                            )),
                         SizedBox(height: 10),
                         Divider(color: Theme.of(context).dividerColor),
                         SizedBox(height: 10),
                         TextField(
-                          keyboardType: TextInputType.number,
+                          keyboardType: TextInputType.text,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.all(0.0),
@@ -734,22 +742,21 @@ class _ReplacementPageState extends State<ReplacementPage> {
       );
 
   Future<void> scanBarcode() async {
+    String scanResult = "";
     try {
-      final barcode = await FlutterBarcodeScanner.scanBarcode(
+      scanResult = await FlutterBarcodeScanner.scanBarcode(
         '#ff6666',
         'Cancel',
         true,
         ScanMode.BARCODE,
       );
-
-      if (!mounted) return;
-
-      setState(() {
-        this.barcode = barcode;
-      });
     } on PlatformException {
-      barcode = 'Failed to get platform version.';
+      scanResult = 'Failed to get platform version.';
     }
+
+    if (!mounted) return;
+
+    setState(() => this.barcode = barcode);
   }
 
   void _handleMenuButtonPressed() {

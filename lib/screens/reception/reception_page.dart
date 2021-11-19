@@ -21,10 +21,15 @@ class _ReceptionPageState extends State<ReceptionPage> {
   late ScrollController _scrollController;
   bool _isScrolled = false;
   String? dropdown;
-  String barcode = '';
-
+  String? scanResult;
+  String? barcode;
   List<dynamic> _services = [
     ['No Options', Iconsax.search_normal, Colors.white],
+  ];
+
+  final List<dynamic> _advancewunites = [
+    ['Unidad', Iconsax.transaction_minus, 'CM'],
+    ['Cantidad', Iconsax.arrow_circle_up, 'CANTIDAD'],
   ];
 
   @override
@@ -49,7 +54,6 @@ class _ReceptionPageState extends State<ReceptionPage> {
 
   final _advancedDrawerController = AdvancedDrawerController();
   final GFBottomSheetController _controller = GFBottomSheetController();
-
   @override
   Widget build(BuildContext context) {
     final text = Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark
@@ -114,16 +118,6 @@ class _ReceptionPageState extends State<ReceptionPage> {
                   onTap: () {
                     Get.toNamed('/home');
                   },
-                  leading: Icon(Iconsax.home, color: Colors.red),
-                  title: Text(
-                    S.of(context).mdashboard,
-                    style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                ),
-                ListTile(
-                  onTap: () {},
                   leading: Icon(Iconsax.task, color: Colors.red),
                   title: Text(
                     S.of(context).mtask,
@@ -133,7 +127,9 @@ class _ReceptionPageState extends State<ReceptionPage> {
                   ),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed('/chart');
+                  },
                   leading: Icon(Iconsax.diagram, color: Colors.red),
                   title: Text(
                     S.of(context).mstatis,
@@ -156,7 +152,9 @@ class _ReceptionPageState extends State<ReceptionPage> {
                   ),
                 ),
                 ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed('/support');
+                  },
                   leading: Icon(Iconsax.support, color: Colors.red),
                   title: Text(
                     S.of(context).msupport,
@@ -221,9 +219,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
               actions: [
                 IconButton(
                   icon: Icon(Iconsax.notification, color: Colors.red),
-                  onPressed: () {
-                    scanBarcode;
-                  },
+                  onPressed: () {},
                 ),
                 IconButton(
                   icon: Icon(Iconsax.message_question, color: Colors.red),
@@ -324,7 +320,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                         TextField(
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
-                            prefixText: '$barcode',
+                            prefixText: scanResult == null ? '' : '$scanResult',
                             prefixStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                             ),
@@ -370,7 +366,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                         TextField(
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
-                            prefixText: '$barcode',
+                            prefixText: scanResult == null ? '' : '$scanResult',
                             prefixStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                             ),
@@ -418,6 +414,8 @@ class _ReceptionPageState extends State<ReceptionPage> {
                         ),
                         SizedBox(height: 10),
                         TextField(
+                          autofocus: true,
+                          textInputAction: TextInputAction.done,
                           readOnly: true,
                           keyboardType: TextInputType.multiline,
                           minLines: 1,
@@ -460,7 +458,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                           keyboardType: TextInputType.datetime,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
-                            prefixText: '$barcode',
+                            prefixText: scanResult == null ? '' : '$scanResult',
                             prefixStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                             ),
@@ -503,94 +501,58 @@ class _ReceptionPageState extends State<ReceptionPage> {
                           ),
                         ),
                         SizedBox(height: 10),
-                        TextField(
-                          keyboardType: TextInputType.number,
-                          cursorColor: Theme.of(context).cursorColor,
-                          decoration: InputDecoration(
-                            prefixText: '$barcode',
-                            prefixStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
+                        Container(
+                            height: 100,
+                            width: 220,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Theme.of(context).cardColor,
                             ),
-                            suffix: IconButton(
-                                onPressed: scanBarcode,
-                                icon: Icon(
-                                  Iconsax.camera,
-                                  color: Colors.red,
-                                )),
-                            contentPadding: EdgeInsets.all(0.0),
-                            labelText: S.of(context).tfamount,
-                            labelStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.w400,
-                            ),
-                            hintStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 14.0,
-                            ),
-                            prefixIcon: Icon(
-                              Iconsax.box_add,
-                              color: Colors.red,
-                              size: 18,
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.grey.shade200, width: 2),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            floatingLabelStyle: TextStyle(
-                              color: Colors.red,
-                              fontSize: 18.0,
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.red, width: 1.5),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        TextField(
-                          readOnly: false,
-                          keyboardType: TextInputType.number,
-                          cursorColor: Theme.of(context).cursorColor,
-                          decoration: InputDecoration(
-                            prefixText: 'Unidad de Medida',
-                            prefixStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            contentPadding: EdgeInsets.all(0.0),
-                            labelText: S.of(context).lblunit,
-                            labelStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 14.0,
-                              fontWeight: FontWeight.w400,
-                            ),
-                            hintStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 14.0,
-                            ),
-                            prefixIcon: Icon(
-                              Iconsax.weight,
-                              color: Colors.red,
-                              size: 18,
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.grey.shade200, width: 2),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            floatingLabelStyle: TextStyle(
-                              color: Colors.red,
-                              fontSize: 18.0,
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.red, width: 1.5),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                          ),
-                        ),
+                            child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: _advancewunites.length,
+                              itemBuilder: (context, index) {
+                                return GestureDetector(
+                                    child: Container(
+                                        height: 100,
+                                        width: 100,
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(15),
+                                            color: Theme.of(context).cardColor),
+                                        margin: EdgeInsets.only(right: 20),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(_advancewunites[index][1],
+                                                color: Colors.red),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Text(
+                                              _advancewunites[index][0],
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Theme.of(context)
+                                                      .primaryColor),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Text(
+                                              "${_advancewunites[index][2]}",
+                                              style: TextStyle(
+                                                  color: Theme.of(context)
+                                                      .primaryColor),
+                                            )
+                                          ],
+                                        )));
+                              },
+                            )),
                       ]),
                     ),
                   ],
@@ -621,22 +583,21 @@ class _ReceptionPageState extends State<ReceptionPage> {
       );
 
   Future<void> scanBarcode() async {
+    String scanResult = "";
     try {
-      final barcode = await FlutterBarcodeScanner.scanBarcode(
+      scanResult = await FlutterBarcodeScanner.scanBarcode(
         '#ff6666',
         'Cancel',
         true,
         ScanMode.BARCODE,
       );
-
-      if (!mounted) return;
-
-      setState(() {
-        this.barcode = barcode;
-      });
     } on PlatformException {
-      barcode = 'Failed to get platform version.';
+      scanResult = 'Failed to get platform version.';
     }
+
+    if (!mounted) return;
+
+    setState(() => this.barcode = barcode);
   }
 
   void _handleMenuButtonPressed() {
