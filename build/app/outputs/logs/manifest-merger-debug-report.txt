@@ -7,6 +7,7 @@ INJECTED from C:\development\repos\rfBuilderApp\android\app\src\main\AndroidMani
 MERGED from C:\development\repos\rfBuilderApp\android\app\src\main\AndroidManifest.xml:1:1-44:12
 MERGED from [:flutter_barcode_scanner] C:\development\repos\rfBuilderApp\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-21:12
 MERGED from [:flutter_plugin_android_lifecycle] C:\development\repos\rfBuilderApp\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider_android] C:\development\repos\rfBuilderApp\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:permission_handler] C:\development\repos\rfBuilderApp\build\permission_handler\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Usuario\.gradle\caches\transforms-2\files-2.1\e0c80cb72d282da5b4cd1966a30d3891\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.material:material:1.3.0] C:\Users\Usuario\.gradle\caches\transforms-2\files-2.1\655ff95270209dd291c438887048ba6e\material-1.3.0\AndroidManifest.xml:17:1-24:12
@@ -165,6 +166,8 @@ MERGED from [:flutter_barcode_scanner] C:\development\repos\rfBuilderApp\build\f
 MERGED from [:flutter_barcode_scanner] C:\development\repos\rfBuilderApp\build\flutter_barcode_scanner\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] C:\development\repos\rfBuilderApp\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_plugin_android_lifecycle] C:\development\repos\rfBuilderApp\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] C:\development\repos\rfBuilderApp\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] C:\development\repos\rfBuilderApp\build\path_provider_android\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:permission_handler] C:\development\repos\rfBuilderApp\build\permission_handler\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:permission_handler] C:\development\repos\rfBuilderApp\build\permission_handler\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Usuario\.gradle\caches\transforms-2\files-2.1\e0c80cb72d282da5b4cd1966a30d3891\multidex-2.0.0\AndroidManifest.xml:20:5-43

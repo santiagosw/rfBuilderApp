@@ -98,3 +98,4 @@ class MyApp extends StatelessWidget {
                           transition: Transition.cupertinoDialog),
                     ])));
       });
+}
