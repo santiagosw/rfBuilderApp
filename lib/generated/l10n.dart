@@ -749,6 +749,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Deposit`
+  String get lbldepo {
+    return Intl.message(
+      'Deposit',
+      name: 'lbldepo',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

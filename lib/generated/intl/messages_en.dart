@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "lblamount": MessageLookupByLibrary.simpleMessage("Amount"),
         "lblapplication": MessageLookupByLibrary.simpleMessage("Aplication"),
         "lblavance": MessageLookupByLibrary.simpleMessage("Advance"),
+        "lbldepo": MessageLookupByLibrary.simpleMessage("Deposit"),
         "lbldes": MessageLookupByLibrary.simpleMessage("Description"),
         "lbldisplay": MessageLookupByLibrary.simpleMessage("Display"),
         "lbleditprof": MessageLookupByLibrary.simpleMessage("Edit Profile"),

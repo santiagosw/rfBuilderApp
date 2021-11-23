@@ -27,8 +27,8 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
     ['No Options', Iconsax.search_normal, Colors.white],
   ];
   final List<dynamic> _advancewunites = [
-    ['Unidad', Iconsax.transaction_minus, 'CM'],
     ['Cantidad', Iconsax.arrow_circle_up, 'CANTIDAD'],
+    ['Unidad', Iconsax.transaction_minus, 'CM'],
   ];
 
   @override

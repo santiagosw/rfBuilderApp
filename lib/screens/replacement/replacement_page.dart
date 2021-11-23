@@ -35,8 +35,22 @@ class _ReplacementPageState extends State<ReplacementPage> {
   ];
 
   final List<dynamic> _advancewunites = [
-    ['Unidad', Iconsax.transaction_minus, 'CM'],
     ['Cantidad', Iconsax.arrow_circle_up, 'CANTIDAD'],
+    ['Unidad', Iconsax.transaction_minus, 'UN'],
+  ];
+
+  final List<dynamic> _eti = [
+    ['Deposito', Iconsax.arrow_circle_up, 'DEPOSITO'],
+    ['Retiro', Iconsax.transaction_minus, 'RE'],
+  ];
+
+  final List<dynamic> _eti2 = [
+    ['Producto', Iconsax.arrow_circle_up, 'PRODUCTO'],
+    ['Cantidad', Iconsax.transaction_minus, 'CA'],
+    ['Unidad', Iconsax.transaction_minus, 'UN'],
+  ];
+  final List<dynamic> _eti3 = [
+    ['Vencimiento', Iconsax.arrow_circle_up, 'VTO'],
   ];
 
   @override
@@ -397,87 +411,179 @@ class _ReplacementPageState extends State<ReplacementPage> {
                     FadeInDown(
                       child: Column(children: [
                         Row(
-                          children: [
-                            Text(
-                              S.of(context).lblwarehouse,
-                              semanticsLabel: '$almacen',
-                              style: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontSize: 15,
-                                fontWeight: FontWeight.normal,
-                              ),
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                  height: 100,
+                                  width: 150,
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context).cardColor,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: ListView.builder(
+                                    scrollDirection: Axis.horizontal,
+                                    itemCount: _eti.length,
+                                    itemBuilder: (context, index) {
+                                      return GestureDetector(
+                                          child: Container(
+                                              height: 75,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    Theme.of(context).cardColor,
+                                                borderRadius:
+                                                    BorderRadius.circular(15),
+                                              ),
+                                              margin: EdgeInsets.only(left: 15),
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
+                                                children: [
+                                                  Icon(_eti[index][1],
+                                                      color: Colors.red),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  Text(
+                                                    _eti[index][0],
+                                                    style: TextStyle(
+                                                      fontSize: 15,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      color: Theme.of(context)
+                                                          .primaryColor,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  Text(
+                                                    "${_eti[index][2]}",
+                                                    style: TextStyle(
+                                                        color: Theme.of(context)
+                                                            .primaryColor),
+                                                  )
+                                                ],
+                                              )));
+                                    },
+                                  )),
+                              SizedBox(width: 15),
+                              Container(
+                                  height: 100,
+                                  width: 120,
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context).cardColor,
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: ListView.builder(
+                                    scrollDirection: Axis.horizontal,
+                                    itemCount: _eti3.length,
+                                    itemBuilder: (context, index) {
+                                      return GestureDetector(
+                                          child: Container(
+                                              height: 75,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    Theme.of(context).cardColor,
+                                                borderRadius:
+                                                    BorderRadius.circular(15),
+                                              ),
+                                              margin: EdgeInsets.only(left: 15),
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
+                                                children: [
+                                                  Icon(_eti3[index][1],
+                                                      color: Colors.red),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  Text(
+                                                    _eti3[index][0],
+                                                    style: TextStyle(
+                                                      fontSize: 15,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      color: Theme.of(context)
+                                                          .primaryColor,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 5,
+                                                  ),
+                                                  Text(
+                                                    "${_eti3[index][2]}",
+                                                    style: TextStyle(
+                                                        color: Theme.of(context)
+                                                            .primaryColor),
+                                                  )
+                                                ],
+                                              )));
+                                    },
+                                  )),
+                            ]),
+                        SizedBox(height: 10),
+                        Divider(),
+                        SizedBox(height: 10),
+                        Container(
+                            height: 100,
+                            width: 230,
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).cardColor,
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                            SizedBox(width: 10),
-                            Text(
-                              S.of(context).lblpicking,
-                              semanticsLabel: '$picking',
-                              style: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontSize: 15,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            ),
-                          ],
-                        ),
+                            child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: _eti2.length,
+                              itemBuilder: (context, index) {
+                                return GestureDetector(
+                                    child: Container(
+                                        height: 75,
+                                        decoration: BoxDecoration(
+                                          color: Theme.of(context).cardColor,
+                                          borderRadius:
+                                              BorderRadius.circular(15),
+                                        ),
+                                        margin: EdgeInsets.only(left: 15),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Icon(_eti2[index][1],
+                                                color: Colors.red),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Text(
+                                              _eti2[index][0],
+                                              style: TextStyle(
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.w500,
+                                                color: Theme.of(context)
+                                                    .primaryColor,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Text(
+                                              "${_eti2[index][2]}",
+                                              style: TextStyle(
+                                                  color: Theme.of(context)
+                                                      .primaryColor),
+                                            )
+                                          ],
+                                        )));
+                              },
+                            )),
                         SizedBox(height: 5),
-                        Divider(
-                          color: Theme.of(context).dividerColor,
-                        ),
-                        SizedBox(height: 5),
-                        Row(
-                          children: [
-                            Text(
-                              S.of(context).lblproduct,
-                              semanticsLabel: '$producto',
-                              style: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontSize: 15,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            ),
-                            SizedBox(width: 5),
-                            Text(
-                              S.of(context).lblamount,
-                              semanticsLabel: '$cantidad',
-                              style: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontSize: 15,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            ),
-                            SizedBox(width: 5),
-                            Text(
-                              S.of(context).lblunit,
-                              semanticsLabel: '$unmed',
-                              style: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontSize: 15,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 5),
-                        Divider(
-                          color: Theme.of(context).dividerColor,
-                        ),
-                        SizedBox(height: 5),
-                        Row(
-                          children: [
-                            Text(
-                              S.of(context).lblexpiration,
-                              semanticsLabel: '$vto',
-                              style: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontSize: 15,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Divider(
-                          color: Theme.of(context).dividerColor,
-                        ),
+                        Divider(),
                         SizedBox(height: 5),
                         TextField(
                           autofocus: true,
@@ -618,60 +724,6 @@ class _ReplacementPageState extends State<ReplacementPage> {
                           ),
                         ),
                         SizedBox(height: 10),
-                        Container(
-                            height: 100,
-                            width: 190,
-                            decoration: BoxDecoration(
-                              color: Theme.of(context).cardColor,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: _advancewunites.length,
-                              itemBuilder: (context, index) {
-                                return GestureDetector(
-                                    child: Container(
-                                        height: 75,
-                                        decoration: BoxDecoration(
-                                          color: Theme.of(context).cardColor,
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                        ),
-                                        margin: EdgeInsets.only(
-                                            right: 20, left: 15),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Icon(_advancewunites[index][1],
-                                                color: Colors.red),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Text(
-                                              _advancewunites[index][0],
-                                              style: TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w500,
-                                                color: Theme.of(context)
-                                                    .primaryColor,
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 5,
-                                            ),
-                                            Text(
-                                              "${_advancewunites[index][2]}",
-                                              style: TextStyle(
-                                                  color: Theme.of(context)
-                                                      .primaryColor),
-                                            )
-                                          ],
-                                        )));
-                              },
-                            )),
                         SizedBox(height: 10),
                         Divider(color: Theme.of(context).dividerColor),
                         SizedBox(height: 10),

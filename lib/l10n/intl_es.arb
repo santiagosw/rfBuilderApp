@@ -110,7 +110,10 @@
     "lblfullname": "Nombre Completo",
     "lbllocation": "Localidad",
     "lblapplication": "Aplicación",
-    "lblavance": "Avance"
+    "lblavance": "Avance",
+    "lbldepo": "Deposito"
+    
+
 }
 
 

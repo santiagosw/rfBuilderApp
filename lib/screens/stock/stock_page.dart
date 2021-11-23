@@ -40,8 +40,8 @@ class _StockPageState extends State<StockPage> {
     ['Inventario', Iconsax.box, 'STOCK'],
   ];
   final List<dynamic> _advancewunites2 = [
-    ['Unidad', Iconsax.transaction_minus, 'CM'],
     ['Cantidad', Iconsax.arrow_circle_up, 'CANTIDAD'],
+    ['Unidad', Iconsax.transaction_minus, 'CM'],
   ];
 
   @override
