@@ -13,6 +13,7 @@ import 'package:rfbuilder_app/screens/save_reception/sreception_page.dart';
 import 'package:rfbuilder_app/screens/settings_page/edit_profile.dart';
 import 'package:rfbuilder_app/screens/settings_page/settings_page.dart';
 import 'package:rfbuilder_app/screens/statistics/CircularChart/chart_screen.dart';
+import 'package:rfbuilder_app/screens/statistics/CircularChart/stats.dart';
 import 'package:rfbuilder_app/screens/stock/stock_page.dart';
 import 'package:rfbuilder_app/screens/support/onboarding_page.dart';
 import 'generated/l10n.dart';
@@ -97,4 +98,3 @@ class MyApp extends StatelessWidget {
                           transition: Transition.cupertinoDialog),
                     ])));
       });
-}

@@ -128,7 +128,7 @@ class _ReceptionPageState extends State<ReceptionPage> {
                 ),
                 ListTile(
                   onTap: () {
-                    Get.toNamed('/chart');
+                    Get.toNamed('/stats');
                   },
                   leading: Icon(Iconsax.diagram, color: Colors.red),
                   title: Text(
@@ -352,17 +352,17 @@ class _ReceptionPageState extends State<ReceptionPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.red,
+                              color: Colors.white,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.red, width: 1.5),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade200, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
                         ),
-                        SizedBox(height: 5),
+                        SizedBox(height: 15),
                         TextField(
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
@@ -398,12 +398,12 @@ class _ReceptionPageState extends State<ReceptionPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.red,
+                              color: Colors.white,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.red, width: 1.5),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade200, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
@@ -436,8 +436,8 @@ class _ReceptionPageState extends State<ReceptionPage> {
                               fontSize: 14.0,
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.grey.shade200, width: 2),
+                              borderSide:
+                                  BorderSide(color: Colors.red, width: 2),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
@@ -490,12 +490,12 @@ class _ReceptionPageState extends State<ReceptionPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.red,
+                              color: Colors.white,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.red, width: 1.5),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade200, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),

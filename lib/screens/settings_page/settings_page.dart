@@ -111,14 +111,14 @@ class _SettingsPageState extends State<SettingsPage> {
                     color: Colors.red,
                     onPressed: () => context
                         .read<LanguageChangeProvider>()
-                        .changeLocale("es"),
+                        .changeLocale('es'),
                     child: Text("Spanish")),
                 SizedBox(width: 15),
                 GFButton(
                     color: Colors.red,
                     onPressed: () => context
                         .read<LanguageChangeProvider>()
-                        .changeLocale("en"),
+                        .changeLocale('en'),
                     child: Text("English")),
               ],
             ),

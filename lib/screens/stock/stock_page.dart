@@ -141,7 +141,7 @@ class _StockPageState extends State<StockPage> {
                 ),
                 ListTile(
                   onTap: () {
-                    Get.toNamed('/chart');
+                    Get.toNamed('/stats');
                   },
                   leading: Icon(Iconsax.diagram, color: Colors.red),
                   title: Text(
@@ -402,13 +402,53 @@ class _StockPageState extends State<StockPage> {
                     FadeInDown(
                       duration: Duration(milliseconds: 500),
                       child: Column(children: [
-                        Text(S.of(context).tfposition,
-                            semanticsLabel: 'Position: $position',
-                            style: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontSize: 14.0,
-                                fontWeight: FontWeight.w400),
-                            textAlign: TextAlign.left),
+                        TextField(
+                          autofocus: true,
+                          readOnly: true,
+                          cursorColor: Theme.of(context).cursorColor,
+                          decoration: InputDecoration(
+                            prefixText: S.of(context).tfposition,
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            suffix: IconButton(
+                                onPressed: scanBarcode,
+                                icon: Icon(
+                                  Iconsax.camera,
+                                  color: Colors.red,
+                                )),
+                            contentPadding: EdgeInsets.all(0.0),
+                            labelText: S.of(context).tfposition,
+                            labelStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            hintStyle: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 14.0,
+                            ),
+                            prefixIcon: Icon(
+                              Iconsax.location,
+                              color: Colors.red,
+                              size: 18,
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.red, width: 2),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            floatingLabelStyle: TextStyle(
+                              color: Colors.red,
+                              fontSize: 18.0,
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.red, width: 1.5),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                          ),
+                        ),
                         Divider(
                           color: Theme.of(context).dividerColor,
                         ),
@@ -448,6 +488,54 @@ class _StockPageState extends State<StockPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
+                              color: Colors.grey.shade200,
+                              fontSize: 18.0,
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade200, width: 1.5),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        TextField(
+                          autofocus: true,
+                          readOnly: true,
+                          cursorColor: Theme.of(context).cursorColor,
+                          decoration: InputDecoration(
+                            prefixText: '$barcode',
+                            prefixStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                            ),
+                            suffix: IconButton(
+                                onPressed: scanBarcode,
+                                icon: Icon(
+                                  Iconsax.camera,
+                                  color: Colors.red,
+                                )),
+                            contentPadding: EdgeInsets.all(0.0),
+                            labelText: S.of(context).lblproduct,
+                            labelStyle: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontSize: 14.0,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            hintStyle: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 14.0,
+                            ),
+                            prefixIcon: Icon(
+                              Iconsax.location,
+                              color: Colors.red,
+                              size: 18,
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.red, width: 2),
+                              borderRadius: BorderRadius.circular(10.0),
+                            ),
+                            floatingLabelStyle: TextStyle(
                               color: Colors.red,
                               fontSize: 18.0,
                             ),
@@ -458,14 +546,6 @@ class _StockPageState extends State<StockPage> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 10),
-                        Text(S.of(context).tfproduct,
-                            semanticsLabel: 'Product: $product',
-                            style: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontSize: 14.0,
-                                fontWeight: FontWeight.w400),
-                            textAlign: TextAlign.left),
                         Divider(
                           color: Theme.of(context).dividerColor,
                         ),
@@ -504,12 +584,12 @@ class _StockPageState extends State<StockPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.red,
+                              color: Colors.grey.shade200,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.red, width: 1.5),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade200, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
@@ -551,12 +631,12 @@ class _StockPageState extends State<StockPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.red,
+                              color: Colors.grey.shade200,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.red, width: 1.5),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade200, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),

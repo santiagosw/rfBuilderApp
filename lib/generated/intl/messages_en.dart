@@ -60,7 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "msettings": MessageLookupByLibrary.simpleMessage("Settings"),
         "msignout": MessageLookupByLibrary.simpleMessage("SignOut"),
         "mslidem": MessageLookupByLibrary.simpleMessage("Slide Menu"),
-        "mstatis": MessageLookupByLibrary.simpleMessage("Statistics"),
+        "mstatis": MessageLookupByLibrary.simpleMessage("Analytics"),
         "msupport": MessageLookupByLibrary.simpleMessage("Support"),
         "mtask": MessageLookupByLibrary.simpleMessage("Tasks"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),

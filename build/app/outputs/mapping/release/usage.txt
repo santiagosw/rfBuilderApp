@@ -5359,9 +5359,9 @@ androidx.customview.widget.ExploreByTouchHelper:
 com.google.android.material.datepicker.CompositeDateValidator
 androidx.annotation.CheckResult
 com.example.rfbuilder_app.R$animator
-io.flutter.embedding.engine.systemchannels.PlatformChannel:
-    private static final java.lang.String TAG
 io.flutter.embedding.engine.systemchannels.PlatformViewsChannel:
+    private static final java.lang.String TAG
+io.flutter.embedding.engine.systemchannels.PlatformChannel:
     private static final java.lang.String TAG
 kotlin.Suppress
 com.google.android.gms.common.server.response.zam

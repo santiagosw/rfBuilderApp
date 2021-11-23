@@ -130,10 +130,10 @@ class S {
     );
   }
 
-  /// `Statistics`
+  /// `Analytics`
   String get mstatis {
     return Intl.message(
-      'Statistics',
+      'Analytics',
       name: 'mstatis',
       desc: '',
       args: [],

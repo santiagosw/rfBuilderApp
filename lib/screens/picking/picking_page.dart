@@ -157,7 +157,7 @@ class _PickingPageState extends State<PickingPage> {
                 ),
                 ListTile(
                   onTap: () {
-                    Get.toNamed('/chart');
+                    Get.toNamed('/stats');
                   },
                   leading: Icon(Iconsax.diagram, color: Colors.red),
                   title: Text(
@@ -450,8 +450,8 @@ class _PickingPageState extends State<PickingPage> {
                               size: 18,
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.grey.shade200, width: 2),
+                              borderSide:
+                                  BorderSide(color: Colors.red, width: 2),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
@@ -499,8 +499,8 @@ class _PickingPageState extends State<PickingPage> {
                               size: 18,
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.grey.shade200, width: 2),
+                              borderSide:
+                                  BorderSide(color: Colors.red, width: 2),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
@@ -554,12 +554,12 @@ class _PickingPageState extends State<PickingPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.red,
+                              color: Colors.white,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.red, width: 1.5),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade200, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
@@ -597,8 +597,8 @@ class _PickingPageState extends State<PickingPage> {
                               size: 18,
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.grey.shade200, width: 2),
+                              borderSide:
+                                  BorderSide(color: Colors.red, width: 2),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
@@ -649,12 +649,12 @@ class _PickingPageState extends State<PickingPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.red,
+                              color: Colors.white,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.red, width: 1.5),
+                              borderSide: BorderSide(
+                                  color: Colors.grey.shade200, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
@@ -737,63 +737,59 @@ class _PickingPageState extends State<PickingPage> {
                           borderRadius: BorderRadius.circular(15),
                         )),
                         SizedBox(height: 10),
-                        Divider(
-                          color: Theme.of(context).dividerColor,
-                        ),
-                        SizedBox(height: 10),
-                        Container(
-                            height: 100,
-                            width: 170,
-                            decoration: BoxDecoration(
-                              color: Theme.of(context).cardColor,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: _advancewunites.length,
-                              itemBuilder: (context, index) {
-                                return GestureDetector(
-                                    child: Container(
-                                        width: 70,
-                                        decoration: BoxDecoration(
-                                          color: Theme.of(context).cardColor,
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                        ),
-                                        margin: EdgeInsets.only(right: 20),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Icon(_advancewunites[index][1],
-                                                color: Colors.red),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Text(
-                                              _advancewunites[index][0],
-                                              style: TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w500,
-                                                color: Theme.of(context)
-                                                    .primaryColor,
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 5,
-                                            ),
-                                            Text(
-                                              "${_advancewunites[index][2]}",
-                                              style: TextStyle(
-                                                  color: Theme.of(context)
-                                                      .primaryColor),
-                                            )
-                                          ],
-                                        )));
-                              },
-                            )),
+                        // Container(
+                        //     height: 100,
+                        //     width: 170,
+                        //     decoration: BoxDecoration(
+                        //       color: Theme.of(context).cardColor,
+                        //       borderRadius: BorderRadius.circular(10),
+                        //     ),
+                        //     child: ListView.builder(
+                        //       scrollDirection: Axis.horizontal,
+                        //       itemCount: _advancewunites.length,
+                        //       itemBuilder: (context, index) {
+                        //         return GestureDetector(
+                        //             child: Container(
+                        //                 width: 70,
+                        //                 decoration: BoxDecoration(
+                        //                   color: Theme.of(context).cardColor,
+                        //                   borderRadius:
+                        //                       BorderRadius.circular(15),
+                        //                 ),
+                        //                 margin: EdgeInsets.only(right: 20),
+                        //                 child: Column(
+                        //                   mainAxisAlignment:
+                        //                       MainAxisAlignment.center,
+                        //                   crossAxisAlignment:
+                        //                       CrossAxisAlignment.center,
+                        //                   children: [
+                        //                     Icon(_advancewunites[index][1],
+                        //                         color: Colors.red),
+                        //                     SizedBox(
+                        //                       height: 10,
+                        //                     ),
+                        //                     Text(
+                        //                       _advancewunites[index][0],
+                        //                       style: TextStyle(
+                        //                         fontSize: 15,
+                        //                         fontWeight: FontWeight.w500,
+                        //                         color: Theme.of(context)
+                        //                             .primaryColor,
+                        //                       ),
+                        //                     ),
+                        //                     SizedBox(
+                        //                       height: 5,
+                        //                     ),
+                        //                     Text(
+                        //                       "${_advancewunites[index][2]}",
+                        //                       style: TextStyle(
+                        //                           color: Theme.of(context)
+                        //                               .primaryColor),
+                        //                     )
+                        //                   ],
+                        //                 )));
+                        //       },
+                        //     )),
                       ]),
                     ),
                   ],
