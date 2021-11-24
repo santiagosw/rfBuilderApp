@@ -19,6 +19,8 @@ import 'package:rfbuilder_app/screens/support/onboarding_page.dart';
 import 'generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+// @dart=2.9
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
