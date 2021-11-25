@@ -31,13 +31,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("¿Olvido su contraseña?"),
         "htamount":
             MessageLookupByLibrary.simpleMessage("Cantidad del producto"),
-        "htdes":
-            MessageLookupByLibrary.simpleMessage("Descripción del producto"),
+        "htdes": MessageLookupByLibrary.simpleMessage(
+            "Esto es una descripcion que se expande dependiendo el tipo de producto, este TextField se puede expandir hasta 8 lineas"),
         "htpos": MessageLookupByLibrary.simpleMessage("Posicion del producto"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lblamount": MessageLookupByLibrary.simpleMessage("Cantidad"),
         "lblapplication": MessageLookupByLibrary.simpleMessage("Aplicación"),
         "lblavance": MessageLookupByLibrary.simpleMessage("Avance"),
+        "lblcantpos":
+            MessageLookupByLibrary.simpleMessage("Cantidad - Posicion"),
         "lbldepo": MessageLookupByLibrary.simpleMessage("Deposito"),
         "lbldes": MessageLookupByLibrary.simpleMessage("Descripción"),
         "lbldisplay": MessageLookupByLibrary.simpleMessage("Monitores"),
@@ -46,9 +48,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "lblfullname": MessageLookupByLibrary.simpleMessage("Nombre Completo"),
         "lbllocation": MessageLookupByLibrary.simpleMessage("Localidad"),
         "lblpackages": MessageLookupByLibrary.simpleMessage("Paquetes"),
-        "lblpicking": MessageLookupByLibrary.simpleMessage("Retiro"),
+        "lblpicking": MessageLookupByLibrary.simpleMessage("Picking"),
         "lblproduct": MessageLookupByLibrary.simpleMessage("Producto"),
+        "lblstorage": MessageLookupByLibrary.simpleMessage("Almacen"),
         "lblunit": MessageLookupByLibrary.simpleMessage("Unidad"),
+        "lblunitread": MessageLookupByLibrary.simpleMessage("Unidad Leida"),
         "lblunits": MessageLookupByLibrary.simpleMessage("Unidades"),
         "lblwarehouse": MessageLookupByLibrary.simpleMessage("Deposito"),
         "mchanguelang":
@@ -89,7 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "tfposition": MessageLookupByLibrary.simpleMessage("Posición"),
         "tfprodcod": MessageLookupByLibrary.simpleMessage("Codigo de Producto"),
         "tfproduct": MessageLookupByLibrary.simpleMessage("Producto"),
-        "tfreason": MessageLookupByLibrary.simpleMessage("Razón"),
+        "tfreason": MessageLookupByLibrary.simpleMessage("Motivo"),
         "tltpicking": MessageLookupByLibrary.simpleMessage("Retirar"),
         "tltreceivinguard":
             MessageLookupByLibrary.simpleMessage("Guardado de Recepción"),

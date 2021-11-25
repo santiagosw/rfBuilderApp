@@ -361,24 +361,24 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                         ),
                         SizedBox(height: 10),
                         TextField(
-                          autofocus: true,
+                          enableInteractiveSelection: true,
                           readOnly: true,
-                          cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
-                            prefixText: S.of(context).lblproduct,
+                            alignLabelWithHint: true,
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
                             prefixStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                             ),
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: S.of(context).tfproduct,
-                            labelStyle: TextStyle(
+                            labelText: S.of(context).lblproduct,
+                            hintText: S.of(context).lblproduct,
+                            hintStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
+                            ),
+                            labelStyle: TextStyle(
+                              color: Colors.red,
                               fontSize: 14.0,
                               fontWeight: FontWeight.w400,
-                            ),
-                            hintStyle: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 14.0,
                             ),
                             prefixIcon: Icon(
                               Iconsax.box,
@@ -386,13 +386,9 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                               size: 18,
                             ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                  color: Colors.grey.shade200, width: 2),
+                              borderSide:
+                                  BorderSide(color: Colors.red, width: 2),
                               borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            floatingLabelStyle: TextStyle(
-                              color: Colors.red,
-                              fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
@@ -402,6 +398,109 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                           ),
                         ),
                         SizedBox(height: 10),
+                        Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 5,
+                                    child: TextField(
+                                      enableInteractiveSelection: true,
+                                      readOnly: true,
+                                      decoration: InputDecoration(
+                                        alignLabelWithHint: true,
+                                        floatingLabelBehavior:
+                                            FloatingLabelBehavior.always,
+                                        prefixStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: S.of(context).lblamount,
+                                        hintText: S.of(context).lblamount,
+                                        hintStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        labelStyle: TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Iconsax.box_time,
+                                          color: Colors.red,
+                                          size: 18,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 1.5),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 5),
+                            Expanded(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 4,
+                                    child: TextField(
+                                      enableInteractiveSelection: true,
+                                      readOnly: true,
+                                      decoration: InputDecoration(
+                                        alignLabelWithHint: true,
+                                        floatingLabelBehavior:
+                                            FloatingLabelBehavior.always,
+                                        prefixStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: S.of(context).tfposition,
+                                        hintText: S.of(context).tfposition,
+                                        hintStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        labelStyle: TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Iconsax.box_time,
+                                          color: Colors.red,
+                                          size: 18,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 1.5),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                         Divider(
                           color: Theme.of(context).dividerColor,
                         ),
@@ -498,58 +597,111 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                           ),
                         ),
                         SizedBox(height: 10),
-                        Container(
-                            height: 100,
-                            width: 220,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Theme.of(context).cardColor,
+                        Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 5,
+                                    child: TextField(
+                                      keyboardType: TextInputType.number,
+                                      decoration: InputDecoration(
+                                        prefixStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: S.of(context).tfamount,
+                                        labelStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        hintStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                          fontSize: 14.0,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Iconsax.box_time,
+                                          color: Colors.red,
+                                          size: 18,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.grey.shade200,
+                                              width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        floatingLabelStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                          fontSize: 18.0,
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.grey.shade200,
+                                              width: 1.5),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                            child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: _advancewunites.length,
-                              itemBuilder: (context, index) {
-                                return GestureDetector(
-                                    child: Container(
-                                        height: 100,
-                                        width: 100,
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(15),
-                                            color: Theme.of(context).cardColor),
-                                        margin: EdgeInsets.only(right: 20),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Icon(_advancewunites[index][1],
-                                                color: Colors.red),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Text(
-                                              _advancewunites[index][0],
-                                              style: TextStyle(
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: Theme.of(context)
-                                                      .primaryColor),
-                                            ),
-                                            SizedBox(
-                                              height: 5,
-                                            ),
-                                            Text(
-                                              "${_advancewunites[index][2]}",
-                                              style: TextStyle(
-                                                  color: Theme.of(context)
-                                                      .primaryColor),
-                                            )
-                                          ],
-                                        )));
-                              },
-                            )),
+                            SizedBox(width: 5),
+                            Expanded(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 4,
+                                    child: TextField(
+                                      enableInteractiveSelection: true,
+                                      readOnly: true,
+                                      decoration: InputDecoration(
+                                        alignLabelWithHint: true,
+                                        floatingLabelBehavior:
+                                            FloatingLabelBehavior.always,
+                                        prefixStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: S.of(context).lblunit,
+                                        hintText: S.of(context).lblunit,
+                                        hintStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        labelStyle: TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Iconsax.box_time,
+                                          color: Colors.red,
+                                          size: 18,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 1.5),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                         SizedBox(height: 10),
                         Divider(
                           color: Theme.of(context).dividerColor,

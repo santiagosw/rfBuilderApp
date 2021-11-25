@@ -411,195 +411,232 @@ class _ReplacementPageState extends State<ReplacementPage> {
                     FadeInDown(
                       child: Column(children: [
                         Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                  height: 100,
-                                  width: 150,
-                                  decoration: BoxDecoration(
-                                    color: Theme.of(context).cardColor,
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: ListView.builder(
-                                    scrollDirection: Axis.horizontal,
-                                    itemCount: _eti.length,
-                                    itemBuilder: (context, index) {
-                                      return GestureDetector(
-                                          child: Container(
-                                              height: 75,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    Theme.of(context).cardColor,
-                                                borderRadius:
-                                                    BorderRadius.circular(15),
-                                              ),
-                                              margin: EdgeInsets.only(left: 15),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                children: [
-                                                  Icon(_eti[index][1],
-                                                      color: Colors.red),
-                                                  SizedBox(
-                                                    height: 10,
-                                                  ),
-                                                  Text(
-                                                    _eti[index][0],
-                                                    style: TextStyle(
-                                                      fontSize: 15,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      color: Theme.of(context)
-                                                          .primaryColor,
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 5,
-                                                  ),
-                                                  Text(
-                                                    "${_eti[index][2]}",
-                                                    style: TextStyle(
-                                                        color: Theme.of(context)
-                                                            .primaryColor),
-                                                  )
-                                                ],
-                                              )));
-                                    },
-                                  )),
-                              SizedBox(width: 15),
-                              Container(
-                                  height: 100,
-                                  width: 120,
-                                  decoration: BoxDecoration(
-                                    color: Theme.of(context).cardColor,
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: ListView.builder(
-                                    scrollDirection: Axis.horizontal,
-                                    itemCount: _eti3.length,
-                                    itemBuilder: (context, index) {
-                                      return GestureDetector(
-                                          child: Container(
-                                              height: 75,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    Theme.of(context).cardColor,
-                                                borderRadius:
-                                                    BorderRadius.circular(15),
-                                              ),
-                                              margin: EdgeInsets.only(left: 15),
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                children: [
-                                                  Icon(_eti3[index][1],
-                                                      color: Colors.red),
-                                                  SizedBox(
-                                                    height: 10,
-                                                  ),
-                                                  Text(
-                                                    _eti3[index][0],
-                                                    style: TextStyle(
-                                                      fontSize: 15,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                      color: Theme.of(context)
-                                                          .primaryColor,
-                                                    ),
-                                                  ),
-                                                  SizedBox(
-                                                    height: 5,
-                                                  ),
-                                                  Text(
-                                                    "${_eti3[index][2]}",
-                                                    style: TextStyle(
-                                                        color: Theme.of(context)
-                                                            .primaryColor),
-                                                  )
-                                                ],
-                                              )));
-                                    },
-                                  )),
-                            ]),
-                        SizedBox(height: 10),
-                        Divider(),
-                        SizedBox(height: 10),
-                        Container(
-                            height: 100,
-                            width: 230,
-                            decoration: BoxDecoration(
-                              color: Theme.of(context).cardColor,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: _eti2.length,
-                              itemBuilder: (context, index) {
-                                return GestureDetector(
-                                    child: Container(
-                                        height: 75,
-                                        decoration: BoxDecoration(
-                                          color: Theme.of(context).cardColor,
-                                          borderRadius:
-                                              BorderRadius.circular(15),
+                          children: <Widget>[
+                            Expanded(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 5,
+                                    child: TextField(
+                                      enableInteractiveSelection: true,
+                                      readOnly: true,
+                                      decoration: InputDecoration(
+                                        alignLabelWithHint: true,
+                                        floatingLabelBehavior:
+                                            FloatingLabelBehavior.always,
+                                        prefixStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
                                         ),
-                                        margin: EdgeInsets.only(left: 15),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Icon(_eti2[index][1],
-                                                color: Colors.red),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Text(
-                                              _eti2[index][0],
-                                              style: TextStyle(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w500,
-                                                color: Theme.of(context)
-                                                    .primaryColor,
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 5,
-                                            ),
-                                            Text(
-                                              "${_eti2[index][2]}",
-                                              style: TextStyle(
-                                                  color: Theme.of(context)
-                                                      .primaryColor),
-                                            )
-                                          ],
-                                        )));
-                              },
-                            )),
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: S.of(context).lblstorage,
+                                        hintText: S.of(context).lblstorage,
+                                        hintStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        labelStyle: TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Iconsax.box_time,
+                                          color: Colors.red,
+                                          size: 18,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 1.5),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 5),
+                            Expanded(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 4,
+                                    child: TextField(
+                                      enableInteractiveSelection: true,
+                                      readOnly: true,
+                                      decoration: InputDecoration(
+                                        alignLabelWithHint: true,
+                                        floatingLabelBehavior:
+                                            FloatingLabelBehavior.always,
+                                        prefixStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: S.of(context).lblpicking,
+                                        hintText: S.of(context).lblpicking,
+                                        hintStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        labelStyle: TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Iconsax.box_time,
+                                          color: Colors.red,
+                                          size: 18,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 1.5),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                         SizedBox(height: 5),
                         Divider(),
                         SizedBox(height: 5),
-                        TextField(
-                          autofocus: true,
+                        Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 5,
+                                    child: TextField(
+                                      enableInteractiveSelection: true,
+                                      readOnly: true,
+                                      decoration: InputDecoration(
+                                        alignLabelWithHint: true,
+                                        floatingLabelBehavior:
+                                            FloatingLabelBehavior.always,
+                                        prefixStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: S.of(context).lblproduct,
+                                        hintText: S.of(context).lblproduct,
+                                        hintStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        labelStyle: TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Iconsax.box_time,
+                                          color: Colors.red,
+                                          size: 18,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 1.5),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 5),
+                            Expanded(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 4,
+                                    child: TextField(
+                                      enableInteractiveSelection: true,
+                                      readOnly: true,
+                                      decoration: InputDecoration(
+                                        alignLabelWithHint: true,
+                                        floatingLabelBehavior:
+                                            FloatingLabelBehavior.always,
+                                        prefixStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: S.of(context).lblexpiration,
+                                        hintText: S.of(context).lblexpiration,
+                                        hintStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        labelStyle: TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Iconsax.box_time,
+                                          color: Colors.red,
+                                          size: 18,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 1.5),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        TextFormField(
+                          enableInteractiveSelection: true,
                           readOnly: true,
                           keyboardType: TextInputType.multiline,
                           minLines: 1,
                           maxLines: 8,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
+                            alignLabelWithHint: true,
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
                             errorMaxLines: 8,
                             helperMaxLines: 8,
+                            labelText: S.of(context).lbldes,
                             hintText: S.of(context).htdes,
-                            labelText: S.of(context).tfdescription,
                             labelStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 14.0,
+                              color: Colors.red,
+                              fontSize: 17.0,
                               fontWeight: FontWeight.w400,
                             ),
                             hintStyle: TextStyle(
@@ -611,16 +648,118 @@ class _ReplacementPageState extends State<ReplacementPage> {
                                   BorderSide(color: Colors.red, width: 2),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
-                            floatingLabelStyle: TextStyle(
-                              color: Colors.red,
-                              fontSize: 18.0,
-                            ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
                                   BorderSide(color: Colors.red, width: 1.5),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                           ),
+                        ),
+                        SizedBox(height: 5),
+                        Divider(),
+                        SizedBox(height: 5),
+                        Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 5,
+                                    child: TextField(
+                                      enableInteractiveSelection: true,
+                                      readOnly: true,
+                                      decoration: InputDecoration(
+                                        alignLabelWithHint: true,
+                                        floatingLabelBehavior:
+                                            FloatingLabelBehavior.always,
+                                        prefixStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: S.of(context).lblamount,
+                                        hintText: S.of(context).lblamount,
+                                        hintStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        labelStyle: TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Iconsax.box_time,
+                                          color: Colors.red,
+                                          size: 18,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 1.5),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 5),
+                            Expanded(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 4,
+                                    child: TextField(
+                                      enableInteractiveSelection: true,
+                                      readOnly: true,
+                                      decoration: InputDecoration(
+                                        alignLabelWithHint: true,
+                                        floatingLabelBehavior:
+                                            FloatingLabelBehavior.always,
+                                        prefixStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: S.of(context).lblunit,
+                                        hintText: S.of(context).lblunit,
+                                        hintStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        labelStyle: TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Iconsax.box_time,
+                                          color: Colors.red,
+                                          size: 18,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 1.5),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
                         ),
                         SizedBox(height: 5),
                         Divider(
@@ -724,6 +863,111 @@ class _ReplacementPageState extends State<ReplacementPage> {
                           ),
                         ),
                         SizedBox(height: 10),
+                        Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 5,
+                                    child: TextField(
+                                      keyboardType: TextInputType.number,
+                                      decoration: InputDecoration(
+                                        prefixStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: S.of(context).tfamount,
+                                        labelStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        hintStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                          fontSize: 14.0,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Iconsax.box_time,
+                                          color: Colors.red,
+                                          size: 18,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.grey.shade200,
+                                              width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        floatingLabelStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                          fontSize: 18.0,
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.grey.shade200,
+                                              width: 1.5),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 5),
+                            Expanded(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 4,
+                                    child: TextField(
+                                      enableInteractiveSelection: true,
+                                      readOnly: true,
+                                      decoration: InputDecoration(
+                                        alignLabelWithHint: true,
+                                        floatingLabelBehavior:
+                                            FloatingLabelBehavior.always,
+                                        prefixStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: S.of(context).lblunit,
+                                        hintText: S.of(context).lblunit,
+                                        hintStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        labelStyle: TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Iconsax.box_time,
+                                          color: Colors.red,
+                                          size: 18,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 1.5),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                         SizedBox(height: 10),
                         Divider(color: Theme.of(context).dividerColor),
                         SizedBox(height: 10),

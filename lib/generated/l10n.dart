@@ -759,6 +759,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Unit Read`
+  String get lblunitread {
+    return Intl.message(
+      'Unit Read',
+      name: 'lblunitread',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Storage`
+  String get lblstorage {
+    return Intl.message(
+      'Storage',
+      name: 'lblstorage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amount - Position`
+  String get lblcantpos {
+    return Intl.message(
+      'Amount - Position',
+      name: 'lblcantpos',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -30,18 +30,10 @@ class _StockPageState extends State<StockPage> {
     ['Skip Product', Iconsax.next, Colors.white],
   ];
 
-  final List<dynamic> _advancewuniten = [
-    ['Unit Save', Iconsax.save_2, 'UNIT'],
-    ['Stock', Iconsax.box, 'STOCK'],
-  ];
-
-  final List<dynamic> _advancewunites = [
-    ['Guardado', Iconsax.save_2, 'UNIT'],
-    ['Inventario', Iconsax.box, 'STOCK'],
-  ];
-  final List<dynamic> _advancewunites2 = [
-    ['Cantidad', Iconsax.arrow_circle_up, 'CANTIDAD'],
-    ['Unidad', Iconsax.transaction_minus, 'CM'],
+  final List<dynamic> _stock2 = [
+    ['Bultos', Iconsax.box, '0'],
+    ['Display', Iconsax.screenmirroring, '0'],
+    ['Unidades', Iconsax.element_plus, '0'],
   ];
 
   @override
@@ -403,29 +395,22 @@ class _StockPageState extends State<StockPage> {
                       duration: Duration(milliseconds: 500),
                       child: Column(children: [
                         TextField(
-                          autofocus: true,
+                          enableInteractiveSelection: false,
                           readOnly: true,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
-                            prefixText: S.of(context).tfposition,
-                            prefixStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            suffix: IconButton(
-                                onPressed: scanBarcode,
-                                icon: Icon(
-                                  Iconsax.camera,
-                                  color: Colors.red,
-                                )),
+                            alignLabelWithHint: true,
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: S.of(context).tfposition,
+                            hintText: S.of(context).tfposition,
                             labelStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 14.0,
+                              color: Colors.red,
+                              fontSize: 17.0,
                               fontWeight: FontWeight.w400,
                             ),
                             hintStyle: TextStyle(
-                              color: Colors.grey,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                             ),
                             prefixIcon: Icon(
@@ -437,10 +422,6 @@ class _StockPageState extends State<StockPage> {
                               borderSide:
                                   BorderSide(color: Colors.red, width: 2),
                               borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            floatingLabelStyle: TextStyle(
-                              color: Colors.red,
-                              fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
@@ -488,7 +469,7 @@ class _StockPageState extends State<StockPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.grey.shade200,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
@@ -500,33 +481,26 @@ class _StockPageState extends State<StockPage> {
                         ),
                         SizedBox(height: 10),
                         TextField(
-                          autofocus: true,
+                          enableInteractiveSelection: false,
                           readOnly: true,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
-                            prefixText: '$barcode',
-                            prefixStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            suffix: IconButton(
-                                onPressed: scanBarcode,
-                                icon: Icon(
-                                  Iconsax.camera,
-                                  color: Colors.red,
-                                )),
+                            alignLabelWithHint: true,
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: S.of(context).lblproduct,
+                            labelText: S.of(context).tfproduct,
+                            hintText: S.of(context).tfproduct,
                             labelStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 14.0,
+                              color: Colors.red,
+                              fontSize: 17.0,
                               fontWeight: FontWeight.w400,
                             ),
                             hintStyle: TextStyle(
-                              color: Colors.grey,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                             ),
                             prefixIcon: Icon(
-                              Iconsax.location,
+                              Iconsax.box,
                               color: Colors.red,
                               size: 18,
                             ),
@@ -535,10 +509,6 @@ class _StockPageState extends State<StockPage> {
                                   BorderSide(color: Colors.red, width: 2),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
-                            floatingLabelStyle: TextStyle(
-                              color: Colors.red,
-                              fontSize: 18.0,
-                            ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
                                   BorderSide(color: Colors.red, width: 1.5),
@@ -546,9 +516,11 @@ class _StockPageState extends State<StockPage> {
                             ),
                           ),
                         ),
+                        SizedBox(height: 5),
                         Divider(
                           color: Theme.of(context).dividerColor,
                         ),
+                        SizedBox(height: 5),
                         TextField(
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
@@ -570,7 +542,7 @@ class _StockPageState extends State<StockPage> {
                               fontWeight: FontWeight.w400,
                             ),
                             hintStyle: TextStyle(
-                              color: Colors.grey,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                             ),
                             prefixIcon: Icon(
@@ -584,7 +556,7 @@ class _StockPageState extends State<StockPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.grey.shade200,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
@@ -599,7 +571,7 @@ class _StockPageState extends State<StockPage> {
                           keyboardType: TextInputType.datetime,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
-                            prefixText: '$barcode',
+                            prefixText: "DEFAULT",
                             prefixStyle: TextStyle(
                               color: Theme.of(context).primaryColor,
                             ),
@@ -631,7 +603,7 @@ class _StockPageState extends State<StockPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.grey.shade200,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
@@ -642,73 +614,124 @@ class _StockPageState extends State<StockPage> {
                           ),
                         ),
                         SizedBox(height: 10),
+                        Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 5,
+                                    child: TextField(
+                                      keyboardType: TextInputType.number,
+                                      decoration: InputDecoration(
+                                        prefixStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: S.of(context).tfamount,
+                                        labelStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        hintStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                          fontSize: 14.0,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Iconsax.box_time,
+                                          color: Colors.red,
+                                          size: 18,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.grey.shade200,
+                                              width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        floatingLabelStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                          fontSize: 18.0,
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.grey.shade200,
+                                              width: 1.5),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 5),
+                            Expanded(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 4,
+                                    child: TextField(
+                                      enableInteractiveSelection: true,
+                                      readOnly: true,
+                                      decoration: InputDecoration(
+                                        alignLabelWithHint: true,
+                                        floatingLabelBehavior:
+                                            FloatingLabelBehavior.always,
+                                        prefixStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: S.of(context).lblunitread,
+                                        hintText: S.of(context).lblunitread,
+                                        hintStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        labelStyle: TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Iconsax.box_time,
+                                          color: Colors.red,
+                                          size: 18,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 1.5),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(height: 10),
                         Divider(color: Theme.of(context).dividerColor),
                         SizedBox(height: 10),
                         Container(
                             height: 100,
-                            width: 220,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Theme.of(context).cardColor,
-                            ),
-                            child: ListView.builder(
-                              scrollDirection: Axis.horizontal,
-                              itemCount: _advancewunites2.length,
-                              itemBuilder: (context, index) {
-                                return GestureDetector(
-                                    child: Container(
-                                        width: 75,
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(15),
-                                            color: Theme.of(context).cardColor),
-                                        margin: EdgeInsets.only(
-                                            right: 20, left: 15),
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.center,
-                                          children: [
-                                            Icon(_advancewunites2[index][1],
-                                                color: Colors.red),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Text(
-                                              _advancewunites2[index][0],
-                                              style: TextStyle(
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: Theme.of(context)
-                                                      .primaryColor),
-                                            ),
-                                            SizedBox(
-                                              height: 5,
-                                            ),
-                                            Text(
-                                              "${_advancewunites2[index][2]}",
-                                              style: TextStyle(
-                                                  color: Theme.of(context)
-                                                      .primaryColor),
-                                            )
-                                          ],
-                                        )));
-                              },
-                            )),
-                        SizedBox(height: 10),
-                        Divider(color: Theme.of(context).dividerColor),
-                        SizedBox(height: 10),
-                        Container(
-                            height: 100,
-                            width: 190,
+                            width: 245,
                             decoration: BoxDecoration(
                               color: Theme.of(context).cardColor,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
-                              itemCount: _advancewunites.length,
+                              itemCount: _stock2.length,
                               itemBuilder: (context, index) {
                                 return GestureDetector(
                                     child: Container(
@@ -726,13 +749,13 @@ class _StockPageState extends State<StockPage> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
-                                            Icon(_advancewunites[index][1],
+                                            Icon(_stock2[index][1],
                                                 color: Colors.red),
                                             SizedBox(
                                               height: 10,
                                             ),
                                             Text(
-                                              _advancewunites[index][0],
+                                              _stock2[index][0],
                                               style: TextStyle(
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.w500,
@@ -744,7 +767,7 @@ class _StockPageState extends State<StockPage> {
                                               height: 5,
                                             ),
                                             Text(
-                                              "${_advancewunites[index][2]}",
+                                              "${_stock2[index][2]}",
                                               style: TextStyle(
                                                   color: Theme.of(context)
                                                       .primaryColor),

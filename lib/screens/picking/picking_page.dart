@@ -39,25 +39,14 @@ class _PickingPageState extends State<PickingPage> {
   ];
 
   final List<dynamic> _productes = [
-    ['Paquetes', Iconsax.box, '0'],
+    ['Bultos', Iconsax.box, '0'],
     ['Display', Iconsax.screenmirroring, '0'],
     ['Unidades', Iconsax.element_plus, '0'],
-  ];
-
-  final List<dynamic> _producten = [
-    ['Packages', Iconsax.box, '0'],
-    ['Display', Iconsax.screenmirroring, '0'],
-    ['Units', Iconsax.element_plus, '0'],
   ];
 
   final List<dynamic> _advancewunites = [
     ['Unidad', Iconsax.transaction_minus, 'CM'],
     ['Cantidad', Iconsax.arrow_circle_up, 'CANTIDAD'],
-  ];
-
-  final List<dynamic> _advancewuniten = [
-    ['Unit', Iconsax.transaction_minus, 'CM'],
-    ['Advance', Iconsax.arrow_circle_up, '[0/14]'],
   ];
 
   @override
@@ -419,29 +408,22 @@ class _PickingPageState extends State<PickingPage> {
                       duration: Duration(milliseconds: 500),
                       child: Column(children: [
                         TextField(
+                          enableInteractiveSelection: false,
                           readOnly: true,
-                          autofocus: true,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
-                            prefixText: S.of(context).htpos,
-                            prefixStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            suffix: IconButton(
-                                onPressed: scanBarcode,
-                                icon: Icon(
-                                  Iconsax.camera,
-                                  color: Colors.red,
-                                )),
+                            alignLabelWithHint: true,
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: S.of(context).tfposition,
+                            hintText: S.of(context).tfposition,
                             labelStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 14.0,
+                              color: Colors.red,
+                              fontSize: 17.0,
                               fontWeight: FontWeight.w400,
                             ),
                             hintStyle: TextStyle(
-                              color: Colors.grey,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                             ),
                             prefixIcon: Icon(
@@ -454,10 +436,6 @@ class _PickingPageState extends State<PickingPage> {
                                   BorderSide(color: Colors.red, width: 2),
                               borderRadius: BorderRadius.circular(10.0),
                             ),
-                            floatingLabelStyle: TextStyle(
-                              color: Colors.red,
-                              fontSize: 18.0,
-                            ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
                                   BorderSide(color: Colors.red, width: 1.5),
@@ -467,30 +445,22 @@ class _PickingPageState extends State<PickingPage> {
                         ),
                         SizedBox(height: 10),
                         TextField(
+                          enableInteractiveSelection: false,
                           readOnly: true,
-                          autofocus: true,
-                          keyboardType: TextInputType.number,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
-                            prefixText: S.of(context).htamount,
-                            prefixStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            suffix: IconButton(
-                                onPressed: scanBarcode,
-                                icon: Icon(
-                                  Iconsax.camera,
-                                  color: Colors.red,
-                                )),
+                            alignLabelWithHint: true,
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
                             contentPadding: EdgeInsets.all(0.0),
                             labelText: S.of(context).tfamount,
+                            hintText: S.of(context).tfamount,
                             labelStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 14.0,
+                              color: Colors.red,
+                              fontSize: 17.0,
                               fontWeight: FontWeight.w400,
                             ),
                             hintStyle: TextStyle(
-                              color: Colors.grey,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                             ),
                             prefixIcon: Icon(
@@ -502,10 +472,6 @@ class _PickingPageState extends State<PickingPage> {
                               borderSide:
                                   BorderSide(color: Colors.red, width: 2),
                               borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            floatingLabelStyle: TextStyle(
-                              color: Colors.red,
-                              fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
@@ -554,7 +520,7 @@ class _PickingPageState extends State<PickingPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.white,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
@@ -566,33 +532,26 @@ class _PickingPageState extends State<PickingPage> {
                         ),
                         SizedBox(height: 10),
                         TextField(
+                          enableInteractiveSelection: false,
                           readOnly: true,
-                          autofocus: true,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
-                            prefixText: S.of(context).lblproduct,
-                            prefixStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            suffix: IconButton(
-                                onPressed: scanBarcode,
-                                icon: Icon(
-                                  Iconsax.camera,
-                                  color: Colors.red,
-                                )),
+                            alignLabelWithHint: true,
+                            floatingLabelBehavior: FloatingLabelBehavior.always,
                             contentPadding: EdgeInsets.all(0.0),
-                            labelText: S.of(context).lblproduct,
+                            labelText: S.of(context).tfproduct,
+                            hintText: S.of(context).tfproduct,
                             labelStyle: TextStyle(
-                              color: Theme.of(context).primaryColor,
-                              fontSize: 14.0,
+                              color: Colors.red,
+                              fontSize: 17.0,
                               fontWeight: FontWeight.w400,
                             ),
                             hintStyle: TextStyle(
-                              color: Colors.grey,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 14.0,
                             ),
                             prefixIcon: Icon(
-                              Iconsax.location,
+                              Iconsax.box,
                               color: Colors.red,
                               size: 18,
                             ),
@@ -600,10 +559,6 @@ class _PickingPageState extends State<PickingPage> {
                               borderSide:
                                   BorderSide(color: Colors.red, width: 2),
                               borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            floatingLabelStyle: TextStyle(
-                              color: Colors.red,
-                              fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide:
@@ -614,7 +569,6 @@ class _PickingPageState extends State<PickingPage> {
                         ),
                         SizedBox(height: 10),
                         TextField(
-                          keyboardType: TextInputType.number,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             prefixText: '$barcode',
@@ -649,7 +603,7 @@ class _PickingPageState extends State<PickingPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.white,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
@@ -661,6 +615,112 @@ class _PickingPageState extends State<PickingPage> {
                         ),
                         SizedBox(height: 10),
                         Divider(color: Theme.of(context).dividerColor),
+                        SizedBox(height: 10),
+                        Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 5,
+                                    child: TextField(
+                                      keyboardType: TextInputType.number,
+                                      decoration: InputDecoration(
+                                        prefixStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: S.of(context).tfamount,
+                                        labelStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        hintStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                          fontSize: 14.0,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Iconsax.box_time,
+                                          color: Colors.red,
+                                          size: 18,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.grey.shade200,
+                                              width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        floatingLabelStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                          fontSize: 18.0,
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.grey.shade200,
+                                              width: 1.5),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 5),
+                            Expanded(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(
+                                    flex: 4,
+                                    child: TextField(
+                                      enableInteractiveSelection: true,
+                                      readOnly: true,
+                                      decoration: InputDecoration(
+                                        alignLabelWithHint: true,
+                                        floatingLabelBehavior:
+                                            FloatingLabelBehavior.always,
+                                        prefixStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        contentPadding: EdgeInsets.all(0.0),
+                                        labelText: S.of(context).lblunit,
+                                        hintText: S.of(context).lblunit,
+                                        hintStyle: TextStyle(
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                        labelStyle: TextStyle(
+                                          color: Colors.red,
+                                          fontSize: 14.0,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        prefixIcon: Icon(
+                                          Iconsax.box_time,
+                                          color: Colors.red,
+                                          size: 18,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.red, width: 1.5),
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
                         SizedBox(height: 10),
                         Container(
                             height: 100,
@@ -736,60 +796,7 @@ class _PickingPageState extends State<PickingPage> {
                           backgroundColor: Colors.grey.shade800,
                           borderRadius: BorderRadius.circular(15),
                         )),
-                        SizedBox(height: 10),
-                        // Container(
-                        //     height: 100,
-                        //     width: 170,
-                        //     decoration: BoxDecoration(
-                        //       color: Theme.of(context).cardColor,
-                        //       borderRadius: BorderRadius.circular(10),
-                        //     ),
-                        //     child: ListView.builder(
-                        //       scrollDirection: Axis.horizontal,
-                        //       itemCount: _advancewunites.length,
-                        //       itemBuilder: (context, index) {
-                        //         return GestureDetector(
-                        //             child: Container(
-                        //                 width: 70,
-                        //                 decoration: BoxDecoration(
-                        //                   color: Theme.of(context).cardColor,
-                        //                   borderRadius:
-                        //                       BorderRadius.circular(15),
-                        //                 ),
-                        //                 margin: EdgeInsets.only(right: 20),
-                        //                 child: Column(
-                        //                   mainAxisAlignment:
-                        //                       MainAxisAlignment.center,
-                        //                   crossAxisAlignment:
-                        //                       CrossAxisAlignment.center,
-                        //                   children: [
-                        //                     Icon(_advancewunites[index][1],
-                        //                         color: Colors.red),
-                        //                     SizedBox(
-                        //                       height: 10,
-                        //                     ),
-                        //                     Text(
-                        //                       _advancewunites[index][0],
-                        //                       style: TextStyle(
-                        //                         fontSize: 15,
-                        //                         fontWeight: FontWeight.w500,
-                        //                         color: Theme.of(context)
-                        //                             .primaryColor,
-                        //                       ),
-                        //                     ),
-                        //                     SizedBox(
-                        //                       height: 5,
-                        //                     ),
-                        //                     Text(
-                        //                       "${_advancewunites[index][2]}",
-                        //                       style: TextStyle(
-                        //                           color: Theme.of(context)
-                        //                               .primaryColor),
-                        //                     )
-                        //                   ],
-                        //                 )));
-                        //       },
-                        //     )),
+                        SizedBox(height: 10)
                       ]),
                     ),
                   ],

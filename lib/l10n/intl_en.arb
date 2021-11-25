@@ -107,6 +107,10 @@
     "lbllocation": "Location",
     "lblapplication": "Aplication",
     "lblavance": "Advance",
-    "lbldepo": "Deposit"
+    "lbldepo": "Deposit",
+    "lblunitread": "Unit Read",
+    "lblstorage": "Storage",
+    "lblcantpos": "Amount - Position"
+
     
 }
