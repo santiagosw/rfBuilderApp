@@ -1,7 +1,7 @@
 # compiler: R8
 # compiler_version: 2.1.62
 # min_api: 16
-# pg_map_id: 7f553dc
+# pg_map_id: 2a1a410
 # common_typos_disable
 $r8$backportedMethods$utility$Objects$2$equals -> a:
     boolean equals(java.lang.Object,java.lang.Object) -> a
@@ -22566,6 +22566,31 @@ io.flutter.plugins.pathprovider.PathProviderPlugin$UiThreadExecutor -> io.flutte
     android.os.Handler handler -> a
 io.flutter.plugins.pathprovider.StorageDirectoryMapper -> io.flutter.plugins.b.i:
     java.lang.String androidType(java.lang.Integer) -> a
+io.flutter.plugins.sharedpreferences.MethodCallHandlerImpl -> io.flutter.plugins.c.a:
+    android.os.Handler handler -> c
+    android.content.SharedPreferences preferences -> a
+    java.util.concurrent.ExecutorService executor -> b
+    android.os.Handler access$000(io.flutter.plugins.sharedpreferences.MethodCallHandlerImpl) -> a
+    void commitAsync(android.content.SharedPreferences$Editor,io.flutter.plugin.common.MethodChannel$Result) -> b
+    java.util.List decodeList(java.lang.String) -> c
+    java.lang.String encodeList(java.util.List) -> d
+    java.util.Map getAllPrefs() -> e
+    void teardown() -> f
+    void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> j
+io.flutter.plugins.sharedpreferences.MethodCallHandlerImpl$1 -> io.flutter.plugins.c.a$a:
+    android.content.SharedPreferences$Editor val$editor -> b
+    io.flutter.plugins.sharedpreferences.MethodCallHandlerImpl this$0 -> d
+    io.flutter.plugin.common.MethodChannel$Result val$result -> c
+io.flutter.plugins.sharedpreferences.MethodCallHandlerImpl$1$1 -> io.flutter.plugins.c.a$a$a:
+    io.flutter.plugins.sharedpreferences.MethodCallHandlerImpl$1 this$1 -> c
+    boolean val$response -> b
+io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin -> io.flutter.plugins.c.b:
+    io.flutter.plugins.sharedpreferences.MethodCallHandlerImpl handler -> b
+    io.flutter.plugin.common.MethodChannel channel -> a
+    void setupChannel(io.flutter.plugin.common.BinaryMessenger,android.content.Context) -> a
+    void teardownChannel() -> b
+    void onAttachedToEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> d
+    void onDetachedFromEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> h
 io.flutter.util.PathUtils -> e.a.d.a:
     java.lang.String getCacheDirectory(android.content.Context) -> a
     java.lang.String getDataDirectory(android.content.Context) -> b

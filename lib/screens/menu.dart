@@ -327,7 +327,9 @@ class _HomePageState extends State<HomePage> {
                       duration: Duration(milliseconds: 500),
                       child: Column(children: [
                         GFButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.toNamed('/transfers');
+                          },
                           text: S.of(context).ttransfer,
                           icon: Icon(Iconsax.arrow_2, color: Colors.red),
                           textColor: Theme.of(context).primaryColor,

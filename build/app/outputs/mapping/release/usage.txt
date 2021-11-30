@@ -95,6 +95,7 @@ com.google.common.util.concurrent.ExecutionSequencer$RunningState
 com.google.common.collect.AbstractMapBasedMultimap$RandomAccessWrappedList
 com.google.common.reflect.Reflection
 kotlin.collections.ArraysKt___ArraysJvmKt
+io.flutter.plugins.sharedpreferences.R$style
 com.google.android.gms.common.api.internal.TaskApiCall:
     public void <init>()
     private void <init>(com.google.android.gms.common.Feature[],boolean,int)
@@ -4323,6 +4324,7 @@ io.flutter.FlutterInjector$Builder:
     public io.flutter.FlutterInjector$Builder setFlutterJNIFactory(io.flutter.embedding.engine.FlutterJNI$Factory)
 kotlin.sequences.FlatteningSequence$iterator$1
 kotlin.collections.ArraysKt___ArraysJvmKt$asList$3
+io.flutter.plugins.sharedpreferences.R$dimen
 com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder$PureJavaComparator
 androidx.recyclerview.widget.FastScroller:
     public boolean isDragging()
@@ -4360,6 +4362,7 @@ androidx.transition.TranslationAnimationCreator$TransitionPositionListener
 com.google.android.gms.common.api.internal.ActivityLifecycleObserver
 androidx.constraintlayout.motion.utils.Easing$CubicEasing
 com.google.common.cache.RemovalCause$3
+io.flutter.plugins.sharedpreferences.R
 android.support.v4.media.MediaBrowserCompat$ItemCallback:
     public void <init>()
     final java.lang.Object mItemCallbackObj
@@ -6982,6 +6985,7 @@ com.google.android.material.progressindicator.BaseProgressIndicatorSpec
 com.google.common.collect.TopKSelector
 io.flutter.embedding.engine.loader.FlutterLoader$Settings:
     public void setLogTag(java.lang.String)
+io.flutter.plugins.sharedpreferences.BuildConfig
 android.support.v4.media.MediaBrowserCompatApi21$MediaItem
 com.google.common.collect.StandardTable$Column$EntrySetIterator
 com.google.android.material.circularreveal.CircularRevealGridLayout
@@ -7781,8 +7785,8 @@ android.support.v4.media.session.MediaControllerCompatApi21$PlaybackInfo:
     private static final int FLAG_SCO
     private static final int STREAM_BLUETOOTH_SCO
     private static final int STREAM_SYSTEM_ENFORCED
-io.flutter.BuildConfig
 com.google.android.gms.common.internal.service.zag
+io.flutter.BuildConfig
 javax.annotation.Nonnull$Checker
 kotlin.NumbersKt__BigDecimalsKt
 com.google.android.gms.internal.vision.zzhe:
@@ -7879,6 +7883,11 @@ android.support.v4.media.session.IMediaSession$Stub:
     static final int TRANSACTION_setShuffleModeEnabledRemoved
     static final int TRANSACTION_setShuffleMode
     static final int TRANSACTION_sendCustomAction
+io.flutter.plugins.sharedpreferences.MethodCallHandlerImpl:
+    private static final java.lang.String SHARED_PREFERENCES_NAME
+    private static final java.lang.String LIST_IDENTIFIER
+    private static final java.lang.String BIG_INTEGER_PREFIX
+    private static final java.lang.String DOUBLE_PREFIX
 com.google.common.collect.HashBiMap$EntryForValue
 androidx.media.MediaBrowserServiceCompat$MediaBrowserServiceImplBase$3
 com.google.android.material.transition.platform.FadeProvider$1
@@ -9791,6 +9800,7 @@ com.google.common.collect.AbstractMapBasedMultiset$Itr
 com.google.common.util.concurrent.AggregateFutureState$SynchronizedAtomicHelper
 androidx.constraintlayout.motion.widget.MotionLayout$Model
 com.google.common.collect.Maps$3
+io.flutter.plugins.sharedpreferences.R$drawable
 com.google.android.material.drawable.DrawableUtils:
     private void <init>()
     public static android.util.AttributeSet parseDrawableXml(android.content.Context,int,java.lang.CharSequence)
@@ -10525,8 +10535,8 @@ androidx.recyclerview.widget.ViewInfoStore$InfoRecord:
     static final int FLAG_APPEAR_AND_DISAPPEAR
     static final int FLAG_PRE_AND_POST
     static final int FLAG_APPEAR_PRE_AND_POST
-com.google.common.hash.BloomFilter
 com.google.common.io.CharSink
+com.google.common.hash.BloomFilter
 com.google.common.collect.ImmutableSetMultimap$Builder
 com.google.common.collect.Maps$ViewCachingAbstractMap
 com.google.common.collect.AbstractTable$CellSet
@@ -12063,6 +12073,9 @@ com.google.common.collect.Range$LowerBoundFn
 kotlin.collections.UByteIterator
 com.google.android.gms.common.api.internal.zae:
     public void zaa(com.google.android.gms.common.api.internal.zaw,boolean)
+io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin:
+    public static void registerWith(io.flutter.plugin.common.PluginRegistry$Registrar)
+    private static final java.lang.String CHANNEL_NAME
 com.google.android.gms.common.internal.GetServiceRequest:
     public android.os.Bundle getExtraArgs()
 com.google.common.collect.AbstractMapBasedMultimap$NavigableAsMap
@@ -12509,6 +12522,7 @@ androidx.appcompat.widget.ActionBarContextView:
     public synthetic bridge boolean isOverflowMenuShowPending()
     public synthetic bridge void postShowOverflowMenu()
     public synthetic bridge void animateToVisibility(int)
+io.flutter.plugins.sharedpreferences.R$id
 kotlin.reflect.KMutableProperty1$Setter
 com.google.android.material.datepicker.DateValidatorPointBackward$1
 androidx.fragment.app.FragmentHostCallback:
@@ -12973,6 +12987,7 @@ com.google.common.base.Throwables:
     static final java.lang.String SHARED_SECRETS_CLASSNAME
 com.google.common.collect.AbstractBiMap$1
 com.google.android.gms.internal.vision.zzdw
+io.flutter.plugins.sharedpreferences.R$string
 com.baseflow.permissionhandler.R$color
 kotlin.coroutines.experimental.SafeContinuation$Fail
 com.google.common.primitives.Floats$LexicographicalComparator
@@ -13148,6 +13163,7 @@ com.google.common.collect.Maps$8
 com.google.android.gms.signin.zad:
     public abstract void zaa(com.google.android.gms.common.internal.IAccountAccessor,boolean)
     public abstract void zaa()
+io.flutter.plugins.sharedpreferences.R$layout
 com.google.common.primitives.Ints
 kotlin.jvm.functions.Function18
 com.google.common.cache.ReferenceEntry
@@ -13686,9 +13702,9 @@ androidx.customview.widget.ExploreByTouchHelper:
     private static final java.lang.String DEFAULT_CLASS_NAME
 com.google.android.material.datepicker.CompositeDateValidator
 com.example.rfbuilder_app.R$animator
-io.flutter.embedding.engine.systemchannels.PlatformViewsChannel:
-    private static final java.lang.String TAG
 io.flutter.embedding.engine.systemchannels.PlatformChannel:
+    private static final java.lang.String TAG
+io.flutter.embedding.engine.systemchannels.PlatformViewsChannel:
     private static final java.lang.String TAG
 com.google.common.collect.Multisets$FilteredMultiset$1
 com.google.android.gms.common.server.response.zam
@@ -14661,6 +14677,7 @@ androidx.appcompat.view.menu.MenuItemImpl:
     private static final int IS_ACTION
     static final int NO_ICON
 com.google.common.primitives.Floats
+io.flutter.plugins.sharedpreferences.R$integer
 kotlin.coroutines.experimental.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnchecked$$inlined$buildContinuationByInvokeCall$IntrinsicsKt__IntrinsicsJvmKt$2
 androidx.dynamicanimation.animation.DynamicAnimation$13
 com.google.common.collect.AbstractIterator$State
@@ -16897,6 +16914,7 @@ androidx.viewpager2.widget.ViewPager2$SavedState$1
 androidx.viewpager2.widget.ViewPager2
 com.google.common.collect.AbstractIterator
 androidx.drawerlayout.R$layout
+io.flutter.plugins.sharedpreferences.R$styleable
 com.google.common.util.concurrent.AbstractScheduledService$CustomScheduler$ReschedulableCallable
 com.google.android.gms.internal.vision.zzai
 kotlin.io.FileTreeWalk
@@ -18650,6 +18668,7 @@ androidx.appcompat.app.AppCompatDelegate:
 androidx.constraintlayout.motion.widget.SplineSet$TranslationZset
 androidx.core.view.inputmethod.EditorInfoCompat
 com.google.android.gms.common.AccountPicker$AccountChooserOptions$Builder
+io.flutter.plugins.sharedpreferences.R$attr
 kotlin.text.Regex$fromInt$$inlined$apply$lambda$1
 com.google.common.util.concurrent.AggregateFutureState$AtomicHelper
 com.google.common.collect.LinkedListMultimap$NodeIterator
@@ -19819,6 +19838,7 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelReader:
     public static android.os.Parcel[] createParcelArray(android.os.Parcel,int)
     public static java.util.ArrayList createParcelList(android.os.Parcel,int)
     public static void readList(android.os.Parcel,int,java.util.List,java.lang.ClassLoader)
+io.flutter.plugins.sharedpreferences.R$color
 androidx.multidex.ZipUtil:
     void <init>()
     private static final int ENDHDR

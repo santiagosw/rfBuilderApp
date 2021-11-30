@@ -670,10 +670,10 @@ class S {
     );
   }
 
-  /// `Unit`
+  /// `Unidad de Medida`
   String get lblunit {
     return Intl.message(
-      'Unit',
+      'Unidad de Medida',
       name: 'lblunit',
       desc: '',
       args: [],
@@ -795,6 +795,16 @@ class S {
     return Intl.message(
       'Choose your Language',
       name: 'lblchoose',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transfers`
+  String get lbltransfer {
+    return Intl.message(
+      'Transfers',
+      name: 'lbltransfer',
       desc: '',
       args: [],
     );

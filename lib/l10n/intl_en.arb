@@ -99,7 +99,7 @@
     "lblwarehouse": "Warehouse",
     "lblproduct": "Product",
     "lblamount": "Amount",
-    "lblunit": "Unit",
+    "lblunit": "Unidad de Medida",
     "lblexpiration": "Expiration",
     "lbldes": "Description",
     "lbleditprof": "Edit Profile",
@@ -112,6 +112,8 @@
     "lblstorage": "Storage",
     "lblcantpos": "Amount - Position",
     "lblchoose": "Choose your Language",
+    "lbltransfer": "Transfers",
+
 
     "@_LANGUAGE TRANS": {
     },

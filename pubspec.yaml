@@ -33,11 +33,11 @@ dependencies:
   introduction_screen: ^2.1.0
   flutter_animation_progress_bar: ^2.0.1
   font_awesome_flutter: ^9.2.0
-  syncfusion_flutter_charts: ^19.3.48
   intl: ^0.17.0
   fl_chart: ^0.40.2
   google_fonts: ^2.1.0
   easy_localization: ^3.0.0
+  
 
 
 dev_dependencies:

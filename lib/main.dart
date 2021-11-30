@@ -12,10 +12,9 @@ import 'package:rfbuilder_app/screens/replacement/replacement_page.dart';
 import 'package:rfbuilder_app/screens/save_reception/sreception_page.dart';
 import 'package:rfbuilder_app/screens/settings_page/edit_profile.dart';
 import 'package:rfbuilder_app/screens/settings_page/settings_page.dart';
-import 'package:rfbuilder_app/screens/statistics/CircularChart/chart_screen.dart';
-import 'package:rfbuilder_app/screens/statistics/CircularChart/stats.dart';
 import 'package:rfbuilder_app/screens/stock/stock_page.dart';
 import 'package:rfbuilder_app/screens/support/onboarding_page.dart';
+import 'package:rfbuilder_app/screens/transfers/transfers.dart';
 import 'generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -59,6 +58,10 @@ class MyApp extends StatelessWidget {
                           page: () => HomePage(),
                           transition: Transition.cupertinoDialog),
                       GetPage(
+                          name: "/transfers",
+                          page: () => TransferPage(),
+                          transition: Transition.cupertinoDialog),
+                      GetPage(
                           name: "/reception",
                           page: () => ReceptionPage(),
                           transition: Transition.cupertinoDialog),
@@ -93,10 +96,6 @@ class MyApp extends StatelessWidget {
                       GetPage(
                           name: "/support",
                           page: () => OnBoardingPage(),
-                          transition: Transition.cupertinoDialog),
-                      GetPage(
-                          name: "/stats",
-                          page: () => CircularChart(),
                           transition: Transition.cupertinoDialog),
                     ])));
       });
