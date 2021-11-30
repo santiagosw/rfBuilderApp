@@ -50,6 +50,9 @@ class _ReceptionPageState extends State<ReceptionPage> {
 
   final _advancedDrawerController = AdvancedDrawerController();
   final GFBottomSheetController _controller = GFBottomSheetController();
+  final focus = FocusNode();
+  final focus1 = FocusNode();
+  final focus2 = FocusNode();
   @override
   Widget build(BuildContext context) {
     final text = Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark
@@ -314,7 +317,11 @@ class _ReceptionPageState extends State<ReceptionPage> {
                         duration: Duration(milliseconds: 500),
                         child: Column(
                           children: [
-                            TextField(
+                            TextFormField(
+                              textInputAction: TextInputAction.next,
+                              onFieldSubmitted: (v) {
+                                FocusScope.of(context).requestFocus(focus);
+                              },
                               cursorColor: Theme.of(context).cursorColor,
                               decoration: InputDecoration(
                                 prefixText:
@@ -361,7 +368,12 @@ class _ReceptionPageState extends State<ReceptionPage> {
                               ),
                             ),
                             SizedBox(height: 15),
-                            TextField(
+                            TextFormField(
+                              focusNode: focus,
+                              textInputAction: TextInputAction.next,
+                              onFieldSubmitted: (v) {
+                                FocusScope.of(context).requestFocus(focus1);
+                              },
                               cursorColor: Theme.of(context).cursorColor,
                               decoration: InputDecoration(
                                 prefixText:
@@ -449,7 +461,12 @@ class _ReceptionPageState extends State<ReceptionPage> {
                               ),
                             ),
                             SizedBox(height: 10),
-                            TextField(
+                            TextFormField(
+                              focusNode: focus1,
+                              textInputAction: TextInputAction.next,
+                              onFieldSubmitted: (v) {
+                                FocusScope.of(context).requestFocus(focus2);
+                              },
                               keyboardType: TextInputType.datetime,
                               cursorColor: Theme.of(context).cursorColor,
                               decoration: InputDecoration(
@@ -506,6 +523,8 @@ class _ReceptionPageState extends State<ReceptionPage> {
                                       Expanded(
                                         flex: 5,
                                         child: TextField(
+                                          focusNode: focus2,
+                                          textInputAction: TextInputAction.done,
                                           keyboardType: TextInputType.number,
                                           decoration: InputDecoration(
                                             prefixStyle: TextStyle(

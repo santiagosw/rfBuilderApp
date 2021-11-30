@@ -37,6 +37,7 @@ dependencies:
   intl: ^0.17.0
   fl_chart: ^0.40.2
   google_fonts: ^2.1.0
+  easy_localization: ^3.0.0
 
 
 dev_dependencies:
@@ -48,12 +49,9 @@ flutter:
     generate: true
     uses-material-design: true
 
-
     assets:
         - assets/images/
     
-
-
 flutter_icons:
   android: true
   ios: true
@@ -63,15 +61,7 @@ flutter_icons:
 flutter_intl:
   enabled: true
   generate: true
-  
-  # Optional
-  # Default: en
-  # <language code>[_<script code>][_<country code>]
   main_locale: en
-  
-  # Optional
-  # Default: S
-  # Suggested alternative name: AppLocalizations
   class_name: S
 
 

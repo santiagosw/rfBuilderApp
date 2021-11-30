@@ -14,6 +14,53 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  final List locale = [
+    {'name': 'English'.tr, 'locale': Locale('en', 'US')},
+    {'name': 'Spanish'.tr, 'locale': Locale('es', 'ES')},
+  ];
+
+  updateLanguage(Locale locale) {
+    Get.back();
+    Get.updateLocale(locale);
+  }
+
+  buildLanguageDialog(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (builder) {
+          return AlertDialog(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+            title: Text(S.of(context).lblchoose),
+            content: Container(
+              width: double.maxFinite,
+              child: ListView.separated(
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: GestureDetector(
+                        child: Text(locale[index]['name'],
+                            style: TextStyle(
+                                color: Theme.of(context).primaryColor)),
+                        onTap: () {
+                          print(locale[index]['name']);
+                          updateLanguage(locale[index]['locale']);
+                        },
+                      ),
+                    );
+                  },
+                  separatorBuilder: (context, index) {
+                    return Divider(
+                      color: Colors.red,
+                    );
+                  },
+                  itemCount: locale.length),
+            ),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
@@ -96,31 +143,17 @@ class _SettingsPageState extends State<SettingsPage> {
               color: Theme.of(context).dividerColor,
             ),
             SizedBox(height: 10),
-            GFListTile(
-              title: Text(S.of(context).mchanguelang,
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    color: Theme.of(context).primaryColor,
-                  )),
-            ),
-            Row(
-              children: [
-                SizedBox(width: 30),
-                GFButton(
-                    color: Colors.red,
-                    onPressed: () => context
-                        .read<LanguageChangeProvider>()
-                        .changeLocale('es'),
-                    child: Text("Spanish")),
-                SizedBox(width: 15),
-                GFButton(
-                    color: Colors.red,
-                    onPressed: () => context
-                        .read<LanguageChangeProvider>()
-                        .changeLocale('en'),
-                    child: Text("English")),
-              ],
+            Center(
+              child: MaterialButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25)),
+                color: Colors.red,
+                onPressed: () {
+                  buildLanguageDialog(context);
+                },
+                child: Text(S.of(context).mchanguelang),
+                textColor: Colors.white,
+              ),
             ),
             SizedBox(
               height: 50,

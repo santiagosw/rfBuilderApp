@@ -53,6 +53,10 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
 
   final _advancedDrawerController = AdvancedDrawerController();
   final GFBottomSheetController _controller = GFBottomSheetController();
+  final focus = FocusNode();
+  final focus1 = FocusNode();
+  final focus2 = FocusNode();
+  final focus3 = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -313,7 +317,11 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                     FadeInDown(
                       duration: Duration(milliseconds: 500),
                       child: Column(children: [
-                        TextField(
+                        TextFormField(
+                          textInputAction: TextInputAction.next,
+                          onFieldSubmitted: (v) {
+                            FocusScope.of(context).requestFocus(focus);
+                          },
                           keyboardType: TextInputType.number,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
@@ -349,7 +357,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.grey.shade200,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
@@ -505,7 +513,12 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                           color: Theme.of(context).dividerColor,
                         ),
                         SizedBox(height: 10),
-                        TextField(
+                        TextFormField(
+                          focusNode: focus,
+                          textInputAction: TextInputAction.next,
+                          onFieldSubmitted: (v) {
+                            FocusScope.of(context).requestFocus(focus1);
+                          },
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             prefixText: '$barcode',
@@ -540,7 +553,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.grey.shade200,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
@@ -551,7 +564,12 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                           ),
                         ),
                         SizedBox(height: 10),
-                        TextField(
+                        TextFormField(
+                          focusNode: focus1,
+                          textInputAction: TextInputAction.next,
+                          onFieldSubmitted: (v) {
+                            FocusScope.of(context).requestFocus(focus2);
+                          },
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             prefixText: '$barcode',
@@ -586,7 +604,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.grey.shade200,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
@@ -604,7 +622,13 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                                 children: <Widget>[
                                   Expanded(
                                     flex: 5,
-                                    child: TextField(
+                                    child: TextFormField(
+                                      focusNode: focus2,
+                                      textInputAction: TextInputAction.next,
+                                      onFieldSubmitted: (v) {
+                                        FocusScope.of(context)
+                                            .requestFocus(focus3);
+                                      },
                                       keyboardType: TextInputType.number,
                                       decoration: InputDecoration(
                                         prefixStyle: TextStyle(
@@ -709,7 +733,9 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                         SizedBox(
                           height: 10,
                         ),
-                        TextField(
+                        TextFormField(
+                          focusNode: focus3,
+                          textInputAction: TextInputAction.done,
                           keyboardType: TextInputType.multiline,
                           minLines: 1,
                           maxLines: 5,
@@ -732,7 +758,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.grey.shade200,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(

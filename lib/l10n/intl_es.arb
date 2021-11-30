@@ -103,7 +103,7 @@
     "lblwarehouse": "Deposito",
     "lblproduct": "Producto",
     "lblamount": "Cantidad",
-    "lblunit": "Unidad",
+    "lblunit": "Unidad de Medida",
     "lblexpiration": "Vencimiento",
     "lbldes": "Descripción",
     "lbleditprof": "Editar Perfil",
@@ -114,9 +114,14 @@
     "lbldepo": "Deposito",
     "lblunitread": "Unidad Leida",
     "lblstorage": "Almacen",
-    "lblcantpos": "Cantidad - Posicion"
-    
+    "lblcantpos": "Cantidad - Posicion",
+    "lblchoose": "Elige tu Idioma",
 
+    "@_LANGUAGE TRANS": {
+    },
+
+    "lblspanish": "Espa",
+    "lblenglish": "English"
 }
 
 

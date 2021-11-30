@@ -71,6 +71,9 @@ class _PickingPageState extends State<PickingPage> {
 
   final _advancedDrawerController = AdvancedDrawerController();
   final GFBottomSheetController _controller = GFBottomSheetController();
+  final focus = FocusNode();
+  final focus1 = FocusNode();
+  final focus2 = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -515,7 +518,11 @@ class _PickingPageState extends State<PickingPage> {
                           color: Theme.of(context).dividerColor,
                         ),
                         SizedBox(height: 10),
-                        TextField(
+                        TextFormField(
+                          textInputAction: TextInputAction.next,
+                          onFieldSubmitted: (v) {
+                            FocusScope.of(context).requestFocus(focus);
+                          },
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             prefixText: '$barcode',
@@ -598,7 +605,12 @@ class _PickingPageState extends State<PickingPage> {
                           ),
                         ),
                         SizedBox(height: 10),
-                        TextField(
+                        TextFormField(
+                          focusNode: focus,
+                          textInputAction: TextInputAction.next,
+                          onFieldSubmitted: (v) {
+                            FocusScope.of(context).requestFocus(focus1);
+                          },
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             prefixText: '$barcode',
@@ -653,7 +665,9 @@ class _PickingPageState extends State<PickingPage> {
                                 children: <Widget>[
                                   Expanded(
                                     flex: 5,
-                                    child: TextField(
+                                    child: TextFormField(
+                                      focusNode: focus1,
+                                      textInputAction: TextInputAction.done,
                                       keyboardType: TextInputType.number,
                                       decoration: InputDecoration(
                                         prefixStyle: TextStyle(

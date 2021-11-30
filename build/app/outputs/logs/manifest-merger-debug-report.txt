@@ -5,6 +5,7 @@ INJECTED from /home/user/development/repos/rfBuilderApp/android/app/src/main/And
 INJECTED from /home/user/development/repos/rfBuilderApp/android/app/src/main/AndroidManifest.xml:1:1-44:12
 INJECTED from /home/user/development/repos/rfBuilderApp/android/app/src/main/AndroidManifest.xml:1:1-44:12
 MERGED from /home/user/development/repos/rfBuilderApp/android/app/src/main/AndroidManifest.xml:1:1-44:12
+MERGED from [:shared_preferences_android] /home/user/development/repos/rfBuilderApp/build/shared_preferences_android/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:flutter_barcode_scanner] /home/user/development/repos/rfBuilderApp/build/flutter_barcode_scanner/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-21:12
 MERGED from [:flutter_plugin_android_lifecycle] /home/user/development/repos/rfBuilderApp/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
 MERGED from [:path_provider_android] /home/user/development/repos/rfBuilderApp/build/path_provider_android/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-7:12
@@ -162,6 +163,8 @@ uses-sdk
 INJECTED from /home/user/development/repos/rfBuilderApp/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/user/development/repos/rfBuilderApp/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/user/development/repos/rfBuilderApp/android/app/src/main/AndroidManifest.xml
+MERGED from [:shared_preferences_android] /home/user/development/repos/rfBuilderApp/build/shared_preferences_android/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences_android] /home/user/development/repos/rfBuilderApp/build/shared_preferences_android/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44
 MERGED from [:flutter_barcode_scanner] /home/user/development/repos/rfBuilderApp/build/flutter_barcode_scanner/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_barcode_scanner] /home/user/development/repos/rfBuilderApp/build/flutter_barcode_scanner/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] /home/user/development/repos/rfBuilderApp/build/flutter_plugin_android_lifecycle/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-44

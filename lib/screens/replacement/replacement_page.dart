@@ -75,6 +75,10 @@ class _ReplacementPageState extends State<ReplacementPage> {
 
   final _advancedDrawerController = AdvancedDrawerController();
   final GFBottomSheetController _controller = GFBottomSheetController();
+  final focus = FocusNode();
+  final focus1 = FocusNode();
+  final focus2 = FocusNode();
+  final focus3 = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -766,7 +770,11 @@ class _ReplacementPageState extends State<ReplacementPage> {
                           color: Theme.of(context).dividerColor,
                         ),
                         SizedBox(height: 5),
-                        TextField(
+                        TextFormField(
+                          textInputAction: TextInputAction.next,
+                          onFieldSubmitted: (v) {
+                            FocusScope.of(context).requestFocus(focus);
+                          },
                           keyboardType: TextInputType.text,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
@@ -802,7 +810,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.grey.shade200,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
@@ -817,7 +825,12 @@ class _ReplacementPageState extends State<ReplacementPage> {
                           color: Theme.of(context).dividerColor,
                         ),
                         SizedBox(height: 10),
-                        TextField(
+                        TextFormField(
+                          focusNode: focus,
+                          textInputAction: TextInputAction.next,
+                          onFieldSubmitted: (v) {
+                            FocusScope.of(context).requestFocus(focus1);
+                          },
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             prefixText: '$barcode',
@@ -852,7 +865,7 @@ class _ReplacementPageState extends State<ReplacementPage> {
                               borderRadius: BorderRadius.circular(10.0),
                             ),
                             floatingLabelStyle: TextStyle(
-                              color: Colors.grey.shade200,
+                              color: Theme.of(context).primaryColor,
                               fontSize: 18.0,
                             ),
                             focusedBorder: OutlineInputBorder(
@@ -870,7 +883,13 @@ class _ReplacementPageState extends State<ReplacementPage> {
                                 children: <Widget>[
                                   Expanded(
                                     flex: 5,
-                                    child: TextField(
+                                    child: TextFormField(
+                                      focusNode: focus1,
+                                      textInputAction: TextInputAction.next,
+                                      onFieldSubmitted: (v) {
+                                        FocusScope.of(context)
+                                            .requestFocus(focus2);
+                                      },
                                       keyboardType: TextInputType.number,
                                       decoration: InputDecoration(
                                         prefixStyle: TextStyle(
@@ -971,8 +990,9 @@ class _ReplacementPageState extends State<ReplacementPage> {
                         SizedBox(height: 10),
                         Divider(color: Theme.of(context).dividerColor),
                         SizedBox(height: 10),
-                        TextField(
-                          keyboardType: TextInputType.text,
+                        TextFormField(
+                          focusNode: focus2,
+                          textInputAction: TextInputAction.done,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.all(0.0),

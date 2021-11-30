@@ -58,7 +58,9 @@ class _StockPageState extends State<StockPage> {
 
   final _advancedDrawerController = AdvancedDrawerController();
   final GFBottomSheetController _controller = GFBottomSheetController();
-
+  final focus = FocusNode();
+  final focus1 = FocusNode();
+  final focus2 = FocusNode();
   @override
   Widget build(BuildContext context) {
     final text = Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark
@@ -434,7 +436,11 @@ class _StockPageState extends State<StockPage> {
                           color: Theme.of(context).dividerColor,
                         ),
                         SizedBox(height: 10),
-                        TextField(
+                        TextFormField(
+                          textInputAction: TextInputAction.next,
+                          onFieldSubmitted: (v) {
+                            FocusScope.of(context).requestFocus(focus);
+                          },
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             prefixText: '$barcode',
@@ -521,7 +527,12 @@ class _StockPageState extends State<StockPage> {
                           color: Theme.of(context).dividerColor,
                         ),
                         SizedBox(height: 5),
-                        TextField(
+                        TextFormField(
+                          focusNode: focus,
+                          textInputAction: TextInputAction.next,
+                          onFieldSubmitted: (v) {
+                            FocusScope.of(context).requestFocus(focus1);
+                          },
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
                             prefixText: '$barcode',
@@ -567,7 +578,12 @@ class _StockPageState extends State<StockPage> {
                           ),
                         ),
                         SizedBox(height: 10),
-                        TextField(
+                        TextFormField(
+                          focusNode: focus1,
+                          textInputAction: TextInputAction.next,
+                          onFieldSubmitted: (v) {
+                            FocusScope.of(context).requestFocus(focus2);
+                          },
                           keyboardType: TextInputType.datetime,
                           cursorColor: Theme.of(context).cursorColor,
                           decoration: InputDecoration(
@@ -621,7 +637,9 @@ class _StockPageState extends State<StockPage> {
                                 children: <Widget>[
                                   Expanded(
                                     flex: 5,
-                                    child: TextField(
+                                    child: TextFormField(
+                                      focusNode: focus2,
+                                      textInputAction: TextInputAction.done,
                                       keyboardType: TextInputType.number,
                                       decoration: InputDecoration(
                                         prefixStyle: TextStyle(

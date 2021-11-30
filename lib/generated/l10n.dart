@@ -789,6 +789,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Choose your Language`
+  String get lblchoose {
+    return Intl.message(
+      'Choose your Language',
+      name: 'lblchoose',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Español`
+  String get lblspanish {
+    return Intl.message(
+      'Español',
+      name: 'lblspanish',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ingles`
+  String get lblenglish {
+    return Intl.message(
+      'Ingles',
+      name: 'lblenglish',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

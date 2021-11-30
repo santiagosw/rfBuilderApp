@@ -110,7 +110,15 @@
     "lbldepo": "Deposit",
     "lblunitread": "Unit Read",
     "lblstorage": "Storage",
-    "lblcantpos": "Amount - Position"
+    "lblcantpos": "Amount - Position",
+    "lblchoose": "Choose your Language",
+
+    "@_LANGUAGE TRANS": {
+    },
+
+    "lblspanish": "Español",
+    "lblenglish": "Ingles"
+
 
     
 }
