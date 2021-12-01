@@ -53,7 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "lblspanish": MessageLookupByLibrary.simpleMessage("Español"),
         "lblstorage": MessageLookupByLibrary.simpleMessage("Storage"),
         "lbltransfer": MessageLookupByLibrary.simpleMessage("Transfers"),
-        "lblunit": MessageLookupByLibrary.simpleMessage("Unidad de Medida"),
+        "lblunit": MessageLookupByLibrary.simpleMessage("Unit"),
         "lblunitread": MessageLookupByLibrary.simpleMessage("Unit Read"),
         "lblunits": MessageLookupByLibrary.simpleMessage("Units"),
         "lblwarehouse": MessageLookupByLibrary.simpleMessage("Warehouse"),

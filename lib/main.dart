@@ -12,6 +12,7 @@ import 'package:rfbuilder_app/screens/replacement/replacement_page.dart';
 import 'package:rfbuilder_app/screens/save_reception/sreception_page.dart';
 import 'package:rfbuilder_app/screens/settings_page/edit_profile.dart';
 import 'package:rfbuilder_app/screens/settings_page/settings_page.dart';
+import 'package:rfbuilder_app/screens/statisticscontroller/statistics_page.dart';
 import 'package:rfbuilder_app/screens/stock/stock_page.dart';
 import 'package:rfbuilder_app/screens/support/onboarding_page.dart';
 import 'package:rfbuilder_app/screens/transfers/transfers.dart';
@@ -96,6 +97,12 @@ class MyApp extends StatelessWidget {
                       GetPage(
                           name: "/support",
                           page: () => OnBoardingPage(),
+                          transition: Transition.cupertinoDialog),
+                      GetPage(
+                          name: "/stats",
+                          page: () => StatisticsPage(
+                                title: '',
+                              ),
                           transition: Transition.cupertinoDialog),
                     ])));
       });

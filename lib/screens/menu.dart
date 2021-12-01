@@ -321,122 +321,125 @@ class _HomePageState extends State<HomePage> {
               child: Container(
                 padding: EdgeInsets.only(left: 20, right: 20, top: 30),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     FadeInDown(
                       duration: Duration(milliseconds: 500),
-                      child: Column(children: [
-                        GFButton(
-                          onPressed: () {
-                            Get.toNamed('/transfers');
-                          },
-                          text: S.of(context).ttransfer,
-                          icon: Icon(Iconsax.arrow_2, color: Colors.red),
-                          textColor: Theme.of(context).primaryColor,
-                          type: GFButtonType.transparent,
-                          position: GFPosition.start,
-                          fullWidthButton: true,
-                        ),
-                        Divider(),
-                        GFButton(
-                          onPressed: () {
-                            Get.toNamed('/reception');
-                          },
-                          text: S.of(context).treception,
-                          icon: Icon(Iconsax.box_add, color: Colors.red),
-                          textColor: Theme.of(context).primaryColor,
-                          type: GFButtonType.transparent,
-                          fullWidthButton: true,
-                          position: GFPosition.start,
-                        ),
-                        Divider(),
-                        Tooltip(
-                            message:
-                                "Picking Nro: $pickingNum. \nAsignacion de Productos: \nCant. Prod: $cantProd. \nCod Conso: $codConso. \nNum Conso: $numConso. \nGrupo: \nBU: $bu. \nDI: $di. \nUN: $un. \nObs.Asig: $obsasig. \nObs.Conso: $obsconso.",
-                            verticalOffset: 40,
-                            waitDuration: Duration(seconds: 1),
-                            padding: EdgeInsets.all(10),
-                            showDuration: Duration(seconds: 3),
-                            child: Row(
-                              children: [
-                                SizedBox(width: 60),
-                                GFButton(
-                                  onPressed: () {
-                                    Get.toNamed('/containernum');
-                                  },
-                                  text: S.of(context).tpicking,
-                                  icon: Icon(Iconsax.box_search,
-                                      color: Colors.red),
-                                  textColor: Theme.of(context).primaryColor,
-                                  type: GFButtonType.transparent,
-                                  padding: EdgeInsets.symmetric(horizontal: 80),
-                                  position: GFPosition.start,
-                                ),
-                                GFIconButton(
-                                  icon: Icon(Iconsax.info_circle,
-                                      color: Colors.red),
-                                  type: GFButtonType.transparent,
-                                  onPressed: () => showAlertDialog(context),
-                                )
-                              ],
-                            )),
-                        Divider(),
-                        GFButton(
-                          onPressed: () {
-                            Get.toNamed('/stock');
-                          },
-                          text: S.of(context).tstock,
-                          icon: Icon(Iconsax.document, color: Colors.red),
-                          textColor: Theme.of(context).primaryColor,
-                          type: GFButtonType.transparent,
-                          fullWidthButton: true,
-                          position: GFPosition.start,
-                        ),
-                        Divider(),
-                        GFButton(
-                          onPressed: () {
-                            Get.toNamed('/replacement');
-                          },
-                          text: S.of(context).treplacement,
-                          icon: Icon(Iconsax.box_tick, color: Colors.red),
-                          textColor: Theme.of(context).primaryColor,
-                          type: GFButtonType.transparent,
-                          fullWidthButton: true,
-                          position: GFPosition.start,
-                        ),
-                        Divider(),
-                        GFButton(
-                          onPressed: () {
-                            Get.toNamed('/savereception');
-                          },
-                          text: S.of(context).treceivinguard,
-                          icon: Icon(Iconsax.save_2, color: Colors.red),
-                          textColor: Theme.of(context).primaryColor,
-                          type: GFButtonType.transparent,
-                          fullWidthButton: true,
-                          position: GFPosition.start,
-                        ),
-                        Divider(),
-                        GFButton(
-                          onPressed: () {},
-                          text: S.of(context).tconsocontrol,
-                          icon: Icon(Iconsax.security, color: Colors.red),
-                          textColor: Theme.of(context).primaryColor,
-                          type: GFButtonType.transparent,
-                          fullWidthButton: true,
-                          position: GFPosition.start,
-                        ),
-                        Divider(),
-                        GFButton(
-                          onPressed: () {},
-                          text: S.of(context).tconsocardis,
-                          icon: Icon(Iconsax.box, color: Colors.red),
-                          textColor: Theme.of(context).primaryColor,
-                          type: GFButtonType.transparent,
-                          fullWidthButton: true,
-                          position: GFPosition.start,
-                        ),
-                      ]),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            GFButton(
+                              onPressed: () {
+                                Get.toNamed('/transfers');
+                              },
+                              text: S.of(context).ttransfer,
+                              icon: Icon(Iconsax.arrow_2, color: Colors.red),
+                              textColor: Theme.of(context).primaryColor,
+                              type: GFButtonType.transparent,
+                              position: GFPosition.start,
+                              fullWidthButton: true,
+                            ),
+                            Divider(),
+                            GFButton(
+                              onPressed: () {
+                                Get.toNamed('/reception');
+                              },
+                              text: S.of(context).treception,
+                              icon: Icon(Iconsax.box_add, color: Colors.red),
+                              textColor: Theme.of(context).primaryColor,
+                              type: GFButtonType.transparent,
+                              fullWidthButton: true,
+                              position: GFPosition.start,
+                            ),
+                            Divider(),
+                            Tooltip(
+                                message:
+                                    "Picking Nro: $pickingNum. \nAsignacion de Productos: \nCant. Prod: $cantProd. \nCod Conso: $codConso. \nNum Conso: $numConso. \nGrupo: \nBU: $bu. \nDI: $di. \nUN: $un. \nObs.Asig: $obsasig. \nObs.Conso: $obsconso.",
+                                verticalOffset: 40,
+                                waitDuration: Duration(seconds: 1),
+                                padding: EdgeInsets.all(10),
+                                showDuration: Duration(seconds: 3),
+                                child: Row(
+                                  children: [
+                                    SizedBox(width: 60),
+                                    GFButton(
+                                      onPressed: () {
+                                        Get.toNamed('/containernum');
+                                      },
+                                      text: S.of(context).tpicking,
+                                      icon: Icon(Iconsax.box_search,
+                                          color: Colors.red),
+                                      textColor: Theme.of(context).primaryColor,
+                                      type: GFButtonType.transparent,
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 80),
+                                      position: GFPosition.start,
+                                    ),
+                                    GFIconButton(
+                                      icon: Icon(Iconsax.info_circle,
+                                          color: Colors.red),
+                                      type: GFButtonType.transparent,
+                                      onPressed: () => showAlertDialog(context),
+                                    )
+                                  ],
+                                )),
+                            Divider(),
+                            GFButton(
+                              onPressed: () {
+                                Get.toNamed('/stock');
+                              },
+                              text: S.of(context).tstock,
+                              icon: Icon(Iconsax.document, color: Colors.red),
+                              textColor: Theme.of(context).primaryColor,
+                              type: GFButtonType.transparent,
+                              fullWidthButton: true,
+                              position: GFPosition.start,
+                            ),
+                            Divider(),
+                            GFButton(
+                              onPressed: () {
+                                Get.toNamed('/replacement');
+                              },
+                              text: S.of(context).treplacement,
+                              icon: Icon(Iconsax.box_tick, color: Colors.red),
+                              textColor: Theme.of(context).primaryColor,
+                              type: GFButtonType.transparent,
+                              fullWidthButton: true,
+                              position: GFPosition.start,
+                            ),
+                            Divider(),
+                            GFButton(
+                              onPressed: () {
+                                Get.toNamed('/savereception');
+                              },
+                              text: S.of(context).treceivinguard,
+                              icon: Icon(Iconsax.save_2, color: Colors.red),
+                              textColor: Theme.of(context).primaryColor,
+                              type: GFButtonType.transparent,
+                              fullWidthButton: true,
+                              position: GFPosition.start,
+                            ),
+                            Divider(),
+                            GFButton(
+                              onPressed: () {},
+                              text: S.of(context).tconsocontrol,
+                              icon: Icon(Iconsax.security, color: Colors.red),
+                              textColor: Theme.of(context).primaryColor,
+                              type: GFButtonType.transparent,
+                              fullWidthButton: true,
+                              position: GFPosition.start,
+                            ),
+                            Divider(),
+                            GFButton(
+                              onPressed: () {},
+                              text: S.of(context).tconsocardis,
+                              icon: Icon(Iconsax.box, color: Colors.red),
+                              textColor: Theme.of(context).primaryColor,
+                              type: GFButtonType.transparent,
+                              fullWidthButton: true,
+                              position: GFPosition.start,
+                            ),
+                          ]),
                     ),
                   ],
                 ),

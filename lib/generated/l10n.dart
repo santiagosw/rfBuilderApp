@@ -670,10 +670,10 @@ class S {
     );
   }
 
-  /// `Unidad de Medida`
+  /// `Unit`
   String get lblunit {
     return Intl.message(
-      'Unidad de Medida',
+      'Unit',
       name: 'lblunit',
       desc: '',
       args: [],
