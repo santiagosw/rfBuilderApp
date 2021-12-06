@@ -1,9 +1,9 @@
-#Wed Dec 01 16:16:39 ART 2021
-base.2=/home/user/development/repos/rfBuilderApp/build/app/intermediates/dex/debug/mergeDexDebug/classes3.dex
+#Mon Dec 06 03:08:48 ART 2021
+base.2=C\:\\development\\repos\\rfBuilderApp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
 path.2=classes3.dex
-base.1=/home/user/development/repos/rfBuilderApp/build/app/intermediates/dex/debug/mergeDexDebug/classes2.dex
+base.1=C\:\\development\\repos\\rfBuilderApp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
 path.1=classes2.dex
-base.0=/home/user/development/repos/rfBuilderApp/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+base.0=C\:\\development\\repos\\rfBuilderApp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
