@@ -30,29 +30,6 @@ class _ReplacementPageState extends State<ReplacementPage> {
   String vto = 'DAY/MONTH/YEAR';
   String des = '';
 
-  List<dynamic> _services = [
-    ['Send To End', Iconsax.arrow_swap_horizontal, Colors.white],
-  ];
-
-  final List<dynamic> _advancewunites = [
-    ['Cantidad', Iconsax.arrow_circle_up, 'CANTIDAD'],
-    ['Unidad', Iconsax.transaction_minus, 'UN'],
-  ];
-
-  final List<dynamic> _eti = [
-    ['Deposito', Iconsax.arrow_circle_up, 'DEPOSITO'],
-    ['Retiro', Iconsax.transaction_minus, 'RE'],
-  ];
-
-  final List<dynamic> _eti2 = [
-    ['Producto', Iconsax.arrow_circle_up, 'PRODUCTO'],
-    ['Cantidad', Iconsax.transaction_minus, 'CA'],
-    ['Unidad', Iconsax.transaction_minus, 'UN'],
-  ];
-  final List<dynamic> _eti3 = [
-    ['Vencimiento', Iconsax.arrow_circle_up, 'VTO'],
-  ];
-
   @override
   void initState() {
     _scrollController = ScrollController();
@@ -85,6 +62,10 @@ class _ReplacementPageState extends State<ReplacementPage> {
     final text = Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark
         ? 'DarkTheme'
         : 'LightTheme';
+
+    List<dynamic> _services = [
+      [S.of(context).lblsendtoend, Iconsax.arrow_swap_horizontal, Colors.white],
+    ];
 
     return AdvancedDrawer(
       backdropColor: Theme.of(context).scaffoldBackgroundColor,

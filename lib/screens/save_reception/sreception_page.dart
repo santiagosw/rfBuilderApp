@@ -190,7 +190,7 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
         ),
       ),
       child: Scaffold(
-          resizeToAvoidBottomInset: false,
+          resizeToAvoidBottomInset: true,
           backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           body: CustomScrollView(controller: _scrollController, slivers: [
             SliverAppBar(

@@ -25,17 +25,6 @@ class _StockPageState extends State<StockPage> {
   String? product = 'ASGAHA-AKAS2A';
   String barcode = '';
 
-  List<dynamic> _services = [
-    ['Close Inventory', Iconsax.close_circle, Colors.white],
-    ['Skip Product', Iconsax.next, Colors.white],
-  ];
-
-  final List<dynamic> _stock2 = [
-    ['Bultos', Iconsax.box, '0'],
-    ['Display', Iconsax.screenmirroring, '0'],
-    ['Unidades', Iconsax.element_plus, '0'],
-  ];
-
   @override
   void initState() {
     _scrollController = ScrollController();
@@ -66,6 +55,17 @@ class _StockPageState extends State<StockPage> {
     final text = Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark
         ? 'DarkTheme'
         : 'LightTheme';
+
+    final List<dynamic> _stock2 = [
+      [S.of(context).lblpackages, Iconsax.box, '0'],
+      [S.of(context).lbldisplay, Iconsax.screenmirroring, '0'],
+      [S.of(context).lblunits, Iconsax.element_plus, '0'],
+    ];
+
+    List<dynamic> _services = [
+      [S.of(context).lblcloseinvent, Iconsax.close_circle, Colors.white],
+      [S.of(context).lblskiprod, Iconsax.next, Colors.white],
+    ];
 
     return AdvancedDrawer(
       backdropColor: Theme.of(context).splashColor,

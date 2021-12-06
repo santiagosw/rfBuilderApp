@@ -24,31 +24,6 @@ class _PickingPageState extends State<PickingPage> {
   String? dropdown;
   String barcode = '';
 
-  List<dynamic> _services = [
-    [
-      'Close Container',
-      Iconsax.close_circle,
-      Colors.white,
-    ],
-    ['End Product', Iconsax.tick_circle, Colors.white],
-    ['Next Product', Iconsax.next, Colors.white],
-    ['Current Content', Iconsax.dcube, Colors.white],
-    ['Positions', Iconsax.location, Colors.white],
-    ['Print Request', Iconsax.document, Colors.white],
-    ['Print Label', Iconsax.printer, Colors.white],
-  ];
-
-  final List<dynamic> _productes = [
-    ['Bultos', Iconsax.box, '0'],
-    ['Display', Iconsax.screenmirroring, '0'],
-    ['Unidades', Iconsax.element_plus, '0'],
-  ];
-
-  final List<dynamic> _advancewunites = [
-    ['Unidad', Iconsax.transaction_minus, 'CM'],
-    ['Cantidad', Iconsax.arrow_circle_up, 'CANTIDAD'],
-  ];
-
   @override
   void initState() {
     _scrollController = ScrollController();
@@ -80,6 +55,26 @@ class _PickingPageState extends State<PickingPage> {
     final text = Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark
         ? 'DarkTheme'
         : 'LightTheme';
+
+    List<dynamic> _services = [
+      [
+        S.of(context).lblcloseconta,
+        Iconsax.close_circle,
+        Colors.white,
+      ],
+      [S.of(context).lblendprod, Iconsax.tick_circle, Colors.white],
+      [S.of(context).lblnxtprod, Iconsax.next, Colors.white],
+      [S.of(context).lblcrtcontent, Iconsax.dcube, Colors.white],
+      [S.of(context).lblposition, Iconsax.location, Colors.white],
+      [S.of(context).lblprintreq, Iconsax.document, Colors.white],
+      [S.of(context).lblprint, Iconsax.printer, Colors.white],
+    ];
+
+    final List<dynamic> _productes = [
+      [S.of(context).lblpackages, Iconsax.box, '0'],
+      [S.of(context).lbldisplay, Iconsax.screenmirroring, '0'],
+      [S.of(context).lblunits, Iconsax.element_plus, '0'],
+    ];
 
     return AdvancedDrawer(
       backdropColor: Theme.of(context).splashColor,

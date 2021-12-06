@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\development\\repos\\rfBuilderApp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ca\\values-ca.xml",
+            "outputFile": "C:\\Users\\Usuario\\Desktop\\rfBuilderApp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ca\\values-ca.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Usuario\\.gradle\\caches\\transforms-2\\files-2.1\\c1e5cf3b1f723b4a1bb61c60fa9a6fb3\\jetified-play-services-basement-17.4.0\\res\\values-ca\\values.xml",

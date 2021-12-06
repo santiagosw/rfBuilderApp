@@ -810,6 +810,106 @@ class S {
     );
   }
 
+  /// `Close Container`
+  String get lblcloseconta {
+    return Intl.message(
+      'Close Container',
+      name: 'lblcloseconta',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `End Product`
+  String get lblendprod {
+    return Intl.message(
+      'End Product',
+      name: 'lblendprod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next Product`
+  String get lblnxtprod {
+    return Intl.message(
+      'Next Product',
+      name: 'lblnxtprod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Current Content`
+  String get lblcrtcontent {
+    return Intl.message(
+      'Current Content',
+      name: 'lblcrtcontent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Positions`
+  String get lblposition {
+    return Intl.message(
+      'Positions',
+      name: 'lblposition',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Print Request`
+  String get lblprintreq {
+    return Intl.message(
+      'Print Request',
+      name: 'lblprintreq',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Print`
+  String get lblprint {
+    return Intl.message(
+      'Print',
+      name: 'lblprint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Close Inventory`
+  String get lblcloseinvent {
+    return Intl.message(
+      'Close Inventory',
+      name: 'lblcloseinvent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Skip Product`
+  String get lblskiprod {
+    return Intl.message(
+      'Skip Product',
+      name: 'lblskiprod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send to end`
+  String get lblsendtoend {
+    return Intl.message(
+      'Send to end',
+      name: 'lblsendtoend',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Español`
   String get lblspanish {
     return Intl.message(

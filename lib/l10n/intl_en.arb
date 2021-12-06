@@ -113,6 +113,16 @@
     "lblcantpos": "Amount - Position",
     "lblchoose": "Choose your Language",
     "lbltransfer": "Transfers",
+    "lblcloseconta": "Close Container",
+    "lblendprod": "End Product",
+    "lblnxtprod": "Next Product",
+    "lblcrtcontent": "Current Content",
+    "lblposition": "Positions",
+    "lblprintreq": "Print Request",
+    "lblprint": "Print",
+    "lblcloseinvent": "Close Inventory",
+    "lblskiprod": "Skip Product",
+    "lblsendtoend": "Send to end",
 
 
     "@_LANGUAGE TRANS": {

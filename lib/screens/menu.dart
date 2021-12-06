@@ -281,7 +281,7 @@ class _HomePageState extends State<HomePage> {
                       FadeIn(
                         duration: const Duration(milliseconds: 500),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
@@ -301,14 +301,17 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(
                         height: 10,
                       ),
-                      Container(
-                        width: 30,
-                        height: 3,
-                        decoration: BoxDecoration(
-                          color: Colors.grey.shade800,
-                          borderRadius: BorderRadius.circular(10),
+                      Row(children: [
+                        SizedBox(width: 10),
+                        Container(
+                          width: 30,
+                          height: 3,
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade800,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
                         ),
-                      ),
+                      ]),
                       SizedBox(
                         height: 8,
                       ),
@@ -337,7 +340,6 @@ class _HomePageState extends State<HomePage> {
                               textColor: Theme.of(context).primaryColor,
                               type: GFButtonType.transparent,
                               position: GFPosition.start,
-                              fullWidthButton: true,
                             ),
                             Divider(),
                             GFButton(
@@ -348,20 +350,20 @@ class _HomePageState extends State<HomePage> {
                               icon: Icon(Iconsax.box_add, color: Colors.red),
                               textColor: Theme.of(context).primaryColor,
                               type: GFButtonType.transparent,
-                              fullWidthButton: true,
                               position: GFPosition.start,
                             ),
                             Divider(),
                             Tooltip(
                                 message:
                                     "Picking Nro: $pickingNum. \nAsignacion de Productos: \nCant. Prod: $cantProd. \nCod Conso: $codConso. \nNum Conso: $numConso. \nGrupo: \nBU: $bu. \nDI: $di. \nUN: $un. \nObs.Asig: $obsasig. \nObs.Conso: $obsconso.",
-                                verticalOffset: 40,
+                                verticalOffset: 20,
                                 waitDuration: Duration(seconds: 1),
                                 padding: EdgeInsets.all(10),
                                 showDuration: Duration(seconds: 3),
                                 child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                                    SizedBox(width: 60),
                                     GFButton(
                                       onPressed: () {
                                         Get.toNamed('/containernum');
@@ -371,8 +373,6 @@ class _HomePageState extends State<HomePage> {
                                           color: Colors.red),
                                       textColor: Theme.of(context).primaryColor,
                                       type: GFButtonType.transparent,
-                                      padding:
-                                          EdgeInsets.symmetric(horizontal: 80),
                                       position: GFPosition.start,
                                     ),
                                     GFIconButton(
@@ -392,7 +392,6 @@ class _HomePageState extends State<HomePage> {
                               icon: Icon(Iconsax.document, color: Colors.red),
                               textColor: Theme.of(context).primaryColor,
                               type: GFButtonType.transparent,
-                              fullWidthButton: true,
                               position: GFPosition.start,
                             ),
                             Divider(),
@@ -404,7 +403,6 @@ class _HomePageState extends State<HomePage> {
                               icon: Icon(Iconsax.box_tick, color: Colors.red),
                               textColor: Theme.of(context).primaryColor,
                               type: GFButtonType.transparent,
-                              fullWidthButton: true,
                               position: GFPosition.start,
                             ),
                             Divider(),
@@ -416,7 +414,6 @@ class _HomePageState extends State<HomePage> {
                               icon: Icon(Iconsax.save_2, color: Colors.red),
                               textColor: Theme.of(context).primaryColor,
                               type: GFButtonType.transparent,
-                              fullWidthButton: true,
                               position: GFPosition.start,
                             ),
                             Divider(),
@@ -426,7 +423,6 @@ class _HomePageState extends State<HomePage> {
                               icon: Icon(Iconsax.security, color: Colors.red),
                               textColor: Theme.of(context).primaryColor,
                               type: GFButtonType.transparent,
-                              fullWidthButton: true,
                               position: GFPosition.start,
                             ),
                             Divider(),
@@ -436,7 +432,6 @@ class _HomePageState extends State<HomePage> {
                               icon: Icon(Iconsax.box, color: Colors.red),
                               textColor: Theme.of(context).primaryColor,
                               type: GFButtonType.transparent,
-                              fullWidthButton: true,
                               position: GFPosition.start,
                             ),
                           ]),

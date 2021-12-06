@@ -41,17 +41,31 @@ class MessageLookup extends MessageLookupByLibrary {
         "lblcantpos":
             MessageLookupByLibrary.simpleMessage("Cantidad - Posicion"),
         "lblchoose": MessageLookupByLibrary.simpleMessage("Elige tu Idioma"),
+        "lblcloseconta":
+            MessageLookupByLibrary.simpleMessage("Cerrar Contenedor"),
+        "lblcloseinvent":
+            MessageLookupByLibrary.simpleMessage("Cerrar Inventario"),
+        "lblcrtcontent":
+            MessageLookupByLibrary.simpleMessage("Contenido Actual"),
         "lbldepo": MessageLookupByLibrary.simpleMessage("Deposito"),
         "lbldes": MessageLookupByLibrary.simpleMessage("Descripción"),
-        "lbldisplay": MessageLookupByLibrary.simpleMessage("Monitores"),
+        "lbldisplay": MessageLookupByLibrary.simpleMessage("Display"),
         "lbleditprof": MessageLookupByLibrary.simpleMessage("Editar Perfil"),
+        "lblendprod": MessageLookupByLibrary.simpleMessage("Terminar Producto"),
         "lblenglish": MessageLookupByLibrary.simpleMessage("English"),
         "lblexpiration": MessageLookupByLibrary.simpleMessage("Vencimiento"),
         "lblfullname": MessageLookupByLibrary.simpleMessage("Nombre Completo"),
         "lbllocation": MessageLookupByLibrary.simpleMessage("Localidad"),
-        "lblpackages": MessageLookupByLibrary.simpleMessage("Paquetes"),
+        "lblnxtprod":
+            MessageLookupByLibrary.simpleMessage("Siguiente Producto"),
+        "lblpackages": MessageLookupByLibrary.simpleMessage("Bultos"),
         "lblpicking": MessageLookupByLibrary.simpleMessage("Picking"),
+        "lblposition": MessageLookupByLibrary.simpleMessage("Posiciones"),
+        "lblprint": MessageLookupByLibrary.simpleMessage("Imprimir"),
+        "lblprintreq": MessageLookupByLibrary.simpleMessage("Pedido Impresion"),
         "lblproduct": MessageLookupByLibrary.simpleMessage("Producto"),
+        "lblsendtoend": MessageLookupByLibrary.simpleMessage("Mandar al final"),
+        "lblskiprod": MessageLookupByLibrary.simpleMessage("Saltear Producto"),
         "lblspanish": MessageLookupByLibrary.simpleMessage("Espa"),
         "lblstorage": MessageLookupByLibrary.simpleMessage("Almacen"),
         "lbltransfer": MessageLookupByLibrary.simpleMessage("Transferencias"),

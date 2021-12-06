@@ -96,8 +96,8 @@
     "@_LABELS": {
     },
 
-    "lblpackages": "Paquetes",
-    "lbldisplay": "Monitores",
+    "lblpackages": "Bultos",
+    "lbldisplay": "Display",
     "lblunits": "Unidades",
     "lblpicking": "Picking",
     "lblwarehouse": "Deposito",
@@ -117,6 +117,16 @@
     "lblcantpos": "Cantidad - Posicion",
     "lblchoose": "Elige tu Idioma",
     "lbltransfer": "Transferencias",
+    "lblcloseconta": "Cerrar Contenedor",
+    "lblendprod": "Terminar Producto",
+    "lblnxtprod": "Siguiente Producto",
+    "lblcrtcontent": "Contenido Actual",
+    "lblposition": "Posiciones",
+    "lblprintreq": "Pedido Impresion",
+    "lblprint": "Imprimir",
+    "lblcloseinvent": "Cerrar Inventario",
+    "lblskiprod": "Saltear Producto",
+    "lblsendtoend": "Mandar al final",
 
     "@_LANGUAGE TRANS": {
     },
