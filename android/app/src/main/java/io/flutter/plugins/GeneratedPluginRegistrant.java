@@ -5,6 +5,7 @@ import androidx.annotation.NonNull;
 import io.flutter.Log;
 
 import io.flutter.embedding.engine.FlutterEngine;
+import io.flutter.embedding.engine.plugins.shim.ShimPluginRegistry;
 
 /**
  * Generated file. Do not edit.
@@ -15,6 +16,12 @@ import io.flutter.embedding.engine.FlutterEngine;
 public final class GeneratedPluginRegistrant {
   private static final String TAG = "GeneratedPluginRegistrant";
   public static void registerWith(@NonNull FlutterEngine flutterEngine) {
+    ShimPluginRegistry shimPluginRegistry = new ShimPluginRegistry(flutterEngine);
+    try {
+      flutterEngine.getPlugins().add(new com.leeboonstra.dialogflow_grpc.DialogflowGrpcPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin dialogflow_grpc, com.leeboonstra.dialogflow_grpc.DialogflowGrpcPlugin", e);
+    }
     try {
       flutterEngine.getPlugins().add(new com.amolg.flutterbarcodescanner.FlutterBarcodeScannerPlugin());
     } catch(Exception e) {
@@ -24,6 +31,11 @@ public final class GeneratedPluginRegistrant {
       flutterEngine.getPlugins().add(new io.flutter.plugins.flutter_plugin_android_lifecycle.FlutterAndroidLifecyclePlugin());
     } catch(Exception e) {
       Log.e(TAG, "Error registering plugin flutter_plugin_android_lifecycle, io.flutter.plugins.flutter_plugin_android_lifecycle.FlutterAndroidLifecyclePlugin", e);
+    }
+    try {
+      io.kommunicate.kommunicate_flutter_plugin.KommunicateFlutterPlugin.registerWith(shimPluginRegistry.registrarFor("io.kommunicate.kommunicate_flutter_plugin.KommunicateFlutterPlugin"));
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin kommunicate_flutter, io.kommunicate.kommunicate_flutter_plugin.KommunicateFlutterPlugin", e);
     }
     try {
       flutterEngine.getPlugins().add(new io.flutter.plugins.pathprovider.PathProviderPlugin());
@@ -39,6 +51,11 @@ public final class GeneratedPluginRegistrant {
       flutterEngine.getPlugins().add(new io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin());
     } catch(Exception e) {
       Log.e(TAG, "Error registering plugin shared_preferences_android, io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new vn.casperpas.sound_stream.SoundStreamPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin sound_stream, vn.casperpas.sound_stream.SoundStreamPlugin", e);
     }
   }
 }

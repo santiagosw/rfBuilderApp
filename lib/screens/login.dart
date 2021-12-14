@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
 import 'package:rfbuilder_app/generated/l10n.dart';
+import 'package:rfbuilder_app/provider/authProvider.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -42,11 +43,28 @@ class _LoginPageState extends State<LoginPage> {
         padding: EdgeInsets.all(20.0),
         child: Column(
           children: [
-            Container(
-                child: Image.asset(
-              "assets/images/emserLogo.png",
-              height: 60,
-            )),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(width: 20),
+                Container(
+                    child: Image.asset(
+                  "assets/images/emserLogo.png",
+                  height: 60,
+                )),
+                FloatingActionButton(
+                    mini: true,
+                    child: Image.asset(
+                      "assets/images/support.png",
+                      scale: 23,
+                    ),
+                    backgroundColor: Colors.red,
+                    onPressed: () {
+                      Get.toNamed("/chatbot");
+                    })
+              ],
+            ),
             SizedBox(
               height: 10,
             ),
@@ -121,7 +139,7 @@ class _LoginPageState extends State<LoginPage> {
               "Fast2Ship",
               style: TextStyle(
                   fontSize: 36,
-                  fontFamily: "Titillium Web",
+                  fontFamily: 'CircularStd',
                   fontWeight: FontWeight.w900,
                   color: Theme.of(context).primaryColor),
             ),
@@ -135,11 +153,13 @@ class _LoginPageState extends State<LoginPage> {
                 labelText: S.of(context).email,
                 hintText: 'Username or e-mail',
                 labelStyle: TextStyle(
+                  fontFamily: 'CircularStd',
                   color: Theme.of(context).primaryColor,
                   fontSize: 14.0,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.normal,
                 ),
                 hintStyle: TextStyle(
+                  fontFamily: 'CircularStd',
                   color: Theme.of(context).primaryColor,
                   fontSize: 14.0,
                 ),
@@ -153,6 +173,7 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 floatingLabelStyle: TextStyle(
+                  fontFamily: 'CircularStd',
                   color: Colors.red,
                   fontSize: 18.0,
                 ),
@@ -172,10 +193,12 @@ class _LoginPageState extends State<LoginPage> {
                 labelText: S.of(context).password,
                 hintText: 'Password',
                 hintStyle: TextStyle(
-                  color: Theme.of(context).primaryColor,
-                  fontSize: 14.0,
-                ),
+                    fontFamily: 'CircularStd',
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.normal),
                 labelStyle: TextStyle(
+                  fontFamily: 'CircularStd',
                   color: Theme.of(context).primaryColor,
                   fontSize: 14.0,
                   fontWeight: FontWeight.w400,
@@ -190,6 +213,7 @@ class _LoginPageState extends State<LoginPage> {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 floatingLabelStyle: TextStyle(
+                  fontFamily: 'CircularStd',
                   color: Colors.red,
                   fontSize: 18.0,
                 ),
@@ -207,6 +231,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     S.of(context).forgotpassword,
                     style: TextStyle(
+                        fontFamily: 'CircularStd',
                         color: Colors.red,
                         fontSize: 14.0,
                         fontWeight: FontWeight.w400),
@@ -218,7 +243,8 @@ class _LoginPageState extends State<LoginPage> {
               height: 10,
             ),
             MaterialButton(
-              onPressed: () {
+              onPressed: () async {
+                // await LoginButton();
                 Get.toNamed('/home');
               },
               height: 45,
@@ -235,34 +261,14 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 5,
             ),
-            // No se usa por ahora
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     Text(
-            //       'Don\'t have an account?',
-            //       style: TextStyle(
-            //           color: Theme.of(context).primaryColor,
-            //           fontSize: 14.0,
-            //           fontWeight: FontWeight.w400),
-            //     ),
-            //     TextButton(
-            //       onPressed: () {
-            //         Get.toNamed('/register');
-            //       },
-            //       child: Text(
-            //         'Register',
-            //         style: TextStyle(
-            //             color: Colors.red,
-            //             fontSize: 14.0,
-            //             fontWeight: FontWeight.w400),
-            //       ),
-            //     )
-            //   ],
-            // ),
           ],
         ),
       ),
     )));
   }
+}
+
+LoginButton() async {
+  final response = await AuthProvider.Login();
+  print(response);
 }

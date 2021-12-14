@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:rfbuilder_app/provider/languageChangeProvider.dart';
 import 'package:rfbuilder_app/provider/theme_provider.dart';
+import 'package:rfbuilder_app/screens/bot/bot_screen.dart';
+import 'package:rfbuilder_app/screens/bot/chat.dart';
 import 'package:rfbuilder_app/screens/login.dart';
 import 'package:rfbuilder_app/screens/menu.dart';
 import 'package:rfbuilder_app/screens/picking/containerNum_page.dart';
@@ -48,7 +50,7 @@ class MyApp extends StatelessWidget {
                     theme: MyThemes.lightTheme,
                     darkTheme: MyThemes.darkTheme,
                     debugShowCheckedModeBanner: false,
-                    home: LoginPage(),
+                    initialRoute: "/login",
                     getPages: [
                       GetPage(
                           name: "/login",
@@ -103,6 +105,10 @@ class MyApp extends StatelessWidget {
                           page: () => StatisticsPage(
                                 title: '',
                               ),
+                          transition: Transition.cupertinoDialog),
+                      GetPage(
+                          name: "/chatbot",
+                          page: () => ChatBot(),
                           transition: Transition.cupertinoDialog),
                     ])));
       });

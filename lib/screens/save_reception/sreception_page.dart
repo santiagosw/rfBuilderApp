@@ -218,11 +218,13 @@ class _SaveReceptionPageState extends State<SaveReceptionPage> {
               ),
               actions: [
                 IconButton(
-                  icon: Icon(Iconsax.notification, color: Colors.red),
-                  onPressed: () {},
+                  icon: Icon(Iconsax.messages, color: Colors.red),
+                  onPressed: () {
+                    Get.toNamed("/chatbot");
+                  },
                 ),
                 IconButton(
-                  icon: Icon(Iconsax.message_question, color: Colors.red),
+                  icon: Icon(Iconsax.info_circle, color: Colors.red),
                   onPressed: () => showAlertDialog(context),
                 ),
               ],
